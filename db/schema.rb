@@ -10,9 +10,41 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_03_27_134156) do
+ActiveRecord::Schema[7.0].define(version: 2023_03_27_135404) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "audios", force: :cascade do |t|
+    t.bigint "story_id", null: false
+    t.bigint "user_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["story_id"], name: "index_audios_on_story_id"
+    t.index ["user_id"], name: "index_audios_on_user_id"
+  end
+
+  create_table "favorites", force: :cascade do |t|
+    t.bigint "user_id", null: false
+    t.bigint "story_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["story_id"], name: "index_favorites_on_story_id"
+    t.index ["user_id"], name: "index_favorites_on_user_id"
+  end
+
+  create_table "stories", force: :cascade do |t|
+    t.string "title"
+    t.text "summary"
+    t.text "content"
+    t.string "tag"
+    t.integer "rating"
+    t.integer "age"
+    t.integer "length"
+    t.bigint "user_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_stories_on_user_id"
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -29,4 +61,9 @@ ActiveRecord::Schema[7.0].define(version: 2023_03_27_134156) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "audios", "stories"
+  add_foreign_key "audios", "users"
+  add_foreign_key "favorites", "stories"
+  add_foreign_key "favorites", "users"
+  add_foreign_key "stories", "users"
 end
