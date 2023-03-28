@@ -5,7 +5,6 @@ class StoriesController < ApplicationController
 
   def show
     @story = Story.find(params[:id])
-    @favorite = Favorite.where(user: current_user)
   end
 
   def new
