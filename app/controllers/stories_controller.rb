@@ -21,6 +21,26 @@ class StoriesController < ApplicationController
     end
   end
 
+  def edit
+    @story = Story.find(params[:id])
+  end
+
+  def update
+    @story = Story.find(params[:id])
+    @story.update(story_params)
+    if @story.save
+      redirect_to stories_path
+    else
+      render :edit, status: :unprocessable_entity
+    end
+  end
+
+  def destroy
+    @story = Story.find(params[:id])
+    @story.destroy
+    # redirect_to profile_path, status: :see_other
+  end
+
   def search
   end
 

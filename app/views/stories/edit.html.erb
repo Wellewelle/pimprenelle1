@@ -1,5 +1,5 @@
 <div class="container">
-  <h1>Ecrivez votre propre histoire</h1>
+  <h1>Modifiez votre histoire</h1>
 
   <%= simple_form_for(@story) do |f| %>
     <%= f.input :title, label: "Titre" %>
@@ -7,6 +7,6 @@
     <%= f.input :tag, label: "Vos tags" %>
     <%= f.input :age, label: "Tranche d'âge" %>
     <%= f.input :content, label: "Racontez..." %>
-    <%= f.button :submit, "Publier mon histoire", class: "submit-button"%>
+    <%= f.button :submit, "Modifier", class: "submit-button"%>
   <% end %>
 </div>
