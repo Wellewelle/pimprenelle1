@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   root to: "pages#home"
 
   get '/profile', to: 'users#profile'
+  get '/mes_histoires', to: 'users#user_stories'
 
   resources :stories, only: [:index, :show, :new, :create, :search, :edit, :update, :destroy]
 
