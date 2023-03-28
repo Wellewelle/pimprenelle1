@@ -5,8 +5,8 @@ class UsersController < ApplicationController
     @user = current_user
   end
 
-  def record
-    @user = current_user
+  def user_stories
+    @stories = current_user.stories
   end
 
   private
