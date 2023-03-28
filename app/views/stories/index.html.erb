@@ -1,2 +1,7 @@
-<h1>Stories#index</h1>
-<p>Find me in app/views/stories/index.html.erb</p>
+<h1> Des histoires pour toutes et tous!</h1>
+
+<% @stories.each do |story| %>
+<h3 style="color:orange"> <%= story.title %> </h3>
+<p> <%= story.summary %> </p>
+<p> Note: <%= story.rating %>,  <span> Durée: <%= story.length %> </span> </p>
+<% end %>
