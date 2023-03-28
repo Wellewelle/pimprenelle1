@@ -9,7 +9,7 @@ require "open-uri"
 User.destroy_all
 Story.destroy_all
 Audio.destroy_all
-Favorites.destroy_all
+Favorite.destroy_all
 
 
 user1 = User.create!(first_name: "Le", last_name: "Wagon", email: "test@gmail.com", username: "lewagon", password: "1234567")
