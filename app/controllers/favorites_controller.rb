@@ -17,12 +17,12 @@ class FavoritesController < ApplicationController
   end
 
   def destroy
-    @favorite = Favorite.where(user: current_user)
+    @favorite = Favorite.find(params[:id])
     @story = Story.find(params[:favorite], params[:story_id])
     if @favorite.destroy!
-      redirect_to story_path(@story), notice: "Removed successfully"
+      redirect_to profile_path, notice: "Removed successfully"
     else
-      redirect_to story_path(@story), alert: "Sorry, something went wrong"
+      redirect_to profile_path, alert: "Sorry, something went wrong"
     end
   end
 

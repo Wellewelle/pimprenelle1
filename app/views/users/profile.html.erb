@@ -4,6 +4,11 @@
 
   <div>
     <%# Favoris %>
+    <% @user.favorites.each do |favorite| %>
+      <%= favorite.story.title %><br>
+      <%= favorite.story.summary %>
+      <%= button_to "delete to favorite", favorite_path(favorite, story_id: favorite.story.id), method: :delete, data: { confirm: 'Are you sure?' } %>
+    <% end %>
   </div>
 
   <div>
@@ -20,6 +25,6 @@
     <%# Créer une histoire %>
   </div>
 
-  <%= link_to "Back to homepage", home_path %>
+<%= link_to "Back to homepage", root_path %>
 
 </div>
