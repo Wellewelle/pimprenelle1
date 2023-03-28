@@ -15,7 +15,7 @@ class StoriesController < ApplicationController
     @story = Story.new(story_params)
     @story.user_id = current_user.id
     if @story.save
-      redirect_to stories_path
+      redirect_to profile_path
     else
       render :new, status: :unprocessable_entity
     end
@@ -29,7 +29,7 @@ class StoriesController < ApplicationController
     @story = Story.find(params[:id])
     @story.update(story_params)
     if @story.save
-      redirect_to stories_path
+      redirect_to profile_path
     else
       render :edit, status: :unprocessable_entity
     end
@@ -38,7 +38,7 @@ class StoriesController < ApplicationController
   def destroy
     @story = Story.find(params[:id])
     @story.destroy
-    # redirect_to profile_path, status: :see_other
+    redirect_to profile_path, status: :see_other
   end
 
   def search
