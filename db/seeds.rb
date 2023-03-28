@@ -8,6 +8,8 @@ require "open-uri"
 #   Character.create(name: "Luke", movie: movies.first)
 User.destroy_all
 Story.destroy_all
+Audio.destroy_all
+Favorites.destroy_all
 
 
 user1 = User.create!(first_name: "Le", last_name: "Wagon", email: "test@gmail.com", username: "lewagon", password: "1234567")
@@ -15,7 +17,7 @@ user2 = User.create!(first_name: "John", last_name: "Doe", email: "theuser@gmail
 user3 = User.create!(first_name: "Lorem", last_name: "Ipsum", email: "random@outlook.com", username: "latin01", password: "atested")
 
 
-Story.create!(title: "Les mauvais voisins", summary: "De très mauvais voisins dans notre quartier !", content: "Il était une fois un homme qui était parti à la recherche d'un emploi. Alors qu'il passait devant la maison de son voisin, un papier important est tombé de la poche de l'homme.
+story1 = Story.create!(title: "Les mauvais voisins", summary: "De très mauvais voisins dans notre quartier !", content: "Il était une fois un homme qui était parti à la recherche d'un emploi. Alors qu'il passait devant la maison de son voisin, un papier important est tombé de la poche de l'homme.
 
   Il se trouve que son voisin regardait par la fenêtre. Il a vu le morceau de papier tomber, et il s'est dit : \" Quelle honte ! Ce type a délibérément laissé tomber ça de sa poche. Il essaie de salir la façade de ma maison, et il est sournois aussi ! \"
   Mais au lieu de sortir et de dire quelque chose, le voisin a planifié sa vengeance.
@@ -35,7 +37,9 @@ Story.create!(title: "Les mauvais voisins", summary: "De très mauvais voisins d
   Tous deux se sont retrouvés dans un hôpital et ont dû passer un certain temps à partager une chambre là-bas. Au début, ils ont refusé de se parler, mais un jour, fatigués du silence, ils se sont mis à parler. Au fil du temps, ils sont devenus amis, jusqu'au jour où ils ont finalement osé discuter de l'incident du morceau de papier. Ils ont réalisé que tout cela n'avait été qu'un malentendu et que s'ils s'étaient parlé la première fois - au lieu de tirer des conclusions hâtives sur de mauvaises intentions - rien de tout cela ne serait arrivé. Mieux encore, ils auraient toujours leurs maisons.
 
   Cependant, à la fin, le fait qu'ils parlaient et soient devenus amis les a beaucoup aidés à se remettre de leurs blessures et à travailler ensemble pour reconstruire leurs maisons.", tag: "fantaisie", rating: 3, length: 4, user_id: user1.id)
-Story.create!(title: "Un poulpe en détresse", summary: "Nous devons aller sauver la pieuvre!", content: "Il était une fois une pieuvre timide et silencieuse. Il se déplaçait presque toujours seul car, bien qu'il veuille avoir beaucoup d'amis, il était trop gêné.
+
+
+story2 = Story.create!(title: "Un poulpe en détresse", summary: "Nous devons aller sauver la pieuvre!", content: "Il était une fois une pieuvre timide et silencieuse. Il se déplaçait presque toujours seul car, bien qu'il veuille avoir beaucoup d'amis, il était trop gêné.
 
   Un jour, la pieuvre essayait d'attraper une huître très glissante. Avant qu'il ne s'en rende compte, il s'était attaché en un nœud massif et il ne pouvait pas bouger. Il a essayé de toutes ses forces de se dégager, mais ce n'était pas bon. Finalement, malgré la grande gêne qu'il ressentait d'être vu dans un tel enchevêtrement, il dut demander de l'aide aux poissons qui passaient. De nombreux poissons passèrent à la nage, l'ignorant, mais un petit poisson très gentil offrit son aide pour détacher tous ces tentacules de toutes ces ventouses.
 
@@ -49,7 +53,9 @@ Story.create!(title: "Un poulpe en détresse", summary: "Nous devons aller sauve
   Alors le gros poisson s'éloigna, tout irrité.
 
   Dès qu'il fut parti, tous les poissons qui s'étaient cachés vinrent féliciter la pieuvre d'avoir été si courageuse. Puis le petit poisson leur raconta à tous comment il avait aidé la pieuvre quelques jours plus tôt, mais il n'avait jamais vu quelqu'un être aussi reconnaissant qu'il finisse par faire quelque chose d'aussi dangereux. En entendant cela, les autres poissons ont découvert à quel point la pieuvre timide était gentille, et tout le monde autour était désireux d'être l'ami d'une pieuvre aussi courageuse et honorable.", tag: "bravery", rating: 4, length: 6, user_id: user1.id)
-Story.create!(title: "Princesse du Feu", summary: "Il était une fois une princesse incroyablement riche, belle et sage. Fatiguée des faux prétendants qui ne s'intéressaient qu'à son argent, elle annonça qu'elle n'épouserait que celui qui parviendrait à lui offrir le cadeau le plus précieux, le plus tendre et le plus sincère de tous.", content: "Il était une fois une princesse incroyablement riche, belle et sage. Fatiguée des faux prétendants qui ne s'intéressaient qu'à son argent, elle annonça qu'elle n'épouserait que celui qui parviendrait à lui offrir le cadeau le plus précieux, le plus tendre et le plus sincère de tous.
+
+
+story3 = Story.create!(title: "Princesse du Feu", summary: "Il était une fois une princesse incroyablement riche, belle et sage. Fatiguée des faux prétendants qui ne s'intéressaient qu'à son argent, elle annonça qu'elle n'épouserait que celui qui parviendrait à lui offrir le cadeau le plus précieux, le plus tendre et le plus sincère de tous.", content: "Il était une fois une princesse incroyablement riche, belle et sage. Fatiguée des faux prétendants qui ne s'intéressaient qu'à son argent, elle annonça qu'elle n'épouserait que celui qui parviendrait à lui offrir le cadeau le plus précieux, le plus tendre et le plus sincère de tous.
   Le palais s'est rempli de fleurs et de cadeaux de toutes sortes, de lettres décrivant l'amour éternel et de poèmes amoureux. Parmi tous ces merveilleux cadeaux, elle a trouvé un caillou, un simple caillou sale. Intriguée, elle a exigé de voir celui qui avait offert ce cadeau. Malgré sa curiosité, elle a fait semblant d'être très offensée par le cadeau lorsque le jeune homme lui a été présenté. Il lui a expliqué comme ça,
   \"Chère princesse, ce caillou représente la chose la plus précieuse que l'on puisse donner - c'est mon cœur. Il est également sincère, car il n'est pas encore à vous et il est aussi dur qu'une pierre. Ce n'est que lorsqu'il se remplira d'amour qu'il adoucir et être plus tendre que tout autre.\"
 
@@ -58,7 +64,9 @@ Story.create!(title: "Princesse du Feu", summary: "Il était une fois une prince
   Au cours des mois suivants, elle entreprit de changer le royaume et consacra sa vie, sa sagesse et ses richesses à séparer ce qui a vraiment de la valeur de ce qui ne l'est pas. Elle a renoncé au luxe, aux bijoux, à l'excès ; et cela signifiait que tout le monde dans le royaume avait maintenant de la nourriture à manger et des livres à lire. Tant de personnes sont sorties de leur interaction avec la princesse enchantées par son caractère et son charisme. Sa simple présence transmettait une telle chaleur humaine qu'ils ont commencé à l'appeler \"La Princesse du Feu\".
 
   Et comme pour le caillou, le feu de sa présence fit fondre la dureté du cœur du jeune homme. Et comme il l'avait promis, il devint si tendre et prévenant qu'il rendit la princesse heureuse jusqu'à la fin de ses jours.", tag: "romance", rating: 6, length: 3, user_id: user3.id)
-Story.create!(title: "Noir et blanc", summary: "Respectez-vous toujours les uns les autres !", content: "Il y a très, très longtemps, quand tout commençait à peine, et même les planètes et les étoiles étaient si jeunes qu'elles allaient encore à l'école, il y avait une classe spéciale qui était la préférée de tout le monde, ayant de loin les camarades de classe les plus amusants. Les membres de la classe étaient un groupe de couleurs plutôt espiègles; du noir et blanc au rouge et bleu, jaune et tout le reste. Ils espéraient devenir de merveilleuses couleurs, et c'est pour cela qu'ils s'entraînaient.
+
+
+story4 = Story.create!(title: "Noir et blanc", summary: "Respectez-vous toujours les uns les autres !", content: "Il y a très, très longtemps, quand tout commençait à peine, et même les planètes et les étoiles étaient si jeunes qu'elles allaient encore à l'école, il y avait une classe spéciale qui était la préférée de tout le monde, ayant de loin les camarades de classe les plus amusants. Les membres de la classe étaient un groupe de couleurs plutôt espiègles; du noir et blanc au rouge et bleu, jaune et tout le reste. Ils espéraient devenir de merveilleuses couleurs, et c'est pour cela qu'ils s'entraînaient.
 
   En plus d'être drôles et joyeux, les couleurs étaient très coquines ; en particulier en noir et blanc, qui étaient tellement préoccupés par le chaos qu'ils étaient presque toujours en retard en classe.
 
@@ -78,7 +86,8 @@ Story.create!(title: "Noir et blanc", summary: "Respectez-vous toujours les uns 
 
   En effet, ils ont si bien réussi cela qu'ils ne voient plus d'inconvénient à être exclus de l'arc-en-ciel. Ils sont maintenant les plus sérieux et les plus importants de toutes les couleurs, et personne ne peut rien faire sans eux.", tag: "respect", rating: 1, length: 6, user_id: user2.id )
 
-Story.create!(title: "Une porte ouverte sur le monde", summary: "Vous devez faire attention à ne pas devenir accro aux ordinateurs. Ils peuvent nous séparer de la vie quotidienne et du monde naturel.", content: "Albert était fou d'ordinateurs et de jeux vidéo. Il pouvait passer des heures et des heures devant l'écran, et même si ses parents avaient du mal à y croire, il en appréciait vraiment chaque minute. Il quittait à peine son siège. Lorsque les gens l'encourageaient à s'impliquer dans la vie normale, il répondait :
+
+story5 = Story.create!(title: "Une porte ouverte sur le monde", summary: "Vous devez faire attention à ne pas devenir accro aux ordinateurs. Ils peuvent nous séparer de la vie quotidienne et du monde naturel.", content: "Albert était fou d'ordinateurs et de jeux vidéo. Il pouvait passer des heures et des heures devant l'écran, et même si ses parents avaient du mal à y croire, il en appréciait vraiment chaque minute. Il quittait à peine son siège. Lorsque les gens l'encourageaient à s'impliquer dans la vie normale, il répondait :
 
   -\"C'est ma porte d'entrée sur le monde, il y a bien plus ici que vous ne le pensez.\"
 
@@ -97,7 +106,9 @@ Story.create!(title: "Une porte ouverte sur le monde", summary: "Vous devez fair
   Et aujourd'hui encore, Albert apprend et découvre de nouvelles choses sur les animaux et la nature. Maintenant, il utilise également l'ordinateur pour le faire. Cependant, chaque fois que quelqu'un lui pose des questions à ce sujet, il pointe du doigt ses animaux de compagnie et dit :
 
   -\"Ils sont définitivement ma porte d'entrée sur le monde, ils sont bien plus que vous ne le pensez.\"", tag: "dicipline", rating: 7, length: 5, user_id: user1.id)
-Story.create!(title: "Le Roi Invisible de la Jungle", summary: "Vous ne pouvez pas mentir et exagérer indéfiniment. Si vous ne pouvez pas tenir parole, tôt ou tard vous serez découvert.", content: "Dans la jungle de Maluba vivait une mouche appelée Mozzie, et Mozzie pouvait rugir comme un lion. Il a découvert sa capacité spéciale alors qu'il était encore très jeune et, en grandissant, il a voyagé jusqu'aux confins de Maluba, où personne ne le connaîtrait. Dès qu'il arrivait, il se déchaînait avec son rugissement pétrifiant, se déplaçant ici et là, effrayant tout le monde. Il utilisait toujours la même méthode, se cachant derrière des buissons, et laissant échapper un rugissement menaçant ; puis il volait rapidement derrière sa victime et rugissait à nouveau :
+
+
+story6 = Story.create!(title: "Le Roi Invisible de la Jungle", summary: "Vous ne pouvez pas mentir et exagérer indéfiniment. Si vous ne pouvez pas tenir parole, tôt ou tard vous serez découvert.", content: "Dans la jungle de Maluba vivait une mouche appelée Mozzie, et Mozzie pouvait rugir comme un lion. Il a découvert sa capacité spéciale alors qu'il était encore très jeune et, en grandissant, il a voyagé jusqu'aux confins de Maluba, où personne ne le connaîtrait. Dès qu'il arrivait, il se déchaînait avec son rugissement pétrifiant, se déplaçant ici et là, effrayant tout le monde. Il utilisait toujours la même méthode, se cachant derrière des buissons, et laissant échapper un rugissement menaçant ; puis il volait rapidement derrière sa victime et rugissait à nouveau :
 
   -« GraaAAARRR ! »
 
@@ -122,7 +133,9 @@ Story.create!(title: "Le Roi Invisible de la Jungle", summary: "Vous ne pouvez p
   Cependant, Mozzie ne pouvait ni mordre ni frapper la tortue, sa seule option était de continuer à rugir et à menacer. Pourtant, le fou Tuga Tuga n'arrêtait pas de rire, ne prêtant aucune attention aux furieux avertissements du lion. Après quelques minutes, il était clair que le lion n'allait exécuter aucune de ses menaces, et un petit oiseau audacieux s'est joint à Tuga Tuga, se moquant du lion. Mozzie a essayé d'effrayer le petit oiseau, mais cela n'a pas fonctionné. Peu à peu, les autres animaux ont commencé à se joindre à eux. Enfin, tous les animaux se moquaient de l'invisible Léon, l'appelant des choses comme : « le lion qui aboie mais ne mord pas », « le roi sans sujets » ou « le fantôme ». Le Roi Lion, celui qui ne fait rien »…
 
   Et ainsi se terminèrent les beaux jours de bonheur de Mozzie ; la mouche qui rugissait, qui menaçait, qui mentait tellement… tellement que quand venait le temps de tenir parole, il n'y avait plus moyen de le faire.", tag: "action", rating: 9, length: 4, user_id: user2.id)
-Story.create!(title: "Le Viking Aux Cent Cornes", summary: "L'ostentation n'apporte rien de positif. Tôt ou tard, cela deviendra une faiblesse.", content: "Olav Brutolsen était le plus terrible de tous les Vikings. Avec seulement ses mains nues, il pouvait combattre un taureau pour le soumettre en quelques secondes. Pour s'assurer que les gens sachent exactement qui il était, son casque et sa cape étaient ornés de ses trophées de victoire. Il avait plus de cent cornes sur son casque, et mille pierres précieuses sur son manteau. une pierre pour chaque ennemi qu'il avait vaincu.
+
+
+story7 = Story.create!(title: "Le Viking Aux Cent Cornes", summary: "L'ostentation n'apporte rien de positif. Tôt ou tard, cela deviendra une faiblesse.", content: "Olav Brutolsen était le plus terrible de tous les Vikings. Avec seulement ses mains nues, il pouvait combattre un taureau pour le soumettre en quelques secondes. Pour s'assurer que les gens sachent exactement qui il était, son casque et sa cape étaient ornés de ses trophées de victoire. Il avait plus de cent cornes sur son casque, et mille pierres précieuses sur son manteau. une pierre pour chaque ennemi qu'il avait vaincu.
 
   Dans sa ville, tout le monde lui faisait place au passage, mais un jour un jeune homme qui lisait distraitement en marchant, rencontra Olav. Olav était furieux. Il fit des reproches au jeune homme et le défia d'un combat à mort. Le jeune homme maigre n'avait pas le choix ; tout ce qu'il pouvait faire était d'accepter à une condition :
 
