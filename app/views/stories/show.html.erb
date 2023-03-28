@@ -1,2 +1,15 @@
 <h1>Stories#show</h1>
 <p>Find me in app/views/stories/show.html.erb</p>
+
+
+<%= @story.title %> <br><br>
+<%= @story.content %>
+<%= form_with(url: favorites_path, method: :post, local: true) do |form| %>
+<%= form.hidden_field :story_id, value: @story.id, name: 'favorite[story_id]'%>
+<%= form.submit "add to favorite", class: "btn btn-success btn-sm"%>
+<% end %>
+
+<br>
+<%# <%= form_with(url: favorites_path, method: :delete, local: true) do |form| %> %>
+<%# <%= form.hidden_field :story_id, value: @story.id, name: 'favorite[story_id]' %> %>
+<%= button_to "delete to favorite", favorites_path(@favorite, story_id: @favorite.story_id), method: :delete, data: { confirm: 'Are you sure?' } %>
