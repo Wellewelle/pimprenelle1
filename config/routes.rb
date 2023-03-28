@@ -6,7 +6,7 @@ Rails.application.routes.draw do
 
   resources :stories, only: [:index, :show, :new, :create, :search, :edit, :update, :destroy]
 
-  resources :favorites, only: :index
+  resources :favorites, only: [:new, :create, :destroy]
 
   resources :audios, only: [:new, :create]
 end
