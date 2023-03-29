@@ -37,7 +37,7 @@ class StoriesController < ApplicationController
 
   def destroy
     @story = Story.find(params[:id])
-    @story.destroy
+    @story.destroy!
     redirect_to profile_path, status: :see_other
   end
 
