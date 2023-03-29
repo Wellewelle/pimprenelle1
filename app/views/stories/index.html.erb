@@ -1,9 +1,32 @@
 <h1> Des histoires pour toutes et tous!</h1>
-<div>
-<% @stories.each do |story| %>
-<h3 style="color:orange"> <%= story.title %> </h3>
-<p> <%= story.summary %> </p>
-<p> Note: <%= story.rating %>,  <span> Durée: <%= story.length %> </span> </p>
-<%= link_to "Read this story", story_path(story) %>
-<% end %>
+
+<div data-controller="toggle" class="mt-5">
+  <button class="btn btn-outline-primary">Genre</button>
+ <%# Il faudra catégories: length, age, genre (et peut être tags?) %>
 </div>
+
+  <div data-controller="filtres" class="mt_5">
+    <button class="btn btn-outline-primary"
+        data-action="click->filtres#search"
+        data-filtres-target="btnFantaisie">
+        Fantaisie
+    </button>
+
+<div data-filtres-target="stories">
+      <% @stories.each do |story| %>
+        <div >
+          <h3 style="color:orange"> <%= story.title %> </h3>
+          <p> <%= story.summary %> </p>
+          <p> Durée: <%= story.length %>, Tranche d'âge: <%= story.age %> </p>
+        </div>
+    <% end %>
+</div>
+
+    <% @stories.each do |story| %>
+        <div class="d-none" data-filtres-target="<%= story.genre %>" data-filtres-target="<%= story.tags %>" data-filtres-target="<%=  story.age %>" data-filtres-target="<%= story.length %>">
+          <h3 style="color:orange"> <%= story.title %> </h3>
+          <p> <%= story.summary %> </p>
+          <p> Durée: <%= story.length %>, Tranche d'âge: <%= story.age %> Genre: <%= story.genre %></p>
+        </div>
+    <% end %>
+  </div>
