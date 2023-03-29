@@ -13,7 +13,7 @@
         <% if user_signed_in? %>
           <li class="nav-item active">
           <li class="nav-item">
-            <%= link_to "Messages", "#", class: "nav-link" %>
+           <p> Hello <%= current_user.first_name %> !</p>
           </li>
           <li class="nav-item dropdown">
             <%= image_tag "https://www.clipartmax.com/png/small/72-722180_these-are-some-cats-avatar-i-drew-during-my-free-time-black.png", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>

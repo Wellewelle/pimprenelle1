@@ -19,6 +19,12 @@
 
   <div>
     <%# Mes histoires (que j'ai créées)%>
+    <% @user.stories.each do |story| %>
+      <%= story.title %><br>
+      <%= story.summary %><br>
+      <%= button_to "edit your story", profile_path, method: :update %>
+      <%= button_to "delete your story", story_path(story), method: :delete, data: { confirm: 'Are you sure?' } %>
+    <% end %>
   </div>
 
   <div>
