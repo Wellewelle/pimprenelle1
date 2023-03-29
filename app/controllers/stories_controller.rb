@@ -44,6 +44,7 @@ class StoriesController < ApplicationController
   def search
   end
 
+
   private
 
   def story_params
