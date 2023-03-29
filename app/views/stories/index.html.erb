@@ -1,7 +1,9 @@
 <h1> Des histoires pour toutes et tous!</h1>
-
+<div>
 <% @stories.each do |story| %>
 <h3 style="color:orange"> <%= story.title %> </h3>
 <p> <%= story.summary %> </p>
 <p> Note: <%= story.rating %>,  <span> Durée: <%= story.length %> </span> </p>
+<%= link_to "Read this story", story_path(story) %>
 <% end %>
+</div>
