@@ -1,6 +1,7 @@
 class StoriesController < ApplicationController
   def index
     @stories = Story.all
+    # @filtered_stories = Story.where
   end
 
   def show
