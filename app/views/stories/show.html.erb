@@ -4,6 +4,8 @@
 
 <%= @story.title %> <br><br>
 <%= @story.content %>
+
+
 <%= form_with(url: favorites_path, method: :post, local: true) do |form| %>
 <%= form.hidden_field :story_id, value: @story.id, name: 'favorite[story_id]'%>
 <%= form.submit "add to favorite", class: "btn btn-success btn-sm"%>
