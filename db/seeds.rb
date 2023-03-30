@@ -36,7 +36,7 @@ story1 = Story.create!(title: "Les mauvais voisins", summary: "De très mauvais 
 
   Tous deux se sont retrouvés dans un hôpital et ont dû passer un certain temps à partager une chambre là-bas. Au début, ils ont refusé de se parler, mais un jour, fatigués du silence, ils se sont mis à parler. Au fil du temps, ils sont devenus amis, jusqu'au jour où ils ont finalement osé discuter de l'incident du morceau de papier. Ils ont réalisé que tout cela n'avait été qu'un malentendu et que s'ils s'étaient parlé la première fois - au lieu de tirer des conclusions hâtives sur de mauvaises intentions - rien de tout cela ne serait arrivé. Mieux encore, ils auraient toujours leurs maisons.
 
-  Cependant, à la fin, le fait qu'ils parlaient et soient devenus amis les a beaucoup aidés à se remettre de leurs blessures et à travailler ensemble pour reconstruire leurs maisons.", genre: "Fantaisie", age: "8 à 10 ans", tags: "Animaux", rating: 3, length: "5 minutes ou moins", user_id: user1.id)
+  Cependant, à la fin, le fait qu'ils parlaient et soient devenus amis les a beaucoup aidés à se remettre de leurs blessures et à travailler ensemble pour reconstruire leurs maisons.", genre: "Fantaisie", age: "8 à 10 ans", tags: "Princes et Princesses", rating: 3, length: "5 minutes ou moins", user_id: user1.id)
 
 
 story2 = Story.create!(title: "Un poulpe en détresse", summary: "Nous devons aller sauver la pieuvre!", content: "Il était une fois une pieuvre timide et silencieuse. Il se déplaçait presque toujours seul car, bien qu'il veuille avoir beaucoup d'amis, il était trop gêné.

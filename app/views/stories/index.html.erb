@@ -1,36 +1,156 @@
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.menu {
+    list-style: none;
+}
+
+.menu-item {
+    position: relative;
+}
+
+.menu-item a {
+    display: block;
+    padding: 12px 24px;
+    text-decoration: none;
+    color: #fff;
+    background-color: #333;
+    border-radius: 4px;
+}
+
+.submenu {
+    position: absolute;
+    bottom: 100%;
+    left: 0;
+    list-style: none;
+    display: none;
+}
+
+.submenu li a {
+    padding: 12px 24px;
+    color: #333;
+    background-color: #fff;
+    text-decoration: none;
+    border-radius: 4px;
+    border: 1px solid #333;
+}
+
+.menu-item:hover .submenu {
+    display: block;
+}
+</style>
+
 <h1> Des histoires pour toutes et tous!</h1>
 
-<div data-controller="toggle" class="mt-5">
-  <button data-action="click->toggle#toggle" class="btn btn-outline-primary">Genre</button>
 
-    <div data-toggle-target="toggleCategories" class="">
-
-      <div data-controller="filtres" class="mt_5">
-        <button class="btn btn-outline-primary"
-            data-action="click->filtres#search"
-            data-filtres-target="btnFantaisie">
-            Fantaisie
-        </button>
-
-        <div data-filtres-target="stories">
-            <% @stories.each do |story| %>
-              <div>
-                <h3 style="color:orange"> <%= story.title %> </h3>
-                <p> <%= story.summary %> </p>
-                <p> Durée: <%= story.length %>, Tranche d'âge: <%= story.age %> </p>
-              </div>
-          <% end %>
-        </div>
-
-        <% @stories.each do |story| %>
-            <div class="d-none" data-filtres-target="<%= story.genre %>" data-filtres-target="<%= story.tags %>" data-filtres-target="<%=  story.age %>" data-filtres-target="<%= story.length %>">
-              <h3 style="color:orange"> <%= story.title %> </h3>
-              <p> <%= story.summary %> </p>
-              <p> Durée: <%= story.length %>, Tranche d'âge: <%= story.age %> Genre: <%= story.genre %></p>
-            </div>
-        <% end %>
-      </div>
-
+<% @stories.each do |story| %>
+      <h3 style="color:orange"> <%= story.title %> </h3>
+      <p> <%= story.summary %> </p>
+      <p> Durée: <%= story.length %>, Tranche d'âge: <%= story.age %> Genre: <%= story.genre %></p>
     </div>
-  <button data-action="click->toggle#toggle" class="btn btn-outline-primary">Tags</button>
-</div>
+<% end %>
+
+<nav>
+  <div class="menu">
+      <li class="menu-item">
+          <a href="#">Découvrir</a>
+          <div class="submenu">
+            <%= form_with url: "/filtres", method: :get do |f| %>
+
+              <div data-controller="toggle" class="mt-5">
+                <button data-action="click->toggle#toggle" class="btn btn-outline-primary"><h2>Genre</h2></button>
+                <br>
+                  <div data-toggle-target="toggleCategories" class="d-none">
+                    <%= label_tag :"Romance" %>
+                    <%= check_box_tag :"Romance" %>
+                    <%= label_tag :"Fantaisie" %>
+                    <%= check_box_tag :"Fantaisie" %>
+                    <%= label_tag :"Aventure" %>
+                    <%= check_box_tag :"Aventure" %>
+                    <%= label_tag :"Amitié" %>
+                    <%= check_box_tag :"Amitié" %>
+                    <%= label_tag :"Science-Fiction" %>
+                    <%= check_box_tag :"Science-Fiction" %>
+                    <%= label_tag :"Humour" %>
+                    <%= check_box_tag :"Humour" %>
+                    <%= label_tag :"Conte" %>
+                    <%= check_box_tag :"Conte" %>
+                    <%= label_tag :"Légende" %>
+                    <%= check_box_tag :"Légende" %>
+                  </div>
+              </div>
+
+              <div data-controller="toggle" class="mt-5">
+                <button data-action="click->toggle#toggle" class="btn btn-outline-primary"><h2>Tags</h2></button>
+                <br>
+                  <div data-toggle-target="toggleCategories" class="d-none">
+                    <%= label_tag :"Fées" %>
+                    <%= check_box_tag :"Fées" %>
+                    <%= label_tag :"Chevaliers" %>
+                    <%= check_box_tag :"Chevaliers" %>
+                    <%= label_tag :"Sorcières" %>
+                    <%= check_box_tag :"Sorcières" %>
+                    <%= label_tag :"Magie" %>
+                    <%= check_box_tag :"Magie" %>
+                    <%= label_tag :"Princes et Princesses" %>
+                    <%= check_box_tag :"Princes et Princesses" %>
+                    <%= label_tag :"Animaux" %>
+                    <%= check_box_tag :"Animaux" %>
+                    <%= label_tag :"Monstres" %>
+                    <%= check_box_tag :"Monstres" %>
+                    <%= label_tag :"Rêves" %>
+                    <%= check_box_tag :"Rêves" %>
+                  </div>
+              </div>
+
+              <div data-controller="toggle" class="mt-5">
+                <button data-action="click->toggle#toggle" class="btn btn-outline-primary"><h2>Tranche d'âge</h2></button>
+                <br>
+                  <div data-toggle-target="toggleCategories" class="d-none">
+                      <%= label_tag :"2 à 5 ans" %>
+                      <%= check_box_tag :"2 à 5 ans" %>
+                      <%= label_tag :"5 à 8 ans" %>
+                      <%= check_box_tag :"5 à 8 ans" %>
+                      <%= label_tag :"8 à 10 ans" %>
+                      <%= check_box_tag :"8 à 10 ans" %>
+                      <%= label_tag :"10 à 12 ans" %>
+                      <%= check_box_tag :"10 à 12 ans" %>
+                      <%= label_tag :"12 ans et plus" %>
+                      <%= check_box_tag :"12 ans et plus" %>
+                  </div>
+              </div>
+
+              <div data-controller="toggle" class="mt-5">
+                <button data-action="click->toggle#toggle" class="btn btn-outline-primary"><h2>Durée</h2></button>
+                <br>
+                  <div data-toggle-target="toggleCategories" class="d-none">
+                      <%= label_tag :"5 minutes ou moins" %>
+                      <%= check_box_tag :"5 minutes ou moins" %>
+                      <%= label_tag :"5 à 10 minutes" %>
+                      <%= check_box_tag :"5 à 10 minutes" %>
+                      <%= label_tag :"10 à 15 minutes" %>
+                      <%= check_box_tag :"10 à 15 minutes" %>
+                      <%= label_tag :"15 à 20 minutes" %>
+                      <%= check_box_tag :"15 à 20 minutes" %>
+                      <%= label_tag :"20 minutes ou plus" %>
+                      <%= check_box_tag :"20 minutes ou plus" %>
+                  </div>
+              </div>
+                  <br>
+                  <%= f.submit "Filtrer" %>
+            <% end %>
+          </div>
+      </li>
+  </ul>
+</nav>

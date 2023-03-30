@@ -1,14 +1,18 @@
 import { Controller } from "@hotwired/stimulus"
 
-// Connects to data-controller="toggle"
 export default class extends Controller {
-  static targets = ["toggleCategories"]
+  static targets = ["toggleCategories", "toggleInIndex"]
 
   connect() {
     console.log("Hello from toggle_controller.js")
   }
 
   toggle() {
+    event.preventDefault()
     this.toggleCategoriesTarget.classList.toggle("d-none");
+  }
+
+  toggle_in_index() {
+    this.toggle_in_index.classList.toggle("d-none");
   }
 }
