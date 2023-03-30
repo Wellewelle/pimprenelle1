@@ -42,3 +42,15 @@
 </div>
 
 <%= button_to "Retour", stories_path, method: :get, class:"mt-2 ms-2 mb-2 btn btn-primary" %>
+
+<% favorite = Favorite.find_by(story: @story, user: current_user) %>
+  <% if favorite == nil %>
+    <%= form_with(url: favorites_path, method: :post, local: true) do |form| %>
+      <%= form.hidden_field :story_id, value: @story.id, name: 'favorite[story_id]'%>
+      <%= form.submit "add to favorite", class: "btn btn-success btn-sm", id: "favorite-button"%>
+    <% end %>
+  <% else %>
+    <p class="alert alert-info text-center" style="position: relative; margin-top: 30px; width: 10%;">you like this story!</p>
+  <% end %>
+<%= link_to "Back to my profile", profile_path %>
+

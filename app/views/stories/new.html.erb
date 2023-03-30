@@ -1,17 +1,21 @@
 <div class="container">
   <div class="row">
     <div class="mt-2">
-      <h3>New Story</h3>
+      <h3>Écrivez votre propre histoire</h3>
 
-      <%= simple_form_for @story do |f| %>
-        <%= f.input :title, as: :string %>
-        <%= f.input :summary, as: :text %>
-        <%= f.input :content, as: :text %>
+      <%= simple_form_for(@story) do |f| %>
+        <%= f.input :title, label: "Titre" %>
+        <%= f.input :summary, label: "Résumé" %>
+        <%= f.select :age,["2 à 5 ans", "5 à 8 ans", "8 à 10 ans", "10 à 12 ans", "12 ans et plus"], label: "Tranche d'âge" %>
+        <%= f.select :genre, ["Romance", "Fantaisie", "Aventure", "Amitié", "Scien-Fiction", "Humour", "Pour s'endormir", "conte", "légende"], label: "Donnez un genre à votre histoire" %>
+        <%= f.select :tags, ["Fées", "Chevaliers", "Sorcières", "Magie", "Princes et Princesses", "Animaux", "Monstres", "Rêves"], label: "Mettez un tag" %>
+        <%= f.input :content, label: "Racontez..." %>
         <%= f.input :audio, as: :file %>
-        <%= f.submit class:"btn btn-primary" %>
+        <%= f.button :submit, "Publier mon histoire", class: "submit-button"%>
       <% end %>
+      <%= link_to "Retour au profile", profile_path %>
 
-      <%= button_to "Back to list", stories_path, method: :get, class:"btn btn-secondary mt-2" %>
+      <%= button_to "Retour à la liste", stories_path, method: :get, class:"btn btn-secondary mt-2" %>
     </div>
   </div>
 </div>

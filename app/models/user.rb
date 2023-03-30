@@ -4,7 +4,8 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 
-  has_many :stories, through: :favorites
+  has_many :stories
+  has_many :favorites
   # has_many :favorited_stories, through: :favorites, source: :story
   # validates
   # validates
