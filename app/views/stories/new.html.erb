@@ -1,2 +1,17 @@
-<h1>Stories#new</h1>
-<p>Find me in app/views/stories/new.html.erb</p>
+<div class="container">
+  <div class="row">
+    <div class="mt-2">
+      <h3>New Story</h3>
+
+      <%= simple_form_for @story do |f| %>
+        <%= f.input :title, as: :string %>
+        <%= f.input :summary, as: :text %>
+        <%= f.input :content, as: :text %>
+        <%= f.input :audio, as: :file %>
+        <%= f.submit class:"btn btn-primary" %>
+      <% end %>
+
+      <%= button_to "Back to list", stories_path, method: :get, class:"btn btn-secondary mt-2" %>
+    </div>
+  </div>
+</div>

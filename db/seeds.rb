@@ -6,10 +6,10 @@ require "open-uri"
 #
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
-User.destroy_all
-Story.destroy_all
 Audio.destroy_all
 Favorite.destroy_all
+Story.destroy_all
+User.destroy_all
 
 
 user1 = User.create!(first_name: "Le", last_name: "Wagon", email: "test@gmail.com", username: "lewagon", password: "1234567")
@@ -146,3 +146,5 @@ story7 = Story.create!(title: "Le Viking Aux Cent Cornes", summary: "L'ostentati
   Mais ce coup n'est jamais venu. Olav avait attaqué pendant plus de cinq minutes et au bout de dix minutes, il est tombé au sol, comme mort.
 
   De nombreux spectateurs pensaient que le jeune homme devait être une sorte de sorcier, mais le garçon, qui était un étudiant en médecine du nom de Virtensen, avait démontré à tout le monde à quel point la fierté et l'ostentation d'Olav avaient suffi à le faire tomber sous le poids de son casque. et manteau. Quand Olav revint à lui, comme un bon guerrier, il accepta sa défaite. A partir de ce jour, il se débarrasse des trophées inutiles sur son casque et son manteau, et revient à des vêtements simples. Maintenant, partout où il marchait, il était comme n'importe qui d'autre. Partout, c'est-à-dire, sauf lorsqu'il marchait sur le champ de bataille, où il était reconnu non pas pour ses nombreuses cornes ou son manteau orné de bijoux, mais pour sa férocité inégalée.", tag: "austérité", rating: 2, length: 3, user_id: user3.id)
+
+

@@ -5,6 +5,21 @@ class StoriesController < ApplicationController
 
   def show
     @story = Story.find(params[:id])
+    @likes = @story.rating
+  end
+
+  def increment
+    @story = Story.find(params[:id])
+    # @story.rating += 1
+    # @story.save!
+    @story.increment!(:rating)
+    redirect_to story_path(@story)
+  end
+
+  def decrease
+    @story = Story.find(params[:id])
+    @story.decrement!(:rating)
+    redirect_to story_path(@story)
   end
 
   def new
@@ -15,6 +30,7 @@ class StoriesController < ApplicationController
     @story = Story.new(story_params)
     @story.user_id = current_user.id
     if @story.save
+      # Cloudinary::Uploader.upload(@story.audio, folder: "Pimprenelle/Audio", public_id: "test001", overwrite: true, resource_type: "video")
       redirect_to stories_path
     else
       render :new, status: :unprocessable_entity
@@ -27,6 +43,6 @@ class StoriesController < ApplicationController
   private
 
   def story_params
-    params.require(:story).permit(:title, :summary, :content, :tag, :rating, :age, :length, :user_id)
+    params.require(:story).permit(:title, :summary, :content, :tag, :rating, :age, :length, :user_id, :audio)
   end
 end

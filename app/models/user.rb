@@ -6,4 +6,7 @@ class User < ApplicationRecord
 
   has_many :stories, through: :favorites
   # has_many :favorited_stories, through: :favorites, source: :story
+  # validates
+  # validates
+  # validates
 end
