@@ -18,6 +18,7 @@
           <h3 style="color:orange"> <%= story.title %> </h3>
           <p> <%= story.summary %> </p>
           <p> Durée: <%= story.length %>, Tranche d'âge: <%= story.age %> </p>
+        <%= link_to "Read this story", story_path(story) %>
         </div>
     <% end %>
 </div>
