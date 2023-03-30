@@ -4,6 +4,11 @@
       <%= image_tag "https://th.bing.com/th/id/OIP.HOBqe8dl-KWq7iN4_O5kbwHaFw?w=277&h=215&c=7&r=0&o=5&pid=1.7" %>
     <% end %>
 
+    <div data-controller="autocomplete">
+      <input type="text" data-autocomplete-target="input" data-action="input->autocomplete#search">
+      <ul data-autocomplete-target="results"></ul>
+    </div>
+
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
