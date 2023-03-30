@@ -1,36 +1,61 @@
 <div class="container">
 
-  <h1>My profile</h1>
+  <h1 class="# mt-4 mb-4" >My profile</h1>
 
-  <div>
-    <%# Favoris %>
-    <% @user.favorites.each do |favorite| %>
-      <%= favorite.story.title %><br>
-      <%= favorite.story.summary %>
-      <%= button_to "delete to favorite", favorite_path(favorite, story_id: favorite.story.id), method: :delete, data: { confirm: 'Are you sure?' } %>
-    <% end %>
-  </div>
 
-  <div>
-    <%# Historique: si on le garde penser à créer la route,
-    si on ne le garde pas penser à supprimer l'action dans le ctrller Users et la view%>
-    <%# <%= link_to "Historique", records_path %>
-  </div>
+    <div class="cards">
+      <div class="card-category " style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://th.bing.com/th/id/R.ce4a0c4636759fb0ac5766394d1d500c?rik=iootZGePDUXNIA&pid=ImgRaw&r=0)">
+        Mes histoires favorites
 
-  <div>
-    <%# Mes histoires (que j'ai créées)%>
-    <% @user.stories.each do |story| %>
-      <%= story.title %><br>
-      <%= story.summary %><br>
-      <%= button_to "edit your story", profile_path, method: :update %>
-      <%= button_to "delete your story", story_path(story), method: :delete, data: { confirm: 'Are you sure?' } %>
-    <% end %>
-  </div>
+        <ol class="list-group list-group-numbered mb-5">
+        <% @user.favorites.each do |favorite| %>
 
-  <div>
+          <li class="list-group-item d-flex justify-content-between align-items-start">
+            <div class="ms-2 me-auto">
+              <div class="fw-bold"><%= favorite.story.title %></div>
+            </div>
+            <span class="#"><%= link_to "🗑", favorite_path(favorite, story_id: favorite.story.id), method: :delete, data: { confirm: 'Are you sure?' } %></span>
+          </li>
+          <% end %>
+        </ol>
+
+      </div>
+
+      <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://th.bing.com/th/id/R.ce4a0c4636759fb0ac5766394d1d500c?rik=iootZGePDUXNIA&pid=ImgRaw&r=0)">
+        Mes histoires crées
+
+        <ol class="list-group list-group-numbered">
+        <% @user.stories.each do |story| %>
+
+          <li class="list-group-item d-flex justify-content-between align-items-start">
+            <div class="ms-2 me-auto">
+              <div class="fw-bold"><%= story.title %></div>
+            </div>
+            <span class="#"><%= link_to "edit", edit_story_path(story) %>-<%= link_to "🗑", story_path(story), method: :delete, data: { confirm: 'Are you sure?' } %></span>
+          </li>
+          <% end %>
+        </ol>
+
+      </div>
+
+
+
+
+    <%# <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/dinner.jpg)">
+        Mes histoires crées
+        <% @user.stories.each do |story| %>
+          <%#= story.title %>
+          <%#= story.summary %>
+          <%#= button_to "edit your story", edit_story_path(story) %>
+          <%#= button_to "delete your story", story_path(story), method: :delete, data: { confirm: 'Are you sure?' } %>
+        <%# end %>
+    <%# </div> %>
+
+
+    <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://th.bing.com/th/id/R.ce4a0c4636759fb0ac5766394d1d500c?rik=iootZGePDUXNIA&pid=ImgRaw&r=0)">
+    Créer une histoire
     <%# Créer une histoire %>
-  </div>
-
-<%= link_to "Back to homepage", root_path %>
-
+    </div>
+</div>
+    <%= link_to "Back to homepage", root_path %>
 </div>

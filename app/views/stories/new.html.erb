@@ -1,21 +1,23 @@
 <div class="container">
-  <div class="row">
-    <div class="mt-2">
-      <h3>Écrivez votre propre histoire</h3>
+ <div class="row justify-content-center">
+    <div class="col-xs-12 col-sm-4 col-sm-offset-4">
+      <div class="form-login">
+        <h1>Ecrivez votre propre histoire</h1>
 
-      <%= simple_form_for(@story) do |f| %>
-        <%= f.input :title, label: "Titre" %>
-        <%= f.input :summary, label: "Résumé" %>
-        <%= f.select :age,["2 à 5 ans", "5 à 8 ans", "8 à 10 ans", "10 à 12 ans", "12 ans et plus"], label: "Tranche d'âge" %>
-        <%= f.select :genre, ["Romance", "Fantaisie", "Aventure", "Amitié", "Scien-Fiction", "Humour", "Pour s'endormir", "conte", "légende"], label: "Donnez un genre à votre histoire" %>
-        <%= f.select :tags, ["Fées", "Chevaliers", "Sorcières", "Magie", "Princes et Princesses", "Animaux", "Monstres", "Rêves"], label: "Mettez un tag" %>
-        <%= f.input :content, label: "Racontez..." %>
-        <%= f.input :audio, as: :file %>
-        <%= f.button :submit, "Publier mon histoire", class: "submit-button"%>
-      <% end %>
-      <%= link_to "Retour au profile", profile_path %>
+        <%= simple_form_for(@story) do |f| %>
+          <%= f.input :title, label: "Titre" %>
+          <%= f.input :summary, label: "Résumé" %>
+          <%= f.select :age,["2 à 5 ans", "5 à 8 ans", "8 à 10 ans", "10 à 12 ans", "12 ans et plus"], label: "Tranche d'âge" %>
+          <%= f.select :genre, ["Romance", "Fantaisie", "Aventure", "Amitié", "Science-Fiction", "Humour", "Pour s'endormir", "conte", "légende"], label: "Donnez un genre à votre histoire" %>
+          <%= f.select :tags, ["Fées", "Chevaliers", "Sorcières", "Magie", "Princes et Princesses", "Animaux", "Monstres", "Rêves"], label: "Mettez un tag" %>
+          <%= f.input :content, label: "Racontez...", => 10, class: :input_html => {:style => 'width: 100%', :rows 'response-project'} %>
+          <%= f.input :audio, as: :file %>
+          <%= f.button :submit, "Publier mon histoire", class: "btn btn-primary"%>
+        <% end %>
+        <%= link_to "Retour au profile", profile_path %>
 
-      <%= button_to "Retour à la liste", stories_path, method: :get, class:"btn btn-secondary mt-2" %>
+        <%= button_to "Retour à la liste", stories_path, method: :get, class:"btn btn-secondary mt-2" %>
+      </div>
     </div>
   </div>
 </div>
