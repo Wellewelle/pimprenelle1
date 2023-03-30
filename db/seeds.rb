@@ -6,10 +6,10 @@ require "open-uri"
 #
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
-User.destroy_all
-Story.destroy_all
 Audio.destroy_all
 Favorite.destroy_all
+Story.destroy_all
+User.destroy_all
 
 
 user1 = User.create!(first_name: "Le", last_name: "Wagon", email: "test@gmail.com", username: "lewagon", password: "1234567")
@@ -36,7 +36,7 @@ story1 = Story.create!(title: "Les mauvais voisins", summary: "De très mauvais 
 
   Tous deux se sont retrouvés dans un hôpital et ont dû passer un certain temps à partager une chambre là-bas. Au début, ils ont refusé de se parler, mais un jour, fatigués du silence, ils se sont mis à parler. Au fil du temps, ils sont devenus amis, jusqu'au jour où ils ont finalement osé discuter de l'incident du morceau de papier. Ils ont réalisé que tout cela n'avait été qu'un malentendu et que s'ils s'étaient parlé la première fois - au lieu de tirer des conclusions hâtives sur de mauvaises intentions - rien de tout cela ne serait arrivé. Mieux encore, ils auraient toujours leurs maisons.
 
-  Cependant, à la fin, le fait qu'ils parlaient et soient devenus amis les a beaucoup aidés à se remettre de leurs blessures et à travailler ensemble pour reconstruire leurs maisons.", tag: "fantaisie", rating: 3, length: 4, user_id: user1.id)
+  Cependant, à la fin, le fait qu'ils parlaient et soient devenus amis les a beaucoup aidés à se remettre de leurs blessures et à travailler ensemble pour reconstruire leurs maisons.", genre: "Fantaisie", age: "8 à 10 ans", tags: "Animaux", rating: 3, length: "5 minutes ou moins", user_id: user1.id)
 
 
 story2 = Story.create!(title: "Un poulpe en détresse", summary: "Nous devons aller sauver la pieuvre!", content: "Il était une fois une pieuvre timide et silencieuse. Il se déplaçait presque toujours seul car, bien qu'il veuille avoir beaucoup d'amis, il était trop gêné.
@@ -52,7 +52,7 @@ story2 = Story.create!(title: "Un poulpe en détresse", summary: "Nous devons al
   Bientôt, cependant, il commença à ressentir une terrible démangeaison ; d'abord dans ses branchies, puis dans ses nageoires, puis sur tout son corps. Il s'est avéré que ce poisson géant avait un caractère très artistique, il adorait les couleurs ; et l'encre noire de la pieuvre lui avait donné une terrible allergie !!
   Alors le gros poisson s'éloigna, tout irrité.
 
-  Dès qu'il fut parti, tous les poissons qui s'étaient cachés vinrent féliciter la pieuvre d'avoir été si courageuse. Puis le petit poisson leur raconta à tous comment il avait aidé la pieuvre quelques jours plus tôt, mais il n'avait jamais vu quelqu'un être aussi reconnaissant qu'il finisse par faire quelque chose d'aussi dangereux. En entendant cela, les autres poissons ont découvert à quel point la pieuvre timide était gentille, et tout le monde autour était désireux d'être l'ami d'une pieuvre aussi courageuse et honorable.", tag: "bravery", rating: 4, length: 6, user_id: user1.id)
+  Dès qu'il fut parti, tous les poissons qui s'étaient cachés vinrent féliciter la pieuvre d'avoir été si courageuse. Puis le petit poisson leur raconta à tous comment il avait aidé la pieuvre quelques jours plus tôt, mais il n'avait jamais vu quelqu'un être aussi reconnaissant qu'il finisse par faire quelque chose d'aussi dangereux. En entendant cela, les autres poissons ont découvert à quel point la pieuvre timide était gentille, et tout le monde autour était désireux d'être l'ami d'une pieuvre aussi courageuse et honorable.", genre: "Romance", age: "8 à 10 ans", tags: "Fées", rating: 5, length: "5 minutes ou moins", user_id: user1.id)
 
 
 story3 = Story.create!(title: "Princesse du Feu", summary: "Il était une fois une princesse incroyablement riche, belle et sage. Fatiguée des faux prétendants qui ne s'intéressaient qu'à son argent, elle annonça qu'elle n'épouserait que celui qui parviendrait à lui offrir le cadeau le plus précieux, le plus tendre et le plus sincère de tous.", content: "Il était une fois une princesse incroyablement riche, belle et sage. Fatiguée des faux prétendants qui ne s'intéressaient qu'à son argent, elle annonça qu'elle n'épouserait que celui qui parviendrait à lui offrir le cadeau le plus précieux, le plus tendre et le plus sincère de tous.
@@ -63,7 +63,7 @@ story3 = Story.create!(title: "Princesse du Feu", summary: "Il était une fois u
 
   Au cours des mois suivants, elle entreprit de changer le royaume et consacra sa vie, sa sagesse et ses richesses à séparer ce qui a vraiment de la valeur de ce qui ne l'est pas. Elle a renoncé au luxe, aux bijoux, à l'excès ; et cela signifiait que tout le monde dans le royaume avait maintenant de la nourriture à manger et des livres à lire. Tant de personnes sont sorties de leur interaction avec la princesse enchantées par son caractère et son charisme. Sa simple présence transmettait une telle chaleur humaine qu'ils ont commencé à l'appeler \"La Princesse du Feu\".
 
-  Et comme pour le caillou, le feu de sa présence fit fondre la dureté du cœur du jeune homme. Et comme il l'avait promis, il devint si tendre et prévenant qu'il rendit la princesse heureuse jusqu'à la fin de ses jours.", tag: "romance", rating: 6, length: 3, user_id: user3.id)
+  Et comme pour le caillou, le feu de sa présence fit fondre la dureté du cœur du jeune homme. Et comme il l'avait promis, il devint si tendre et prévenant qu'il rendit la princesse heureuse jusqu'à la fin de ses jours.", genre: "Aventure", age: "8 à 10 ans", tags: "Chevaliers", rating: 3, length: "5 minutes ou moins", user_id: user3.id)
 
 
 story4 = Story.create!(title: "Noir et blanc", summary: "Respectez-vous toujours les uns les autres !", content: "Il y a très, très longtemps, quand tout commençait à peine, et même les planètes et les étoiles étaient si jeunes qu'elles allaient encore à l'école, il y avait une classe spéciale qui était la préférée de tout le monde, ayant de loin les camarades de classe les plus amusants. Les membres de la classe étaient un groupe de couleurs plutôt espiègles; du noir et blanc au rouge et bleu, jaune et tout le reste. Ils espéraient devenir de merveilleuses couleurs, et c'est pour cela qu'ils s'entraînaient.
@@ -84,7 +84,7 @@ story4 = Story.create!(title: "Noir et blanc", summary: "Respectez-vous toujours
   Un peu plus tard, noir et blanc entrèrent dans la salle de classe, la trouvant vide.
   Tout le monde félicitait tellement les autres couleurs pour leur merveilleuse performance que le noir et le blanc - vraiment la plus amusante et la plus joyeuse de toutes les couleurs - n'osaient pas demander à faire partie de l'arc-en-ciel, et à partir de ce moment-là, ils se sont forcés à être ponctuel et responsable.
 
-  En effet, ils ont si bien réussi cela qu'ils ne voient plus d'inconvénient à être exclus de l'arc-en-ciel. Ils sont maintenant les plus sérieux et les plus importants de toutes les couleurs, et personne ne peut rien faire sans eux.", tag: "respect", rating: 1, length: 6, user_id: user2.id )
+  En effet, ils ont si bien réussi cela qu'ils ne voient plus d'inconvénient à être exclus de l'arc-en-ciel. Ils sont maintenant les plus sérieux et les plus importants de toutes les couleurs, et personne ne peut rien faire sans eux.", genre: "Fantaisie", age: "8 à 10 ans", tags: "Animaux", rating: 3, length: "5 minutes ou moins", user_id: user2.id )
 
 
 story5 = Story.create!(title: "Une porte ouverte sur le monde", summary: "Vous devez faire attention à ne pas devenir accro aux ordinateurs. Ils peuvent nous séparer de la vie quotidienne et du monde naturel.", content: "Albert était fou d'ordinateurs et de jeux vidéo. Il pouvait passer des heures et des heures devant l'écran, et même si ses parents avaient du mal à y croire, il en appréciait vraiment chaque minute. Il quittait à peine son siège. Lorsque les gens l'encourageaient à s'impliquer dans la vie normale, il répondait :
@@ -105,7 +105,7 @@ story5 = Story.create!(title: "Une porte ouverte sur le monde", summary: "Vous d
 
   Et aujourd'hui encore, Albert apprend et découvre de nouvelles choses sur les animaux et la nature. Maintenant, il utilise également l'ordinateur pour le faire. Cependant, chaque fois que quelqu'un lui pose des questions à ce sujet, il pointe du doigt ses animaux de compagnie et dit :
 
-  -\"Ils sont définitivement ma porte d'entrée sur le monde, ils sont bien plus que vous ne le pensez.\"", tag: "dicipline", rating: 7, length: 5, user_id: user1.id)
+  -\"Ils sont définitivement ma porte d'entrée sur le monde, ils sont bien plus que vous ne le pensez.\"", genre: "Fantaisie", age: "8 à 10 ans", tags: "Animaux", rating: 3, length: "5 minutes ou moins", user_id: user1.id)
 
 
 story6 = Story.create!(title: "Le Roi Invisible de la Jungle", summary: "Vous ne pouvez pas mentir et exagérer indéfiniment. Si vous ne pouvez pas tenir parole, tôt ou tard vous serez découvert.", content: "Dans la jungle de Maluba vivait une mouche appelée Mozzie, et Mozzie pouvait rugir comme un lion. Il a découvert sa capacité spéciale alors qu'il était encore très jeune et, en grandissant, il a voyagé jusqu'aux confins de Maluba, où personne ne le connaîtrait. Dès qu'il arrivait, il se déchaînait avec son rugissement pétrifiant, se déplaçant ici et là, effrayant tout le monde. Il utilisait toujours la même méthode, se cachant derrière des buissons, et laissant échapper un rugissement menaçant ; puis il volait rapidement derrière sa victime et rugissait à nouveau :
@@ -132,7 +132,7 @@ story6 = Story.create!(title: "Le Roi Invisible de la Jungle", summary: "Vous ne
 
   Cependant, Mozzie ne pouvait ni mordre ni frapper la tortue, sa seule option était de continuer à rugir et à menacer. Pourtant, le fou Tuga Tuga n'arrêtait pas de rire, ne prêtant aucune attention aux furieux avertissements du lion. Après quelques minutes, il était clair que le lion n'allait exécuter aucune de ses menaces, et un petit oiseau audacieux s'est joint à Tuga Tuga, se moquant du lion. Mozzie a essayé d'effrayer le petit oiseau, mais cela n'a pas fonctionné. Peu à peu, les autres animaux ont commencé à se joindre à eux. Enfin, tous les animaux se moquaient de l'invisible Léon, l'appelant des choses comme : « le lion qui aboie mais ne mord pas », « le roi sans sujets » ou « le fantôme ». Le Roi Lion, celui qui ne fait rien »…
 
-  Et ainsi se terminèrent les beaux jours de bonheur de Mozzie ; la mouche qui rugissait, qui menaçait, qui mentait tellement… tellement que quand venait le temps de tenir parole, il n'y avait plus moyen de le faire.", tag: "action", rating: 9, length: 4, user_id: user2.id)
+  Et ainsi se terminèrent les beaux jours de bonheur de Mozzie ; la mouche qui rugissait, qui menaçait, qui mentait tellement… tellement que quand venait le temps de tenir parole, il n'y avait plus moyen de le faire.", genre: "Fantaisie", age: "8 à 10 ans", tags: "Animaux", rating: 3, length: "5 minutes ou moins", user_id: user2.id)
 
 
 story7 = Story.create!(title: "Le Viking Aux Cent Cornes", summary: "L'ostentation n'apporte rien de positif. Tôt ou tard, cela deviendra une faiblesse.", content: "Olav Brutolsen était le plus terrible de tous les Vikings. Avec seulement ses mains nues, il pouvait combattre un taureau pour le soumettre en quelques secondes. Pour s'assurer que les gens sachent exactement qui il était, son casque et sa cape étaient ornés de ses trophées de victoire. Il avait plus de cent cornes sur son casque, et mille pierres précieuses sur son manteau. une pierre pour chaque ennemi qu'il avait vaincu.
@@ -145,4 +145,4 @@ story7 = Story.create!(title: "Le Viking Aux Cent Cornes", summary: "L'ostentati
 
   Mais ce coup n'est jamais venu. Olav avait attaqué pendant plus de cinq minutes et au bout de dix minutes, il est tombé au sol, comme mort.
 
-  De nombreux spectateurs pensaient que le jeune homme devait être une sorte de sorcier, mais le garçon, qui était un étudiant en médecine du nom de Virtensen, avait démontré à tout le monde à quel point la fierté et l'ostentation d'Olav avaient suffi à le faire tomber sous le poids de son casque. et manteau. Quand Olav revint à lui, comme un bon guerrier, il accepta sa défaite. A partir de ce jour, il se débarrasse des trophées inutiles sur son casque et son manteau, et revient à des vêtements simples. Maintenant, partout où il marchait, il était comme n'importe qui d'autre. Partout, c'est-à-dire, sauf lorsqu'il marchait sur le champ de bataille, où il était reconnu non pas pour ses nombreuses cornes ou son manteau orné de bijoux, mais pour sa férocité inégalée.", tag: "austérité", rating: 2, length: 3, user_id: user3.id)
+  De nombreux spectateurs pensaient que le jeune homme devait être une sorte de sorcier, mais le garçon, qui était un étudiant en médecine du nom de Virtensen, avait démontré à tout le monde à quel point la fierté et l'ostentation d'Olav avaient suffi à le faire tomber sous le poids de son casque. et manteau. Quand Olav revint à lui, comme un bon guerrier, il accepta sa défaite. A partir de ce jour, il se débarrasse des trophées inutiles sur son casque et son manteau, et revient à des vêtements simples. Maintenant, partout où il marchait, il était comme n'importe qui d'autre. Partout, c'est-à-dire, sauf lorsqu'il marchait sur le champ de bataille, où il était reconnu non pas pour ses nombreuses cornes ou son manteau orné de bijoux, mais pour sa férocité inégalée.", genre: "Conte", age: "8 à 10 ans", tags: "Animaux", rating: 3, length: "5 minutes ou moins", user_id: user3.id)

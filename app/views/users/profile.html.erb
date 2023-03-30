@@ -1,0 +1,36 @@
+<div class="container">
+
+  <h1>My profile</h1>
+
+  <div>
+    <%# Favoris %>
+    <% @user.favorites.each do |favorite| %>
+      <%= favorite.story.title %><br>
+      <%= favorite.story.summary %>
+      <%= button_to "delete to favorite", favorite_path(favorite, story_id: favorite.story.id), method: :delete, data: { confirm: 'Are you sure?' } %>
+    <% end %>
+  </div>
+
+  <div>
+    <%# Historique: si on le garde penser à créer la route,
+    si on ne le garde pas penser à supprimer l'action dans le ctrller Users et la view%>
+    <%# <%= link_to "Historique", records_path %>
+  </div>
+
+  <div>
+    <%# Mes histoires (que j'ai créées)%>
+    <% @user.stories.each do |story| %>
+      <%= story.title %><br>
+      <%= story.summary %><br>
+      <%= button_to "edit your story", profile_path, method: :update %>
+      <%= button_to "delete your story", story_path(story), method: :delete, data: { confirm: 'Are you sure?' } %>
+    <% end %>
+  </div>
+
+  <div>
+    <%# Créer une histoire %>
+  </div>
+
+<%= link_to "Back to homepage", root_path %>
+
+</div>

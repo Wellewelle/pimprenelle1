@@ -1,2 +1,19 @@
-<h1>Stories#show</h1>
-<p>Find me in app/views/stories/show.html.erb</p>
+<div class="container">
+<h1>My favorite stories</h1>
+
+
+<%= @story.title %> <br><br>
+<%= @story.content %>
+
+<% favorite = Favorite.find_by(story: @story, user: current_user) %>
+  <% if favorite == nil %>
+    <%= form_with(url: favorites_path, method: :post, local: true) do |form| %>
+      <%= form.hidden_field :story_id, value: @story.id, name: 'favorite[story_id]'%>
+      <%= form.submit "add to favorite", class: "btn btn-success btn-sm", id: "favorite-button"%>
+    <% end %>
+  <% else %>
+    <p class="alert alert-info text-center" style="position: relative; margin-top: 30px; width: 10%;">you like this story!</p>
+  <% end %>
+<%= link_to "Back to my profile", profile_path %>
+
+</div>
