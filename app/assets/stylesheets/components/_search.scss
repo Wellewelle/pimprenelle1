@@ -51,7 +51,9 @@ nav {
 #decouvrir {
   position: fixed;
   z-index: 999;
-  bottom: 10px;
+  bottom: 50px;
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 0;
 }
 
 #btn-decouvrir {

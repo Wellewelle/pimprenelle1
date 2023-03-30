@@ -5,9 +5,7 @@ class Story < ApplicationRecord
   # validates :tags, inclusion: {in: []}
   # validates :age
   # validates :rating
-
   has_one_attached :photo
-
   has_one_attached :audio
 
   include PgSearch::Model
