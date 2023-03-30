@@ -2,11 +2,14 @@ Rails.application.routes.draw do
   devise_for :users
   root to: "pages#home"
 
-
   get '/mes_histoires', to: 'users#user_stories'
 
-
-  resources :stories, only: [:index, :show, :new, :create, :search, :edit, :update, :destroy]
+  resources :stories, only: [:index, :show, :new, :create, :search, :edit, :update, :destroy] do
+    member do
+      post :increment
+      post :decrease
+    end
+  end
 
   resources :favorites
   get '/profile', to: 'users#profile'
