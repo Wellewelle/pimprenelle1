@@ -190,4 +190,3 @@ story7.photo.attach(io: file, filename: "IMG_3141_yif7zj.jpg", content_type: "im
 file = URI.open("https://res.cloudinary.com/dyi2oz7zm/video/upload/v1680095816/Float_z5pvtc.mp3")
 story7.audio.attach(io: file, filename: "Float_z5pvtc.mp3", content_type: "audio/mp3")
 story7.save
-
