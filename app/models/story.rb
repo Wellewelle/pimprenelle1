@@ -4,12 +4,12 @@ class Story < ApplicationRecord
   # has_many :favorited_by, through: :favorites, source: :user
 
   include PgSearch::Model
-  pg_search_scope :search_by_title_and_tag,
-    against: [ :title, :tag ],
+  pg_search_scope :search_by_title_and_tags,
+    against: [ :title, :tags ],
     using: {
       tsearch: { prefix: true }
     }
-    
+
   validates :title, presence: true, uniqueness: true
   validates :summary, presence: true, uniqueness: true
   validates :content, presence: true, uniqueness: true

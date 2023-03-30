@@ -1,7 +1,7 @@
 class StoriesController < ApplicationController
   def index
     if params[:query].present?
-      @stories = Story.search_by_title_and_tag(params[:query]).limit(5)
+      @stories = Story.search_by_title_and_tags(params[:query]).limit(5)
       respond_to do |format|
         format.html # basic format for rails
         format.json { render json: @stories.to_json(only: [:id, :title]) }
@@ -56,6 +56,6 @@ end
   private
 
   def story_params
-    params.require(:story).permit(:title, :summary, :content, :tag, :rating, :age, :length, :user_id)
+    params.require(:story).permit(:title, :summary, :content, :genre, :tags, :rating, :age, :length, :user_id)
   end
 end
