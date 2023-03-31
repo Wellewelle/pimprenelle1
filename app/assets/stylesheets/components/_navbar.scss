@@ -7,6 +7,7 @@
 .navbar-lewagon {
   display: flex;
   justify-content: space-between;
+  z-index: 999;
   align-items: center;
   background: #FFF2CC;
   width: 100%;
@@ -118,3 +119,4 @@
 input::placeholder {
   font-size: 0.875rem;
 }
+

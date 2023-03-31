@@ -1,3 +1,4 @@
+
 <div class="container">
 <h1> Des histoires pour toutes et tous!</h1>
 
@@ -6,14 +7,6 @@
  <%# Il faudra catégories: length, age, genre (et peut être tags?) %>
 </div>
 
-  <div data-controller="filtres" class="mt_5">
-    <button class="btn btn-outline-primary"
-        data-action="click->filtres#search"
-        data-filtres-target="btnFantaisie">
-        Fantaisie
-    </button>
-
-<div data-filtres-target="stories">
       <% @stories.each do |story| %>
         <div class="cards", style="background-color: #F0F0F0">
           <h3 style="color:#F1D00A; text-align:center"> <strong><%= story.title %></strong> </h3>
