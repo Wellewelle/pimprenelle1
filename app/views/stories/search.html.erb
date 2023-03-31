@@ -1,2 +1,7 @@
-<h1>Stories#search</h1>
-<p>Find me in app/views/stories/search.html.erb</p>
+<div class="container">
+  <% @stories.each do |story| %>
+    <h3 style="color:orange"> <%= story.title %> </h3>
+    <p> <%= story.summary %> </p>
+    <p> Durée: <%= story.length %>, Tranche d'âge: <%= story.age %> Genre: <%= story.genre %></p>
+  <% end %>
+</div>

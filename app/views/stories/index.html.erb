@@ -1,31 +1,9 @@
+
 <h1> Des histoires pour toutes et tous!</h1>
 
-<div data-controller="toggle" class="mt-5">
-  <button data-action="click->toggle#toggle" class="btn btn-outline-primary">Genre</button>
-
-    <div data-toggle-target="toggleCategories" class="">
-
-
-<div data-filtres-target="stories">
       <% @stories.each do |story| %>
         <div >
           <h3 style="color:orange"> <%= story.title %> </h3>
           <p> <%= story.summary %> </p>
-          <p> Durée: <%= story.length %>, Tranche d'âge: <%= story.age %> </p>
+          <p> Durée: <%= story.length %>, Tranche d'âge: <%= story.age %>  Genre: <%= story.genre %> </p>
         <%= link_to "Read this story", story_path(story) %>
-
-
-        </div>
-
-        <% @stories.each do |story| %>
-            <div class="d-none" data-filtres-target="<%= story.genre %>" data-filtres-target="<%= story.tags %>" data-filtres-target="<%=  story.age %>" data-filtres-target="<%= story.length %>">
-              <h3 style="color:orange"> <%= story.title %> </h3>
-              <p> <%= story.summary %> </p>
-              <p> Durée: <%= story.length %>, Tranche d'âge: <%= story.age %> Genre: <%= story.genre %></p>
-            </div>
-        <% end %>
-      </div>
-
-    </div>
-  <button data-action="click->toggle#toggle" class="btn btn-outline-primary">Tags</button>
-</div>
