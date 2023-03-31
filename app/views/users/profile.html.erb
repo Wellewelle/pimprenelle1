@@ -1,44 +1,54 @@
-<div class="container">
+<div class="containerprofile">
 
-  <h1 class="# mt-4 mb-4" style="font-weight: bold;" >My profile</h1>
+  <h1 class="# mt-4 mb-4" style="font-weight: bold; background-image: url('https://files.slack.com/files-tmb/T02NE0241-F05140AEE20-d734bcdf01/7_720.png');">My profile</h1>
 
 
-    <div class="cards">
+    <div class="cardsprofile">
 
-      <div class="card-category d-flex justify-content-center align-items-center h-50" style="background-color: white;">
-      <span><%= image_tag "https://www.clipartmax.com/png/small/72-722180_these-are-some-cats-avatar-i-drew-during-my-free-time-black.png", class: "avatar dropdown-toggle fs-3 w-5", id: "carditoDropdown"%></span>
-      <p> Hello <%= current_user.first_name %>! </p>
+      <div class="card-category-profile d-flex justify-content-center align-items-center", id="sizecard" style="background-color: #F0F0F0;">
+        <span><%= image_tag "https://www.clipartmax.com/png/small/72-722180_these-are-some-cats-avatar-i-drew-during-my-free-time-black.png", class: "avatar dropdown-toggle fs-3 w-5", id: "carditoDropdown"%></span>
+          <div class="d-flex">
+            <p style="margin-right: 5%;"> Hello</p>
+            <p><%= current_user.first_name %>!</p>
+          </div>
       </div>
 
-
-      <div class="card-category " style="background-color: white;">
-        <span style="color: orange; font-weight: bold;">Tes histoires favorites</span>
+      <div class="card-category-profile " style="background-color: #F0F0F0;">
+        <span style="color: #F1D00A;; font-weight: bold;">Tes histoires favorites</span>
 
         <ol class="list-group list-group-numbered mb-5">
         <% @user.favorites.each do |favorite| %>
 
           <li class="list-group-item d-flex justify-content-between align-items-start">
             <div class="ms-2 me-auto">
-              <div class="fw-bold"><%= favorite.story.title %></div>
+              <div class="fw-bold"><strong><%= link_to favorite.story.title, story_path(favorite.story), class: "linkstory" %></strong></div>
             </div>
-            <span class="#"><%= button_to "🗑", favorite_path(favorite, story_id: favorite.story.id), class: "destroybtn", method: :delete, data: { confirm: 'Are you sure?' } %></span>
+            <span class="#"><%= button_to favorite_path(favorite, story_id: favorite.story.id), class: "destroybtn", method: :delete, data: { confirm: 'Are you sure?' } do %>
+              <i class="fa-regular fa-trash-can"></i>
+            </span>
+            <% end %>
           </li>
           <% end %>
         </ol>
 
       </div>
 
-      <div class="card-category" style="background-color: white;">
-        <span style="color: orange; font-weight: bold"> Tes histoires crées</span>
+      <div class="card-category-profile" style="background-color: #F0F0F0;">
+        <span style="color: #F1D00A; font-weight: bold"> Tes histoires crées</span>
 
         <ol class="list-group list-group-numbered">
         <% @user.stories.each do |story| %>
 
-          <li class="list-group-item d-flex justify-space-between align-items-start">
+          <li class="list-group-item d-flex justify-content-between align-items-center">
             <div class="ms-2 me-auto">
-              <div class="fw-bold"><%= link_to story.title, story_path(story) %></div>
+              <div class="fw-bold">
+                <strong><%= link_to story.title, story_path(story), class: "linkstory" %></strong>
+              </div>
+              <div class="d-flex">
+                <%= link_to "modifier", edit_story_path(story), class:"btn btn-warning mr-2", id:"editbutton" %>
+                <%= button_to "supprimer", story_path(story), class: "destroybtn ml-1", method: :delete, data: { confirm: 'Are you sure?' } %>
+              </div>
             </div>
-            <span class="#"><%= link_to "edit", edit_story_path(story) %><%= button_to " 🗑", story_path(story), class: "destroybtn", method: :delete, data: { confirm: 'Are you sure?' } %></span>
           </li>
           <% end %>
         </ol>
@@ -46,13 +56,10 @@
       </div>
 
 
-      <div class="card-category" style="background-color: white;">
-        <span style="color: orange; font-weight: bold">Raconte une nouvelle histoire</span>
+      <div class="card-category-profile" style="background-color: #F0F0F0;">
+        <span style="color: #F1D00A; font-weight: bold"><%= link_to "Raconte une nouvelle histoire", new_story_path %></span>
 
       </div>
-    <div><%= button_to "Back to homepage", root_path %></div>
+    <%= link_to "Retour à la page d'accueil", root_path, class:"btn btn-primary", id:"pageretour" %>
 </div>
 </div>
- <%# width: 100%;
-    margin-bottom: 20px;
-    box-shadow: 1px 1px 2px rgba(0,0,0,0.1); %>
