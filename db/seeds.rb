@@ -12,9 +12,9 @@ Story.destroy_all
 User.destroy_all
 
 
-user1 = User.create!(first_name: "Le", last_name: "Wagon", email: "test@gmail.com", username: "lewagon", password: "1234567")
+user1 = User.create!(first_name: "Ginette", last_name: "Wagon", email: "test@gmail.com", username: "lewagon", password: "1234567")
 user2 = User.create!(first_name: "John", last_name: "Doe", email: "theuser@gmail.com", username: "anonymous", password: "abcdefg")
-user3 = User.create!(first_name: "Lorem", last_name: "Ipsum", email: "random@outlook.com", username: "latin01", password: "atested")
+user3 = User.create!(first_name: "Paul", last_name: "Ipsum", email: "random@outlook.com", username: "latin01", password: "atested")
 
 
 story1 = Story.create!(title: "Les mauvais voisins", summary: "De très mauvais voisins dans notre quartier !", content: "Il était une fois un homme qui était parti à la recherche d'un emploi. Alors qu'il passait devant la maison de son voisin, un papier important est tombé de la poche de l'homme.
@@ -147,3 +147,45 @@ story7 = Story.create!(title: "Le Viking Aux Cent Cornes", summary: "L'ostentati
 
   De nombreux spectateurs pensaient que le jeune homme devait être une sorte de sorcier, mais le garçon, qui était un étudiant en médecine du nom de Virtensen, avait démontré à tout le monde à quel point la fierté et l'ostentation d'Olav avaient suffi à le faire tomber sous le poids de son casque. et manteau. Quand Olav revint à lui, comme un bon guerrier, il accepta sa défaite. A partir de ce jour, il se débarrasse des trophées inutiles sur son casque et son manteau, et revient à des vêtements simples. Maintenant, partout où il marchait, il était comme n'importe qui d'autre. Partout, c'est-à-dire, sauf lorsqu'il marchait sur le champ de bataille, où il était reconnu non pas pour ses nombreuses cornes ou son manteau orné de bijoux, mais pour sa férocité inégalée.", genre: "Conte", age: "8 à 10 ans", tags: "Animaux", rating: 3, length: "5 minutes ou moins", user_id: user3.id)
 
+
+file = URI.open("https://res.cloudinary.com/dyi2oz7zm/image/upload/v1680261825/IMG_3139_j6nk3m.jpg")
+story1.photo.attach(io: file, filename: "IMG_3139_j6nk3m.jpg", content_type: "image/jpg")
+file = URI.open("https://res.cloudinary.com/dyi2oz7zm/video/upload/v1680095816/Float_z5pvtc.mp3")
+story1.audio.attach(io: file, filename: "Float_z5pvtc.mp3", content_type: "audio/mp3")
+story1.save
+
+file = URI.open("https://res.cloudinary.com/dyi2oz7zm/image/upload/v1680261825/IMG_3136_gnnjcn.jpg")
+story2.photo.attach(io: file, filename: "IMG_3136_gnnjcn.jpg", content_type: "image/jpg")
+file = URI.open("https://res.cloudinary.com/dyi2oz7zm/video/upload/v1680095816/Float_z5pvtc.mp3")
+story2.audio.attach(io: file, filename: "Float_z5pvtc.mp3", content_type: "audio/mp3")
+story2.save
+
+file = URI.open("https://res.cloudinary.com/dyi2oz7zm/image/upload/v1680261824/IMG_3135_shsmgh.jpg")
+stort3.photo.attach(io: file, filename: "IMG_3135_shsmgh.jpg", content_type: "image/jpg")
+file = URI.open("https://res.cloudinary.com/dyi2oz7zm/video/upload/v1680095816/Float_z5pvtc.mp3")
+story3.audio.attach(io: file, filename: "Float_z5pvtc.mp3", content_type: "audio/mp3")
+story3.save
+
+file = URI.open("https://res.cloudinary.com/dyi2oz7zm/image/upload/v1680261825/IMG_3137_lumsia.gif")
+story4.photo.attach(io: file, filename: "IMG_3137_lumsia.gif", content_type: "image/gif")
+file = URI.open("https://res.cloudinary.com/dyi2oz7zm/video/upload/v1680095816/Float_z5pvtc.mp3")
+story4.audio.attach(io: file, filename: "Float_z5pvtc.mp3", content_type: "audio/mp3")
+story4.save
+
+file = URI.open("https://res.cloudinary.com/dyi2oz7zm/image/upload/v1680261820/IMG_3140_kh2cyu.jpg")
+story5.photo.attach(io: file, filename: "IMG_3140_kh2cyu.jpg", content_type: "image/jpg")
+file = URI.open("https://res.cloudinary.com/dyi2oz7zm/video/upload/v1680095816/Float_z5pvtc.mp3")
+story5.audio.attach(io: file, filename: "Float_z5pvtc.mp3", content_type: "audio/mp3")
+story5.save
+
+file = URI.open("https://res.cloudinary.com/dyi2oz7zm/image/upload/v1680261824/IMG_3138_srkunj.jpg")
+story6.photo.attach(io: file, filename: "IMG_3138_srkunj.jpg", content_type: "image/jpg")
+file = URI.open("https://res.cloudinary.com/dyi2oz7zm/video/upload/v1680095816/Float_z5pvtc.mp3")
+story6.audio.attach(io: file, filename: "Float_z5pvtc.mp3", content_type: "audio/mp3")
+story6.save
+
+file = URI.open("https://res.cloudinary.com/dyi2oz7zm/image/upload/v1680261684/IMG_3141_yif7zj.jpg")
+story7.photo.attach(io: file, filename: "IMG_3141_yif7zj.jpg", content_type: "image/jpg")
+file = URI.open("https://res.cloudinary.com/dyi2oz7zm/video/upload/v1680095816/Float_z5pvtc.mp3")
+story7.audio.attach(io: file, filename: "Float_z5pvtc.mp3", content_type: "audio/mp3")
+story7.save
