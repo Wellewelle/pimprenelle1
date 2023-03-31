@@ -10,7 +10,7 @@ h1 {
   margin: auto;
   text-align:center;
 }
-.cards {
+.cards-index {
   border: 1px solid #ccc;
   border-radius: 5px;
   box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
@@ -19,22 +19,22 @@ h1 {
   background-color: #fff;
 }
 
-.cards h3 {
+.cards-index h3 {
   margin-top: 0;
 }
 
-.cards p.summaryp {
+.cards-index p.summaryp {
   font-size: 18px;
   line-height: 1.5;
 }
 
-.cards p {
+.cards-index p {
   font-size: 16px;
   line-height: 1.5;
   color: #555;
 }
 
-.cards a {
+.cards-index a {
   display: block;
   margin-top: 20px;
   text-align: center;
@@ -47,41 +47,41 @@ h1 {
   text-decoration: none;
 }
 
-.cards a:hover {
+.cards-index a:hover {
   background-color: #E5C800;
 }
 
 // Smallest device
 @media (min-width: 100px) and (max-width: 575px) {
-  .cards {
+  .cards-index {
     grid-template-columns: 1fr;
   }
 }
 
 // Small devices (landscape phones, 576px and up)
 @media (min-width: 576px) {
-  .cards {
+  .cards-index {
     grid-template-columns: 1fr;
   }
 }
 
 // Medium devices (tablets, 768px and up)
 @media (min-width: 768px) {
-  .cards {
+  .cards-index {
     grid-template-columns: 1fr 1fr;
   }
 }
 
 // Large devices (desktops, 992px and up)
 @media (min-width: 992px) {
-  .cards {
+  .cards-index {
     grid-template-columns: 1fr 1fr 1fr;
   }
 }
 
 // Extra large devices (large desktops, 1200px and up)
 @media (min-width: 1200px) {
-  .cards {
+  .cards-index {
     grid-template-columns: 1fr 1fr 1fr;
   }
 }
