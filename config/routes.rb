@@ -6,7 +6,12 @@ Rails.application.routes.draw do
 
   get '/filtres', to: 'stories#search'
 
-  resources :stories, only: [:index, :show, :new, :create, :search, :edit, :update, :destroy]
+  resources :stories, only: [:index, :show, :new, :create, :search, :edit, :update, :destroy] do
+    member do
+      post :increment
+      post :decrease
+    end
+  end
 
   resources :favorites
   get '/profile', to: 'users#profile'
