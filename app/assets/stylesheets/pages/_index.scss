@@ -1,3 +1,87 @@
 // Import page-specific CSS files here.
 @import "home";
 @import "profile";
+.container {
+  margin: auto;
+}
+
+h1 {
+  color: white;
+  margin: auto;
+  text-align:center;
+}
+.cards {
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
+  margin: 20px;
+  padding: 20px;
+  background-color: #fff;
+}
+
+.cards h3 {
+  margin-top: 0;
+}
+
+.cards p.summaryp {
+  font-size: 18px;
+  line-height: 1.5;
+}
+
+.cards p {
+  font-size: 16px;
+  line-height: 1.5;
+  color: #555;
+}
+
+.cards a {
+  display: block;
+  margin-top: 20px;
+  text-align: center;
+  font-size: 18px;
+  font-weight: bold;
+  color: #fff;
+  background-color: #F1D00A;
+  border-radius: 5px;
+  padding: 10px 20px;
+  text-decoration: none;
+}
+
+.cards a:hover {
+  background-color: #E5C800;
+}
+
+// Smallest device
+@media (min-width: 100px) and (max-width: 575px) {
+  .cards {
+    grid-template-columns: 1fr;
+  }
+}
+
+// Small devices (landscape phones, 576px and up)
+@media (min-width: 576px) {
+  .cards {
+    grid-template-columns: 1fr;
+  }
+}
+
+// Medium devices (tablets, 768px and up)
+@media (min-width: 768px) {
+  .cards {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+// Large devices (desktops, 992px and up)
+@media (min-width: 992px) {
+  .cards {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}
+
+// Extra large devices (large desktops, 1200px and up)
+@media (min-width: 1200px) {
+  .cards {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}
