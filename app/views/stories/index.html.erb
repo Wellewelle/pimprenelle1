@@ -5,6 +5,7 @@
 
     <div data-toggle-target="toggleCategories" class="">
 
+<<<<<<< HEAD
       <div data-controller="filtres" class="mt_5">
         <button class="btn btn-outline-primary"
             data-action="click->filtres#search"
@@ -20,6 +21,15 @@
                 <p> Durée: <%= story.length %>, Tranche d'âge: <%= story.age %> </p>
               </div>
           <% end %>
+=======
+<div data-filtres-target="stories">
+      <% @stories.each do |story| %>
+        <div >
+          <h3 style="color:orange"> <%= story.title %> </h3>
+          <p> <%= story.summary %> </p>
+          <p> Durée: <%= story.length %>, Tranche d'âge: <%= story.age %> </p>
+        <%= link_to "Read this story", story_path(story) %>
+>>>>>>> 13fa479282ee7715da380dbe28c32d03aff29fc0
         </div>
 
         <% @stories.each do |story| %>

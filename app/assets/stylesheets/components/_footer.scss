@@ -1,0 +1,21 @@
+footer {
+  background-color: #FFF2CC;
+  padding: 10px;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  ul {
+      list-style: none;
+      display: flex;
+      justify-content: space-between;
+      margin: 0;
+      padding: 0;
+      li a {
+          color: #FFAA4C;
+          text-decoration: none;
+      }
+            i {
+            font-size: 2rem;
+            }
+  }
+}

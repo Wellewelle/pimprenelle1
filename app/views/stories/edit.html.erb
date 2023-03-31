@@ -1,13 +1,20 @@
 <div class="container">
-  <h1>Modifiez votre histoire</h1>
+  <div class="row justify-content-center">
+      <div class="col-xs-12 col-sm-4 col-sm-offset-4">
+        <div class="form-login">
+          <h1>Modifiez votre histoire</h1>
 
-  <%= simple_form_for(@story) do |f| %>
-    <%= f.input :title, label: "Titre" %>
-    <%= f.input :summary, label: "Résumé" %>
-    <%= f.input :tag, label: "Vos tags" %>
-    <%= f.input :age, label: "Tranche d'âge" %>
-    <%= f.input :content, label: "Racontez..." %>
-    <%= f.button :submit, "Modifier", class: "submit-button"%>
-  <% end %>
-  <%= link_to "Back to profile", profile_path %>
+          <%= simple_form_for(@story) do |f| %>
+            <%= f.input :title, label: "Titre" %>
+            <%= f.input :summary, label: "Résumé" %>
+            <%= f.select :age,["2 à 5 ans", "5 à 8 ans", "8 à 10 ans", "10 à 12 ans", "12 ans et plus"], label: "Tranche d'âge" %>
+            <%= f.select :genre, ["Romance", "Fantaisie", "Aventure", "Amitié", "Scien-Fiction", "Humour", "Pour s'endormir", "conte", "légende"], label: "Donnez un genre à votre histoire" %>
+            <%= f.select :tags, ["Fées", "Chevaliers", "Sorcières", "Magie", "Princes et Princesses", "Animaux", "Monstres", "Rêves"], label: "Mettez un tag" %>
+            <%= f.input :content, label: "Racontez...", :input_html => {:style => 'width: 100%', :rows => 15, class: 'response-project'} %>
+            <%= f.button :submit, "Modifier", class: "btn btn-primary"%>
+          <% end %>
+          <%= link_to "Back to profile", profile_path %>
+      </div>
+    </div>
+  </div>
 </div>
