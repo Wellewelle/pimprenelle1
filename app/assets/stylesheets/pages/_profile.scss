@@ -1,0 +1,75 @@
+.container {
+  text-align: center;
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: 1fr ;
+  grid-template-rows: 1fr 1fr 1fr 1fr;
+  grid-gap: 16px;
+}
+
+.card-category {
+  color: black;
+  text-align: center;
+  border-radius: 5px;
+  box-shadow: 0 1px 2px rgba(0,0,0,0.2);
+
+}
+
+.card-category p {
+ margin-right: 50px;
+}
+#carditoDropdown {
+  width: 50%;
+  margin-left: -60px;
+}
+
+.fw-bold {
+  text-decoration: none;
+}
+
+.destroybtn {
+  background-color: transparent;
+  border: none;
+  color: violet;
+}
+
+li.list-group-item.d-flex.justify-content-between.align-items-start {
+  background-color: transparent;
+}
+
+// Smallest device
+@media (min-width: 100px) and (max-width: 575px) {
+  .cards {
+    grid-template-columns: 1fr;
+  }
+}
+
+// Small devices (landscape phones, 576px and up)
+@media (min-width: 576px) {
+  .cards {
+    grid-template-columns: 1fr;
+  }
+}
+
+// Medium devices (tablets, 768px and up)
+@media (min-width: 768px) {
+  .cards {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+// Large devices (desktops, 992px and up)
+@media (min-width: 992px) {
+  .cards {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}
+
+// Extra large devices (large desktops, 1200px and up)
+@media (min-width: 1200px) {
+  .cards {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}
