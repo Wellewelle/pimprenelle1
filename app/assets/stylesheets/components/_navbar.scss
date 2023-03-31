@@ -1,8 +1,19 @@
+@media(max-width: 800px) {
+  .collapse:not(.show) {
+    display: block;
+  }
+}
+
 .navbar-lewagon {
+  display: flex;
   justify-content: space-between;
-  background: white;
-  box-shadow: 0 2px 4px 0 rgba(0,0,0,.2);
-  padding: 10px;
+  align-items: center;
+  background: #FFF2CC;
+  width: 100%;
+}
+
+.navbar-brand {
+  margin-right: 0;
 }
 
 .navbar-lewagon .navbar-collapse {
@@ -22,8 +33,88 @@
   height: 100%;
 }
 
-.container-fluid {
-  display: flex;
+#navbarDropdown {
+  margin-left: 180%;
+}
+
+.logo_login {
+  width: 100%;
+  justify-content: center;
+}
+
+#logo {
+  font-family: 'Send Flowers', cursive;
+  color: #FFAA4C;
+  font-size: 45px;
+  margin-left: 10%;
+}
+
+.autocomplete {
+  width: 100%;
+  justify-content: center;
+}
+
+[data-controller="autocomplete"] input[type="text"] {
+  width: 20rem;
+}
+
+.autocomplete_results {
+  position: absolute;
+  z-index: 1;
+  background-color: #fff;
+  border-radius: 0 0 12px 12px;
+  display: grid;
+  row-gap: 5px;
+  top: 100%;
+  width: 80%;
+}
+
+.autocomplete_result {
+  display: grid;
+  grid-template-columns: 1fr 5fr;
   align-items: center;
-  justify-content: space-between;
+  overflow: hidden;
+  border-radius: 10px;
+  box-shadow: 0 5px 7px -1px rgba(51, 51, 51, 0.23);
+  transition: transform .25s cubic-bezier(.7,.98,.86,.98), box-shadow .25s cubic-bezier(.7,.98,.86,.98);
+  background-color: #fff;
+}
+
+.autocomplete_result:hover,
+.autocomplete_result:active {
+  transform: scale(1.05);
+  box-shadow: 0 9px 47px 11px rgba(51, 51, 51, 0.18);
+}
+
+.autocomplete_vignette {
+  max-width: 100%;
+  width: 60px;
+  box-shadow: 0 0.125em 0.313em rgba(50,50,93,.09), 0 0.063em 0.125em rgba(0,0,0,.07);
+}
+
+.autocomplete_story {
+  text-decoration: none;
+  color: #979cb0;
+  font-weight: 600;
+  font-size: 15px;
+  letter-spacing: 0.64px;
+  margin-left: 0.875rem;
+}
+
+.autocomplete_rating {
+  color: #35d8ac;
+  font-weight: 700;
+  font-size: 34px;
+  text-align: right;
+}
+
+.autocomplete_rating > span {
+  opacity: .8;
+  font-weight: 600;
+  font-size: 13px;
+  margin-left: 3px;
+}
+
+input::placeholder {
+  font-size: 0.875rem;
 }
