@@ -1,5 +1,41 @@
-<h1>Once upon a time</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
+<div class="container-fluid">
+  <h1 class="text-center orange mt-2">Il était une fois...</h1>
 
-<%= link_to "Go to profile", profile_path %>
-<%= link_to "Go to stories", stories_path %>
+<div class="d-grid gap-2 mb-5">
+  <button id="creation" class="btn btn-primary rounded-5 mt-2 fs-5" style="height: 5rem;" type="button">Créez votre histoire</button>
+</div>
+
+<div class="d-grid gap-2 mb-5">
+  <button id="creation" class="btn btn-primary rounded-5 mt-2 fs-5" style="height: 5rem;" type="button">Trouvez votre histoire</button>
+</div>
+
+  <h1 class="text-center orange mt-2">Vos histoires en cours...</h1>
+
+  <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+    <div class="carousel-inner">
+      <% @stories.each_slice(2).with_index do |stories, index| %>
+        <div class="carousel-item <%= 'active' if index == 0 %>">
+          <div class="cards d-flex justify-content-between">
+            <% stories.each do |story| %>
+              <div class="card h-80 rounded-4" style="width: 10rem;">
+                <%= cl_image_tag story.photo.key, crop: :pad, class:"card-img-top rounded-4", style:"height: 7rem;" %>
+                <div class="card-body">
+                  <p class="card-title"><%= link_to story.title, story_path(story), class:"orange" %></p>
+                  <p class="card-text"> <%= story.tags %></p>
+                </div>
+              </div>
+            <% end %>
+          </div>
+        </div>
+      <% end %>
+    </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Next</span>
+    </button>
+  </div>
+</div>
