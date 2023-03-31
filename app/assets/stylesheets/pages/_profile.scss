@@ -1,6 +1,5 @@
 .container {
   text-align: center;
-
 }
 
 .cards {
@@ -11,11 +10,34 @@
 }
 
 .card-category {
-  color: white;
+  color: black;
   text-align: center;
+  border-radius: 5px;
+  box-shadow: 0 1px 2px rgba(0,0,0,0.2);
 
 }
 
+.card-category p {
+ margin-right: 50px;
+}
+#carditoDropdown {
+  width: 50%;
+  margin-left: -60px;
+}
+
+.fw-bold {
+  text-decoration: none;
+}
+
+.destroybtn {
+  background-color: transparent;
+  border: none;
+  color: violet;
+}
+
+li.list-group-item.d-flex.justify-content-between.align-items-start {
+  background-color: transparent;
+}
 
 // Smallest device
 @media (min-width: 100px) and (max-width: 575px) {
