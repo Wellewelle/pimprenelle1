@@ -1,0 +1,6 @@
+<% stories.each do |story| %>
+<div class="autocomplete_result">
+      <%= cl_image_tag story.photo.key, crop: :pad, class:"autocomplete_vignette", style:"height: 7rem;"  %>
+      <a class="autocomplete_story" href="/stories/<%=story.id%>"><%=story.title%></a>
+              </div>
+<% end %>

@@ -1,99 +1,108 @@
-
-
 <nav data-controller="toggle">
   <div class="menu">
       <li class="menu-item">
         <div id="btn-decouvrir">
-          <button id="decouvrir" class="btn-category" data-action="click->toggle#activation">Découvrir</button>
+
+          <button id="decouvrir" class="btn-category" data-action="click->toggle#activation">
+            <i class="fa-solid fa-cloud-moon"></i>
+          </button>
+
         </div>
           <div data-toggle-target="onClick" class="submenu d-none">
+          <div id="div-scroll">
             <div id="search-window" class="container">
-              <%= form_with url: "/filtres", class: "form-search", method: :get do |f| %>
+              <%= form_with url: "/filtres", class: "form-search ", method: :get do |f| %>
 
-                <div class="mt-5">
-                  <button data-action="click->toggle#toggle" class="btn-category"><h2>Genre</h2></button>
+                <div class="mt-5 option-block">
+                  <button data-action="click->toggle#toggle" class="category-title">
+                  <h2><i class="fa-solid fa-arrow-down"></i>  GENRE  <i class="fa-solid fa-arrow-down"></i></h2></button>
                   <br>
-                    <div data-toggle-target="toggleCategories" class="d-none">
-                      <%= label_tag :"Romance" %>
-                      <%= check_box_tag :"Romance" %>
-                      <%= label_tag :"Fantaisie" %>
-                      <%= check_box_tag :"Fantaisie" %>
-                      <%= label_tag :"Aventure" %>
-                      <%= check_box_tag :"Aventure" %>
-                      <%= label_tag :"Amitié" %>
-                      <%= check_box_tag :"Amitié" %>
-                      <%= label_tag :"Science-Fiction" %>
-                      <%= check_box_tag :"Science-Fiction" %>
-                      <%= label_tag :"Humour" %>
-                      <%= check_box_tag :"Humour" %>
-                      <%= label_tag :"Conte" %>
-                      <%= check_box_tag :"Conte" %>
-                      <%= label_tag :"Légende" %>
-                      <%= check_box_tag :"Légende" %>
+                    <div data-toggle-target="toggleCategories" class="d-none form-block d-flex flex-wrap">
+                      <%= check_box_tag("Romance", nil, false, class: "option-tag") %>
+                      <%= label_tag("Romance", nil, class: "option-label") %>
+                      <%= check_box_tag("Fantaisie", nil, false, class: "option-tag") %>
+                      <%= label_tag("Fantaisie", nil, class: "option-label") %>
+                      <%= check_box_tag("Aventure", nil, false, class: "option-tag") %>
+                      <%= label_tag("Aventure", nil, class: "option-label") %>
+                      <%= check_box_tag("Amitié", nil, false, class: "option-tag") %>
+                      <%= label_tag("Amitié", nil, class: "option-label") %>
+                      <%= check_box_tag("Science-Fiction", nil, false, class: "option-tag") %>
+                      <%= label_tag("Science-Fiction", nil, class: "option-label") %>
+                      <%= check_box_tag("Humour", nil, false, class: "option-tag") %>
+                      <%= label_tag("Humour", nil, class: "option-label") %>
+                      <%= check_box_tag("Conte", nil, false, class: "option-tag") %>
+                      <%= label_tag("Conte", nil, class: "option-label") %>
+                      <%= check_box_tag("Légende", nil, false, class: "option-tag") %>
+                      <%= label_tag("Légende", nil, class: "option-label") %>
                     </div>
                 </div>
 
-                <div data-controller="toggle" class="mt-5">
-                  <button data-action="click->toggle#toggle" class="btn-category"><h2>Tags</h2></button>
+                <div data-controller="toggle" class="mt-5 option-block">
+                  <button data-action="click->toggle#toggle" class="category-title"><h2><i class="fa-solid fa-arrow-down"></i>  TAGS  <i class="fa-solid fa-arrow-down"></i></h2></button>
                   <br>
-                    <div data-toggle-target="toggleCategories" class="d-none">
-                      <%= label_tag :"Fées" %>
-                      <%= check_box_tag :"Fées" %>
-                      <%= label_tag :"Chevaliers" %>
-                      <%= check_box_tag :"Chevaliers" %>
-                      <%= label_tag :"Sorcières" %>
-                      <%= check_box_tag :"Sorcières" %>
-                      <%= label_tag :"Magie" %>
-                      <%= check_box_tag :"Magie" %>
-                      <%= label_tag :"Princes et Princesses" %>
-                      <%= check_box_tag :"Princes et Princesses" %>
-                      <%= label_tag :"Animaux" %>
-                      <%= check_box_tag :"Animaux" %>
-                      <%= label_tag :"Monstres" %>
-                      <%= check_box_tag :"Monstres" %>
-                      <%= label_tag :"Rêves" %>
-                      <%= check_box_tag :"Rêves" %>
+                    <div data-toggle-target="toggleCategories" class="d-none form-block d-flex flex-wrap">
+                      <%= check_box_tag("Fées", nil, false, class: "option-tag") %>
+                      <%= label_tag("Fées", nil, class: "option-label") %>
+                      <%= check_box_tag("Chevaliers", nil, false, class: "option-tag") %>
+                      <%= label_tag("Chevaliers", nil, class: "option-label") %>
+                      <%= check_box_tag("Sorcières", nil, false, class: "option-tag") %>
+                      <%= label_tag("Sorcières", nil, class: "option-label") %>
+                      <%= check_box_tag("Magie", nil, false, class: "option-tag") %>
+                      <%= label_tag("Magie", nil, class: "option-label") %>
+                      <%= check_box_tag("Princes et Princesses", nil, false, class: "option-tag") %>
+                      <%= label_tag("Princes et Princesses", nil, class: "option-label") %>
+                      <%= check_box_tag("Animaux", nil, false, class: "option-tag") %>
+                      <%= label_tag("Animaux", nil, class: "option-label") %>
+                      <%= check_box_tag("Monstres", nil, false, class: "option-tag") %>
+                      <%= label_tag("Monstres", nil, class: "option-label") %>
+                      <%= check_box_tag("Rêves", nil, false, class: "option-tag") %>
+                      <%= label_tag("Rêves", nil, class: "option-label") %>
                     </div>
                 </div>
 
-                <div data-controller="toggle" class="mt-5">
-                  <button data-action="click->toggle#toggle" class="btn-category"><h2>Tranche d'âge</h2></button>
+                <div data-controller="toggle" class="mt-5 option-block">
+                  <button data-action="click->toggle#toggle" class="category-title"><h2><i class="fa-solid fa-arrow-down"></i>  TRANCHE D'ÂGE  <i class="fa-solid fa-arrow-down"></i></h2></button>
                   <br>
-                    <div data-toggle-target="toggleCategories" class="d-none">
-                        <%= label_tag :"2 à 5 ans" %>
-                        <%= check_box_tag :"2 à 5 ans" %>
-                        <%= label_tag :"5 à 8 ans" %>
-                        <%= check_box_tag :"5 à 8 ans" %>
-                        <%= label_tag :"8 à 10 ans" %>
-                        <%= check_box_tag :"8 à 10 ans" %>
-                        <%= label_tag :"10 à 12 ans" %>
-                        <%= check_box_tag :"10 à 12 ans" %>
-                        <%= label_tag :"12 ans et plus" %>
-                        <%= check_box_tag :"12 ans et plus" %>
+                    <div data-toggle-target="toggleCategories" class="d-none form-block d-flex flex-wrap">
+                        <%= check_box_tag("2 à 5 ans", nil, false, class: "option-tag") %>
+                        <%= label_tag("2 à 5 ans", nil, class: "option-label") %>
+                        <%= check_box_tag("5 à 8 ans", nil, false, class: "option-tag") %>
+                        <%= label_tag("5 à 8 ans", nil, class: "option-label") %>
+                        <%= check_box_tag("8 à 10 ans", nil, false, class: "option-tag") %>
+                        <%= label_tag("8 à 10 ans", nil, class: "option-label") %>
+                        <%= check_box_tag("10 à 12 ans", nil, false, class: "option-tag") %>
+                        <%= label_tag("10 à 12 ans", nil, class: "option-label") %>
+                        <%= check_box_tag("12 ans et plus", nil, false, class: "option-tag") %>
+                        <%= label_tag("12 ans et plus", nil, class: "option-label") %>
                     </div>
                 </div>
 
-                <div data-controller="toggle" class="mt-5">
-                  <button data-action="click->toggle#toggle" class="btn-category"><h2>Durée</h2></button>
+                <div data-controller="toggle" class="mt-5 option-block">
+                  <button data-action="click->toggle#toggle" class="category-title"><h2><i class="fa-solid fa-arrow-down"></i>  DURÉE  <i class="fa-solid fa-arrow-down"></i></h2></button>
                   <br>
-                    <div data-toggle-target="toggleCategories" class="d-none">
-                        <%= label_tag :"5 minutes ou moins" %>
-                        <%= check_box_tag :"5 minutes ou moins" %>
-                        <%= label_tag :"5 à 10 minutes" %>
-                        <%= check_box_tag :"5 à 10 minutes" %>
-                        <%= label_tag :"10 à 15 minutes" %>
-                        <%= check_box_tag :"10 à 15 minutes" %>
-                        <%= label_tag :"15 à 20 minutes" %>
-                        <%= check_box_tag :"15 à 20 minutes" %>
-                        <%= label_tag :"20 minutes ou plus" %>
-                        <%= check_box_tag :"20 minutes ou plus" %>
+                    <div data-toggle-target="toggleCategories" class="d-none form-block d-flex flex-wrap">
+                        <%= check_box_tag("5 minutes ou moins", nil, false, class: "option-tag") %>
+                        <%= label_tag("5 minutes ou moins", nil, class: "option-label") %>
+                        <%= check_box_tag("5 à 10 minutes", nil, false, class: "option-tag") %>
+                        <%= label_tag("5 à 10 minutes", nil, class: "option-label") %>
+                        <%= check_box_tag("10 à 15 minutes", nil, false, class: "option-tag") %>
+                        <%= label_tag("10 à 15 minutes", nil, class: "option-label") %>
+                        <%= check_box_tag("15 à 20 minutes", nil, false, class: "option-tag") %>
+                        <%= label_tag("15 à 20 minutes", nil, class: "option-label") %>
+                        <%= check_box_tag("20 minutes ou plus", nil, false, class: "option-tag") %>
+                        <%= label_tag("20 minutes ou plus", nil, class: "option-label") %>
                     </div>
                 </div>
                     <br>
-                    <%= f.submit "Filtrer", data: { action: "click->toggle#desactivation" } %>
+                    <div class="submit-search">
+                      <%= f.submit "Filtrer", data: { action: "click->toggle#desactivation" }, class: "search-submit" %>
+                    </div>
               <% end %>
             </div>
+          </div>
           </div>
       </li>
   </ul>
 </nav>
+
+<%# style="overflow-y:scroll; overflow-x:hidden; height:400px;" %>

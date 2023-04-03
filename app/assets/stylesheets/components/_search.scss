@@ -1,78 +1,115 @@
 
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-nav {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 .menu {
-    list-style: none;
-}
-
-.menu-item {
-    position: relative;
-}
-
-.menu-item a {
-    display: block;
-    // padding: 12px 24px;
-    text-decoration: none;
-    color: #fff;
-    background-color: #333;
-    border-radius: 4px;
-}
-
-.submenu {
-  position: absolute;
-  bottom: 100%;
-  left: 0;
   list-style: none;
 }
 
+.menu-item {
+  position: relative;
+}
+
+.menu-item a {
+  display: block;
+  text-decoration: none;
+  color: #fff;
+  background-color: #333;
+  border-radius: 4px;
+}
+
+.submenu {
+position: absolute;
+bottom: 100%;
+left: 0;
+list-style: none;
+}
+
 .submenu li a {
-    padding: 12px 24px;
-    color: #333;
-    background-color: #fff;
-    text-decoration: none;
-    border-radius: 4px;
-    border: 1px solid #333;
+  padding: 12px 24px;
+  color: #333;
+  background-color: #fff;
+  text-decoration: none;
+  border-radius: 4px;
+  border: 1px solid #333;
 }
 
 .menu-item .ouvert .submenu {
-  display: block;
+display: block;
 }
 
 #decouvrir {
-  position: fixed;
-  z-index: 999;
-  bottom: 50px;
-  border-bottom-right-radius: 0;
-  border-bottom-left-radius: 0;
+position: fixed;
+z-index: 999;
+bottom: 50px;
+border-radius: 10px;
+border-bottom-right-radius: 0 !important;
+border-bottom-left-radius: 0 !important;
+color: #FFAA4C;
+padding: 10px;
+border-radius: 10px;
+border: none;
+text-align: center;
+background: radial-gradient( #035397, #5089C6);
+border: solid 1px whitesmoke;
+padding-left: 40px;
+padding-right: 40px;
+padding-top: 12px;
+padding-bottom: 12px;
+box-shadow: 2px 2px 6px darkgrey;
+font-size: 1.2rem;
+}
+
+.fa-cloud-moon {
+  color: #FFAA4C;
+}
+
+.fa-arrow-down {
+  color: #FFAA4C;
 }
 
 #btn-decouvrir {
-  justify-content: center;
-  width: 100%;
-  display: flex;
+justify-content: center;
+width: 100%;
+display: flex;
+margin-top: 50px;
 }
 
 .btn-category {
-  background: linear-gradient(90deg, $orange, blue);
-  color: lightgray;
-  padding: 10px;
-  border-radius: 10px;
+  cursor: pointer;
+  display: inline-block;
+  font-size: 0.7rem;
+  border-radius: 50rem;
+  padding: 0.1rem 0.5rem;
+  background: radial-gradient( #035397, #5089C6);
+  color: #FFAA4C;
+  margin-left: 15px;
   border: none;
+  padding: 5px;
+  box-shadow: 2px 2px 2px darkgrey;
+}
+
+.submit-search {
   text-align: center;
+  padding: 5px;
+}
+
+.search-submit {
+  color: black;
+  padding: 5px;
+  background: radial-gradient(#FFAA4C, #035397);
+  border: solid 1px whitesmoke;
+  box-shadow: 2px 2px 2px darkgrey;
+  border-radius: 5px;
 }
 
 .form-search {
-  background-color: white;
+  border-radius: 10px;
+  background-image: url("search-background.png");
+  border: solid 3px whitesmoke;
   position: fixed;
   z-index: 998;
   bottom: 50;
@@ -80,21 +117,76 @@ nav {
   left: 0;
   right: 0;
   float: center;
-  height: 100vh;
-  text-align: center;
-  padding-top: 40px;
+  height: 620px;
+  justify-content: center;
+  margin-top: 110px;
+  margin-left: 10px;
+  margin-right: 10px;
+  overflow-y: scroll;
 }
 
-// .choices {
-//   position: absolute;
-//   transform: scale(0);
-// }
+.category-title {
+  align-self: center;
+  opacity: 1;
+  padding: 5px;
+  font-size: smaller;
+  margin-top: 0;
+  color: black;
+  background: radial-gradient(#5089C6, #035397);
+  border: solid 1px whitesmoke;
+  border-radius: 5px;
+  box-shadow: 2px 2px 2px darkgrey;
+  width: 80%;
+}
 
-// .choices + label {
-//   cursor: pointer;
-//   background-color: red;
-// }
+.category-title:active {
+  opacity: 0.8;
+}
 
-// .choices:checked + label {
-//   background-color: blue;
-// }
+#search-window {
+  position: fixed;
+  display: flex;
+  text-align: left;
+  align-content: center;
+  margin: 5px;
+}
+
+.option-block {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 0;
+}
+
+.form-block {
+  display: flex;
+  justify-content: space-around;
+  align-self: center;
+}
+
+.option-btn {
+  display: inline-block !important;
+}
+
+.option-tag {
+  position: absolute !important;
+  cursor: pointer !important;
+  transform: scale(0);
+}
+
+.option-tag + label {
+  // display: inline-block !important;
+  font-size: 0.7rem !important;
+  border-radius: 50rem !important;
+  padding: 0.1rem 0.5rem !important;
+  background: radial-gradient( #035397, #5089C6) !important;
+  color: #FFAA4C !important;
+  border: 1px solid #035397 !important;
+  margin-right: 0.6rem !important;
+  margin-bottom: 0.4rem !important;
+}
+
+.option-tag:checked + label {
+  background: #035397 !important;
+  color: white !important;
+}
