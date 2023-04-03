@@ -13,7 +13,13 @@
         <p class="card-text">Length: <%= @story.length %> mins</p>
         <p class="card-text" id="storySpot" data-show-content-target="summary"><%= @story.summary %></p>
         <p class="card-text d-none" id="storySpot" data-show-content-target="content"><%= @story.content %></p>
-        <a href="#" class="btn btn-primary" id="viewStory" data-show-content-target="button" data-action="click->show-content#show">Voir toute l'histoire</a>
+        <%= link_to "Voir toute l'histoire",
+            story_read_stories_path(@story),
+            method: :post,
+            remote: true,
+            class: "btn btn-primary",
+            id: "viewStory",
+            data: { show_content_target: "button", action: "click->show-content#show" } %>
       </div>
     </div>
   </div>

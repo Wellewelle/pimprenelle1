@@ -36,3 +36,4 @@ export default class extends Controller {
 }
 
 // <img src="https://res.cloudinary.com/your-cloud-name/image/upload/c_fill/${story.photo.key}" alt="" class="autocomplete_vignette">
+// <%= cl_image_tag story.photo.key, crop: :fill, class:"autocomplete_vignette" %>
