@@ -12,9 +12,10 @@
         <p class="card-text">Rating: <%= @story.rating %></p>
         <p class="card-text">Length: <%= @story.length %> mins</p>
         <p class="card-text" id="storySpot" data-show-content-target="summary"><%= @story.summary %></p>
-        <p class="card-text d-none" id="storySpot" data-show-content-target="content"><%= @story.content %></p>
+        <p class="card-text d-none" style="text-align: justify;" id="storySpot" data-show-content-target="content"><%= @story.content.gsub('.', '.<br><br>').html_safe %></p>
         <a href="#" class="btn btn-primary" id="viewStory" data-show-content-target="button" data-action="click->show-content#show">Voir toute l'histoire</a>
       </div>
+
     </div>
   </div>
 

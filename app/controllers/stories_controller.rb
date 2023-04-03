@@ -4,7 +4,7 @@ class StoriesController < ApplicationController
       @stories = Story.search_by_title_and_tags(params[:query]).limit(5)
       respond_to do |format|
         format.html # basic format for rails
-        format.json { render json: @stories.to_json(only: [:id, :title, :photo]) }
+        format.text { render partial: "stories/result", locals: { stories: @stories }, formats: [:html] }
       end
     else
       @stories = Story.all

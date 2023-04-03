@@ -5,7 +5,7 @@
 
       <% @stories.each do |story| %>
         <div class="cards-index", style="background-color: #F0F0F0">
-          <h3 style="color:#F1D00A; text-align:center"> <strong><%= story.title %></strong> </h3>
+          <h3 style="color:#FFAA4C; text-align:center"> <strong><%= story.title %></strong> </h3>
           <p class= "summaryp"> <%= story.summary %> </p>
           <p style="color: #3E497A"> <strong>Durée:</strong> <%= story.length %>min</p>
           <p style="color: #3E497A"><strong>Tranche d'âge:</strong> <%= story.age %> </p>
@@ -16,7 +16,7 @@
 
     <% @stories.each do |story| %>
         <div class="d-none" data-filtres-target="<%= story.genre %>" data-filtres-target="<%= story.tags %>" data-filtres-target="<%=  story.age %>" data-filtres-target="<%= story.length %>">
-          <h3 style="color:#F1D00A"> <%= story.title %> </h3>
+          <h3 style="color:#FFAA4C"> <%= story.title %> </h3>
           <p class= "summaryp"> <%= story.summary %> </p>
           <p> Durée: <%= story.length %>, Tranche d'âge: <%= story.age %> Genre: <%= story.genre %></p>
         </div>
