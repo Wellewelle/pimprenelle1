@@ -10,7 +10,26 @@
         <h5 class="card-title"><%= @story.title %></h5>
         <p class="card-text">Age: <%= @story.age %></p>
         <p class="card-text">Rating: <%= @story.rating %></p>
-        <p class="card-text">Length: <%= @story.length %> mins</p>
+
+            <% @word_count = 0 %>
+            <% @story.content.each_char do |word| %>
+              <% @word_count += 1 %>
+            <% end %>
+              <% @word_count/5 %>
+            <% if @word_count <= 650 %>
+              <% @story_length = @story.length = "5 minutes ou moins" %>
+            <% elsif @word_count = 651..1300 %>
+              <% @story_length = @story.length = "5 à 10 minutes" %>
+            <% elsif @word_count = 1301..1950 %>
+              <% @story_length = @story.length = "10 à 15 minutes" %>
+            <% elsif @word_count = 1951..2600 %>
+              <% @story_length = @story.length = "15 à 20 minutes" %>
+            <% elsif @word_count >= 2600 %>
+              <% @story_length = @story.length = "20 minutes ou plus" %>
+            <% end %>
+
+        <p class="card-text"> Durée: <%= @story_length %></p>
+
         <p class="card-text" id="storySpot" data-show-content-target="summary"><%= @story.summary %></p>
         <p class="card-text d-none" id="storySpot" data-show-content-target="content"><%= @story.content %></p>
         <a href="#" class="btn btn-primary" id="viewStory" data-show-content-target="button" data-action="click->show-content#show">Voir toute l'histoire</a>
