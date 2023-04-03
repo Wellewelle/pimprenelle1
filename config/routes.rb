@@ -11,6 +11,8 @@ Rails.application.routes.draw do
       post :increment
       post :decrease
     end
+
+    resources :read_stories, only: [:create]
   end
 
   resources :favorites

@@ -34,6 +34,3 @@ export default class extends Controller {
   //     .join("");
   // }
 }
-
-// <img src="https://res.cloudinary.com/your-cloud-name/image/upload/c_fill/${story.photo.key}" alt="" class="autocomplete_vignette">
-//<img src="https://res.cloudinary.com/dyi2oz7zm/image/upload/v1680261825/IMG_3136_gnnjcn.jpg" class="autocomplete_vignette"></img>

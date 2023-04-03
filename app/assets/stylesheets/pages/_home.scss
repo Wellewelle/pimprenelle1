@@ -9,3 +9,44 @@ a {
   text-decoration: none;
   font-size: 15px;
 }
+
+.child {
+  font-family: 'Short Stack', cursive;
+}
+
+.scroll-container {
+  display: flex;
+  overflow-x: auto;
+  width: 100%;
+  scrollbar-width: thin;
+  scrollbar-color: rgba(0, 0, 0, 0.1) transparent;
+
+    &::-webkit-scrollbar {
+      display: none;
+    }
+}
+
+#creation {
+  background: #FFF2CC;
+  font-family: 'Short Stack', cursive;
+}
+
+.scroll-item {
+  flex: 0 0 auto;
+  padding: 5px;
+  margin-right: 10px;
+
+    img {
+      border: solid 1px black;
+    }
+
+    &:last-child {
+      margin-right: 0;
+    }
+}
+
+.card-body {
+  a {
+    font-size: 16px;
+  }
+}

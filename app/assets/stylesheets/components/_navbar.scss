@@ -5,8 +5,6 @@
 }
 
 .navbar-lewagon {
-  display: flex;
-  justify-content: space-between;
   z-index: 999;
   align-items: center;
   background: #FFF2CC;
@@ -34,20 +32,11 @@
   height: 100%;
 }
 
-#navbarDropdown {
-  margin-left: 180%;
-}
-
-.logo_login {
-  width: 100%;
-  justify-content: center;
-}
-
 #logo {
+  text-align: center;
   font-family: 'Send Flowers', cursive;
   color: #FFAA4C;
   font-size: 45px;
-  margin-left: 10%;
 }
 
 .autocomplete {
