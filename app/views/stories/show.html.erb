@@ -6,13 +6,13 @@
 <div class="container">
   <div class="row mb-3">
     <div class="card text-center">
-      <div class="card-body" data-controller="show-content">
+      <div class="card-body" data-controller="show-content" data-show-content-id-value="<%=@story.id%>">
         <h5 class="card-title"><%= @story.title %></h5>
         <p class="card-text">Age: <%= @story.age %></p>
         <p class="card-text">Rating: <%= @story.rating %></p>
         <p class="card-text">Length: <%= @story.length %> mins</p>
         <p class="card-text" id="storySpot" data-show-content-target="summary"><%= @story.summary %></p>
-        <p class="card-text d-none" id="storySpot" data-show-content-target="content"><%= @story.content %></p>
+        <p class="card-text d-none" id="storySpot" data-show-content-target="content" style="font-family: 'Short Stack', cursive;"><%= simple_format(@story.content) %></p>
         <%= link_to "Voir toute l'histoire",
             story_read_stories_path(@story),
             method: :post,

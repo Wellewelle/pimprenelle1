@@ -1,41 +1,35 @@
 <div class="container-fluid">
-  <h1 class="text-center orange mt-2">Il était une fois...</h1>
+  <h2 class="text-center orange mt-2 child">Il était une fois...</h2>
 
-<div class="d-grid gap-2 mb-5">
-  <button id="creation" class="btn btn-primary rounded-5 mt-2 fs-5" style="height: 5rem;" type="button">Créez votre histoire</button>
+<div class="d-grid gap-2 mb-4 text-center">
+  <%= link_to "/stories/new" do %>
+    <button id="creation" class="btn btn-primary rounded-5 fs-5 w-100" style="height: 5rem;" type="button">Créer votre histoire</button>
+  <% end %>
 </div>
 
-<div class="d-grid gap-2 mb-5">
-  <button id="creation" class="btn btn-primary rounded-5 mt-2 fs-5" style="height: 5rem;" type="button">Trouvez votre histoire</button>
-</div>
-
-  <h1 class="text-center orange mt-2">Vos histoires en cours...</h1>
-
-  <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
-    <div class="carousel-inner">
-      <% @stories.each_slice(2).with_index do |stories, index| %>
-        <div class="carousel-item <%= 'active' if index == 0 %>">
-          <div class="cards d-flex justify-content-between">
-            <% stories.each do |story| %>
-              <div class="card h-80 rounded-4" style="width: 10rem;">
-                <%= cl_image_tag story.photo.key, crop: :pad, class:"card-img-top rounded-4", style:"height: 7rem;" %>
-                <div class="card-body">
-                  <p class="card-title"><%= link_to story.title, story_path(story), class:"orange" %></p>
-                  <p class="card-text"> <%= story.tags %></p>
-                </div>
-              </div>
-            <% end %>
-          </div>
-        </div>
-      <% end %>
+  <h4 class="text-center orange mt-2 child">Vos histoires en cours</h4>
+  <div class="scroll-container">
+    <% @stories.each do |story| %>
+    <div class="scroll-item card rounded-4" style="width: 10rem;">
+      <%= cl_image_tag story.photo.key, crop: :fill, class:"card-img-top rounded-4", style:"height: 7rem;" %>
+      <div class="card-body p-1">
+        <p class="card-title text-center"><%= link_to story.title, story_path(story), class:"orange child" %></p>
+        <p class="card-text text-center child"> Lu à <strong><%= rand(20..100) %>%</strong></p>
+      </div>
     </div>
-    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
-      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-      <span class="visually-hidden">Previous</span>
-    </button>
-    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
-      <span class="carousel-control-next-icon" aria-hidden="true"></span>
-      <span class="visually-hidden">Next</span>
-    </button>
+    <% end %>
+  </div>
+
+  <h4 class="text-center orange mt-4 child">Des histoires à découvrir</h4>
+  <div class="scroll-container">
+    <% @stories.each do |story| %>
+    <div class="scroll-item card rounded-4" style="width: 10rem;">
+      <%= cl_image_tag story.photo.key, crop: :pad, class:"card-img-top rounded-4", style:"height: 7rem;" %>
+      <div class="card-body p-1">
+        <p class="card-title text-center"><%= link_to story.title, story_path(story), class:"orange child" %></p>
+        <p class="card-text text-center child"> avec <%= story.tags %>...</strong></p>
+      </div>
+    </div>
+    <% end %>
   </div>
 </div>

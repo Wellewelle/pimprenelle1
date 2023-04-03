@@ -12,7 +12,7 @@ Rails.application.routes.draw do
       post :decrease
     end
 
-    resources :read_stories, only: [:create], shallow: true
+    resources :read_stories, only: [:create]
   end
 
   resources :favorites
