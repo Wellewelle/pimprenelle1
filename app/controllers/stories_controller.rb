@@ -14,6 +14,7 @@ class StoriesController < ApplicationController
   def show
     @story = Story.find(params[:id])
     @likes = @story.rating
+    @audios = @story.audios
   end
 
   def increment
@@ -36,7 +37,7 @@ class StoriesController < ApplicationController
 
   def create
     @story = Story.new(story_params)
-    @story.user_id = current_user.id
+    @story.user_id = current_user
     if @story.save
       redirect_to stories_path
     else
@@ -103,6 +104,6 @@ class StoriesController < ApplicationController
   private
 
   def story_params
-    params.require(:story).permit(:title, :summary, :content, :genre, :tags, :rating, :age, :length, :user_id, :audio)
+    params.require(:story).permit(:title, :summary, :content, :genre, :tags, :rating, :age, :length, :user_id, :photo, audios: [])
   end
 end

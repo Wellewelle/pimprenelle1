@@ -7,7 +7,7 @@ class Story < ApplicationRecord
   # validates :age
   # validates :rating
   has_one_attached :photo
-  has_one_attached :audio
+  has_many_attached :audios
 
   include PgSearch::Model
   pg_search_scope :search_by_title_and_tags,

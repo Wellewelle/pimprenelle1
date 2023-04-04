@@ -2,6 +2,44 @@
   #tttt {
     background-color: white;
   }
+
+  /* The Modal (background) */
+  .modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+  }
+
+  /* Modal Content/Box */
+  .modal-content {
+    background-color: #fefefe;
+    margin: 15% auto; /* 15% from the top and centered */
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%; /* Could be more or less, depending on screen size */
+  }
+
+  /* The Close Button */
+  .close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+  }
+
+  .close:hover,
+  .close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+  }
 </style>
 <div class="container">
   <div class="row mb-3">
@@ -45,6 +83,42 @@
             id: "viewStory",
             data: { show_content_target: "button", action: "click->show-content#show" } %>
 
+            <button id="myBtn">Test</button>
+            <!-- The Modal -->
+            <div id="myModal" class="modal">
+              <!-- Modal content -->
+              <div class="modal-content">
+                <span class="close">&times;</span>
+                <p><%= @story.content %></p>
+              </div>
+            </div>
+            <script>
+              var modal = document.getElementById("myModal");
+
+              // Get the button that opens the modal
+              var btn = document.getElementById("myBtn");
+
+              // Get the <span> element that closes the modal
+              var span = document.getElementsByClassName("close")[0];
+
+              // When the user clicks on the button, open the modal
+              btn.onclick = function() {
+                modal.style.display = "block";
+              }
+
+              // When the user clicks on <span> (x), close the modal
+              span.onclick = function() {
+                modal.style.display = "none";
+              }
+
+              // When the user clicks anywhere outside of the modal, close it
+              window.onclick = function(event) {
+                if (event.target == modal) {
+                  modal.style.display = "none";
+                }
+              }
+            </script>
+
             <button class="btn btn-primary" data-action="click->text-vide#bionique" data-text-vide-target="btnBio"><strong>Lect</strong>ure <strong>Bion</strong>ique</button>
             <button data-text-vide-target="btnReset" data-action="click->text-vide#reset" class="btn btn-primary d-none">Lecture Non-Bionique</button>
       </div>
@@ -71,11 +145,13 @@
       <div id="tttt" class="border rounded p-2" style="width: 20rem;">
         <h5><strong>Audio:</strong></h5>
         <% if @story.audio.attached? %>
-            <% audio_url = Cloudinary::Utils.cloudinary_url(@story.audio.key, resource_type: 'video') %>
+          <% @story.audio.each do |sound| %>
+            <% audio_url = Cloudinary::Utils.cloudinary_url(sound.key, resource_type: 'video') %>
             <audio controls>
-                <source src="<%= audio_url %>" type="<%= @story.audio.content_type %>">
+                <source src="<%= audio_url %>" type="<%= sound.content_type %>">
                 Votre navigateur ne supporte pas l'élément audio.
             </audio>
+          <% end %>
         <% end %>
       </div>
     </div>
