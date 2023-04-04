@@ -31,7 +31,9 @@
         <p class="card-text"> Durée: <%= @story_length %></p>
 
         <p class="card-text" id="storySpot" data-show-content-target="summary"><%= @story.summary %></p>
-        <p class="card-text d-none" id="storySpot" data-show-content-target="content" style="font-family: 'Short Stack', cursive;"><%= simple_format(@story.content) %></p>
+        <div class="d-none" id="storySpot" data-show-content-target="content" style="font-family: 'Short Stack', cursive;">
+        <p class="card-text" style="text-align: justify; font-family: 'Short Stack', cursive;"><%= @story.content.gsub('.', '.<br><br>').html_safe %></p>
+        </div>
         <%= link_to "Voir toute l'histoire",
             story_read_stories_path(@story),
             method: :post,

@@ -23,13 +23,15 @@
   <h4 class="text-center orange mt-4 child">Des histoires à découvrir</h4>
   <div class="scroll-container">
     <% @stories.each do |story| %>
-    <div class="scroll-item card rounded-4" style="width: 10rem;">
-      <%= cl_image_tag story.photo.key, crop: :pad, class:"card-img-top rounded-4", style:"height: 7rem;" %>
-      <div class="card-body p-1">
-        <p class="card-title text-center"><%= link_to story.title, story_path(story), class:"orange child" %></p>
-        <p class="card-text text-center child"> avec <%= story.tags %>...</strong></p>
+    <% if story.photo.present? %>
+      <div class="scroll-item card rounded-4" style="background: linear-gradient(0deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url(<%= cl_image_path(story.photo.key, crop: :fit) %>);">
+        <div class="card-body p-1">
+          <div class="title-container">
+            <p class="card-title text-center"><%= link_to story.title.upcase, story_path(story), class:"child white" %></p>
+          </div>
+        </div>
       </div>
-    </div>
+    <% end %>
     <% end %>
   </div>
 </div>
