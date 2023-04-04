@@ -34,7 +34,9 @@
 
       <div data-controller="text-vide" id="story-content">
         <p class="card-text" id="storySpot" data-show-content-target="summary"><%= @story.summary %></p>
-        <p class="card-text d-none" id="storySpot" data-show-content-target="content" data-text-vide-target="text" style="font-family: 'Short Stack', cursive;"><%= simple_format(@story.content) %></p>
+
+         <p class="card-text d-none" style="text-align: justify;" id="storySpot" data-show-content-target="content" data-show-content-target="content" data-text-vide-target="text"><%= @story.content.gsub('.', '.<br><br>').html_safe %></p>
+
         <%= link_to "Voir toute l'histoire",
             story_read_stories_path(@story),
             method: :post,
