@@ -21,6 +21,11 @@
   border-radius: 4px;
 }
 
+img.autocomplete_vignette {
+object-fit: cover;
+// width: 20%!important;
+}
+
 .submenu {
 position: absolute;
 bottom: 100%;
