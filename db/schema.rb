@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_03_30_122359) do
+ActiveRecord::Schema[7.0].define(version: 2023_04_03_141412) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -60,6 +60,15 @@ ActiveRecord::Schema[7.0].define(version: 2023_03_30_122359) do
     t.index ["user_id"], name: "index_favorites_on_user_id"
   end
 
+  create_table "read_stories", force: :cascade do |t|
+    t.bigint "user_id", null: false
+    t.bigint "story_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["story_id"], name: "index_read_stories_on_story_id"
+    t.index ["user_id"], name: "index_read_stories_on_user_id"
+  end
+
   create_table "stories", force: :cascade do |t|
     t.string "title"
     t.text "summary"
@@ -67,7 +76,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_03_30_122359) do
     t.string "genre"
     t.integer "rating", default: 0
     t.string "age"
-    t.integer "length"
+    t.string "length"
     t.bigint "user_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -96,5 +105,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_03_30_122359) do
   add_foreign_key "audios", "users"
   add_foreign_key "favorites", "stories"
   add_foreign_key "favorites", "users"
+  add_foreign_key "read_stories", "stories"
+  add_foreign_key "read_stories", "users"
   add_foreign_key "stories", "users"
 end

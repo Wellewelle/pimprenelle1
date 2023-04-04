@@ -1,0 +1,10 @@
+<% stories.each do |story| %>
+<div class="autocomplete_result d-flex">
+  <div class="testtaille">
+      <%= cl_image_tag story.photo.key, crop: :pad, class:"autocomplete_vignette", style:"height: 7rem;"  %>
+  </div>
+  <div class="test2taille">
+      <a class="autocomplete_story" href="/stories/<%=story.id%>"><%=story.title%></a>
+  </div>
+</div>
+<% end %>

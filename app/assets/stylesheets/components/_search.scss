@@ -5,12 +5,6 @@
   box-sizing: border-box;
 }
 
-nav {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
 .menu {
   list-style: none;
 }
@@ -21,11 +15,15 @@ nav {
 
 .menu-item a {
   display: block;
-  // padding: 12px 24px;
   text-decoration: none;
   color: #fff;
   background-color: #333;
   border-radius: 4px;
+}
+
+img.autocomplete_vignette {
+object-fit: cover;
+// width: 20%!important;
 }
 
 .submenu {
@@ -61,6 +59,7 @@ border-radius: 10px;
 border: none;
 text-align: center;
 background: radial-gradient( #035397, #5089C6);
+border: solid 1px whitesmoke;
 padding-left: 40px;
 padding-right: 40px;
 padding-top: 12px;
@@ -70,6 +69,10 @@ font-size: 1.2rem;
 }
 
 .fa-cloud-moon {
+  color: #FFAA4C;
+}
+
+.fa-arrow-down {
   color: #FFAA4C;
 }
 
@@ -94,16 +97,24 @@ margin-top: 50px;
   box-shadow: 2px 2px 2px darkgrey;
 }
 
-.search-submit {
+.submit-search {
+  text-align: center;
+  padding: 5px;
+}
 
-  background: radial-gradient( #035397, #5089C6);
-  color: #FFAA4C;
-  margin-left: 15px;
+.search-submit {
+  color: black;
+  padding: 5px;
+  background: radial-gradient(#FFAA4C, #035397);
+  border: solid 1px whitesmoke;
+  box-shadow: 2px 2px 2px darkgrey;
+  border-radius: 5px;
 }
 
 .form-search {
   border-radius: 10px;
   background-image: url("search-background.png");
+  border: solid 3px whitesmoke;
   position: fixed;
   z-index: 998;
   bottom: 50;
@@ -111,11 +122,30 @@ margin-top: 50px;
   left: 0;
   right: 0;
   float: center;
-  height: 100vh;
+  height: 620px;
   justify-content: center;
   margin-top: 110px;
   margin-left: 10px;
   margin-right: 10px;
+  overflow-y: scroll;
+}
+
+.category-title {
+  align-self: center;
+  opacity: 1;
+  padding: 5px;
+  font-size: smaller;
+  margin-top: 0;
+  color: black;
+  background: radial-gradient(#5089C6, #035397);
+  border: solid 1px whitesmoke;
+  border-radius: 5px;
+  box-shadow: 2px 2px 2px darkgrey;
+  width: 80%;
+}
+
+.category-title:active {
+  opacity: 0.8;
 }
 
 #search-window {
@@ -123,30 +153,20 @@ margin-top: 50px;
   display: flex;
   text-align: left;
   align-content: center;
-  margin: 50px;
+  margin: 5px;
 }
 
-.check_box_tag {
-  position: absolute;
-  transform: scale(0);
+.option-block {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 0;
 }
 
-.check_box_tag + label {
-  cursor: pointer;
-  display: inline-block;
-  font-size: 0.7rem;
-  border-radius: 50rem;
-  padding: 0.1rem 0.5rem;
-  background-color: #ECEAFF;
-  color: #7E73FF;
-  border: 1px solid #7E73FF;
-  margin-right: 0.6rem;
-  margin-bottom: 0.4rem;
-}
-
-.check_box_tag:checked + label {
-  background-color: #7E73FF;
-  color: white;
+.form-block {
+  display: flex;
+  justify-content: space-around;
+  align-self: center;
 }
 
 .option-btn {
@@ -155,46 +175,23 @@ margin-top: 50px;
 
 .option-tag {
   position: absolute !important;
-  transform: scale(0) !important;
+  cursor: pointer !important;
+  transform: scale(0);
 }
 
-.option-tag.option-label {
-  cursor: pointer !important;
-  display: inline-block !important;
+.option-tag + label {
+  // display: inline-block !important;
   font-size: 0.7rem !important;
   border-radius: 50rem !important;
   padding: 0.1rem 0.5rem !important;
-  background-color: #ECEAFF !important;
-  color: #7E73FF !important;
-  border: 1px solid #7E73FF !important;
+  background: radial-gradient( #035397, #5089C6) !important;
+  color: #FFAA4C !important;
+  border: 1px solid #035397 !important;
   margin-right: 0.6rem !important;
   margin-bottom: 0.4rem !important;
 }
 
-.option-tag:checked.option-label {
-  background-color: #7E73FF !important;
+.option-tag:checked + label {
+  background: #035397 !important;
   color: white !important;
 }
-
-// .tag-selector {
-//   position: absolute;
-//   transform: scale(0);
-// }
-
-// .tag-selector + label {
-//   cursor: pointer;
-//   display: inline-block;
-//   font-size: 0.7rem;
-//   border-radius: 50rem;
-//   padding: 0.1rem 0.5rem;
-//   background-color: #ECEAFF;
-//   color: #7E73FF;
-//   border: 1px solid #7E73FF;
-//   margin-right: 0.6rem;
-//   margin-bottom: 0.4rem;
-// }
-
-// .tag-selector:checked + label {
-//   background-color: #7E73FF;
-//   color: white;
-// }

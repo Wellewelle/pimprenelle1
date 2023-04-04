@@ -2,21 +2,23 @@
  <div class="row justify-content-center">
     <div class="col-xs-12 col-sm-4 col-sm-offset-4">
       <div class="form-login">
-        <h1>Ecrivez votre propre histoire</h1>
+        <h1>Écrivez une histoire</h1>
 
-  <%= simple_form_for(@story) do |f| %>
-    <%= f.input :title, label: "Titre" %>
-    <%= f.input :summary, label: "Résumé" %>
-    <%= f.select :age,["2 à 5 ans", "5 à 8 ans", "8 à 10 ans", "10 à 12 ans", "12 ans et plus"], label: "Tranche d'âge" %>
-    <%= f.select :genre, ["Romance", "Fantaisie", "Aventure", "Amitié", "Science-Fiction", "Humour", "Conte", "Légende"], label: "Donnez un genre à votre histoire" %>
-    <%= f.select :tags, ["Fées", "Chevaliers", "Sorcières", "Magie", "Princes et Princesses", "Animaux", "Monstres", "Rêves"], label: "Ajoutez un tag" %>
-    <%= f.input :content, label: "Racontez...", :input_html => {:style => 'width: 100%', :rows => 15, class: 'response-project'} %>
-    <%= f.input :audio, as: :file %>
-    <%= f.button :submit, "Publier mon histoire", class: "btn btn-primary"%>
-  <% end %>
-  <%= link_to "Retour au profile", profile_path %>
+          <%= simple_form_for(@story) do |f| %>
+            <%= f.input :title, label: "Titre" %>
+            <%= f.input :summary, label: "Résumé" %>
+          <div id="select-inputs">
+            <div class="select-item"><%= f.select :age,["2 à 5 ans", "5 à 8 ans", "8 à 10 ans", "10 à 12 ans", "12 ans et plus"], label: "Tranche d'âge" %></div>
+            <div class="select-item"><%= f.select :genre, ["Romance", "Fantaisie", "Aventure", "Amitié", "Science-Fiction", "Humour", "Conte", "Légende"], label: "Donnez un genre à votre histoire" %></div>
+            <div class="select-item"><%= f.select :tags, ["Fées", "Chevaliers", "Sorcières", "Magie", "Princes et Princesses", "Animaux", "Monstres", "Rêves"], label: "Ajoutez un tag" %></div>
+          </div>
+            <%= f.input :content, label: "Racontez...", :input_html => {:style => 'width: 100%', :rows => 15, class: 'response-project'} %>
+            <%= f.input :audio, as: :file %>
+            <%= f.button :submit, "Publier mon histoire", class: "btn btn-primary"%>
+          <% end %>
+          <%= link_to "Retour au profile", profile_path %>
 
-        <%= button_to "Retour à la liste", stories_path, method: :get, class:"btn btn-secondary mt-2" %>
+        <%= button_to "Retour à la liste", stories_path, method: :get, class:"btn btn-secondary mt-2 retour-liste" %>
       </div>
     </div>
   </div>
