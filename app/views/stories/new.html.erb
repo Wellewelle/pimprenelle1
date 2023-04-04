@@ -13,12 +13,13 @@
             <div class="select-item"><%= f.select :tags, ["Fées", "Chevaliers", "Sorcières", "Magie", "Princes et Princesses", "Animaux", "Monstres", "Rêves"], label: "Ajoutez un tag" %></div>
           </div>
             <%= f.input :content, label: "Racontez...", :input_html => {:style => 'width: 100%', :rows => 15, class: 'response-project'} %>
+            <%= f.input :photo, as: :file %>
             <%= f.input :audio, as: :file %>
-            <%= f.button :submit, "Publier mon histoire", class: "btn btn-primary"%>
+            <%= f.button :submit, "Publier mon histoire", class: "btn btn-primary publier"%>
           <% end %>
           <%= link_to "Retour au profile", profile_path %>
 
-        <%= button_to "Retour à la liste", stories_path, method: :get, class:"btn btn-secondary mt-2" %>
+        <%= button_to "Retour à la liste", stories_path, method: :get, class:"btn btn-secondary mt-2 retour-liste" %>
       </div>
     </div>
   </div>
