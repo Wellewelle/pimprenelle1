@@ -4,6 +4,7 @@ $yellow: #F1D00A;
 $orange: #FFAA4C;
 $green: #1EDD88;
 $gray: #0E0000;
+$white: #FFFF;
 $light-gray: #F4F4F4;
 
 .yellow {
@@ -19,4 +20,8 @@ color: $yellow;
 
 .light-gray {
   color: $light-gray;
+}
+
+.white {
+  color: $white;
 }
