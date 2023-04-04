@@ -141,11 +141,12 @@
         </div>
       </div>
     </div>
+    <%= @story.photo %>
     <div class="col-12 mt-2 d-flex justify-content-center">
       <div id="tttt" class="border rounded p-2" style="width: 20rem;">
         <h5><strong>Audio:</strong></h5>
-        <% if @story.audio.attached? %>
-          <% @story.audio.each do |sound| %>
+        <% if @story.audios.attached? %>
+          <% @story.audios.each do |sound| %>
             <% audio_url = Cloudinary::Utils.cloudinary_url(sound.key, resource_type: 'video') %>
             <audio controls>
                 <source src="<%= audio_url %>" type="<%= sound.content_type %>">

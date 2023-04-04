@@ -37,13 +37,38 @@ class StoriesController < ApplicationController
 
   def create
     @story = Story.new(story_params)
-    @story.user_id = current_user
-    if @story.save
+    @story.user = current_user
+
+    if params[:story][:photo].present?
+      cloudinary_photo = Cloudinary::Uploader.upload(params[:story][:photo], resource_type: "image")
+      file = Down.open(cloudinary_photo["url"])
+      @story.photo.attach(io: file, filename: params[:story][:photo].original_filename, content_type: params[:story][:photo].content_type)
+    end
+
+    if params[:story][:audios].present?
+      params[:story][:audios][1..].each do |uploaded_audio|
+        cloudinary_audio = Cloudinary::Uploader.upload(uploaded_audio, resource_type: "video")
+        file = Down.open(cloudinary_audio["url"])
+        @story.audios.attach(io: file, filename: uploaded_audio.original_filename, content_type: uploaded_audio.content_type)
+      end
+    end
+
+    if @story.create
       redirect_to stories_path
     else
       render :new, status: :unprocessable_entity
     end
   end
+
+  # def create
+  #   @story = Story.new(story_params)
+  #   @story.user_id = current_user
+  #   if @story.save
+  #     redirect_to stories_path
+  #   else
+  #     render :new, status: :unprocessable_entity
+  #   end
+  # end
 
   def edit
     @story = Story.find(params[:id])
