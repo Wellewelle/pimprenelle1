@@ -1,6 +1,6 @@
 .form-login {
   background-color: #5089C6;
-  color: #FFAA4C;
+  color: #FFF2CC;
   border: solid 3px #FFF2CC;
   border-radius: 5px;
 }
@@ -20,17 +20,13 @@
   color: #001E6C;
 }
 
-// .select-item + label {
-
-// }
-
 .form-login input {
-  background: #FFF2CC;
+  background: whitesmoke;
   border-radius: 3px;
 }
 
 .form-login textarea {
-  background: #FFF2CC;
+  background: whitesmoke;
   border-radius: 3px;
 }
 
@@ -44,4 +40,12 @@
 .form-login #story_audio {
   background: #FFF2CC;
   border-radius: 3px;
+}
+
+.retour-liste {
+  border: solid 3px whitesmoke;
+  box-shadow: 2px 2px 2px darkgrey;
+  background-color: #FFF2CC;
+  // background: radial-gradient(#FFAA4C, #FFF2CC);
+  color: black;
 }
