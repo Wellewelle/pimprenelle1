@@ -23,6 +23,11 @@ h1 {
   margin-top: 0;
 }
 
+#picturesize {
+  object-fit: cover;
+margin-bottom: 20px;
+}
+
 .cards-index p.summaryp {
   font-size: 18px;
   line-height: 1.5;

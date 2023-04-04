@@ -43,7 +43,7 @@
 
               <div class="d-flex" style="gap: 10px;">
                 <div class= "">
-                  <span class="order-1"><%= button_to edit_story_path(story), class:"btn btn-warning mr-2", id:"editbutton" do %>
+                  <span class="order-1"><%= button_to edit_story_path(story), method: :get, class:"btn btn-warning mr-2", id:"editbutton" do %>
                    <i class="fa-solid fa-pen-nib"></i>
                   </span>
                   <% end %>
@@ -62,7 +62,7 @@
         </ol>
       </div>
       <div class="card-category-profile" style="background-color: #F0F0F0;">
-        <span style="color: #F1D00A; font-weight: bold"> Tes histoires en cours</span>
+        <span style="color: #FFAA4C; font-weight: bold"> Tes histoires en cours</span>
         <ol class="list-group list-group-numbered">
           <% @user.read_stories.includes(:story).each do |read_story| %>
           <li class="list-group-item d-flex justify-content-between align-items-center">
