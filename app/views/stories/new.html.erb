@@ -14,7 +14,7 @@
           </div>
             <%= f.input :content, label: "Racontez...", :input_html => {:style => 'width: 100%', :rows => 15, class: 'response-project'} %>
             <%= f.input :audio, as: :file %>
-            <%= f.button :submit, "Publier mon histoire", class: "btn btn-primary"%>
+            <%= f.button :submit, "Publier mon histoire", class: "btn btn-primary publier"%>
           <% end %>
           <%= link_to "Retour au profile", profile_path %>
 
