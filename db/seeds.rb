@@ -6,11 +6,11 @@ require "open-uri"
 #
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
+ReadStory.destroy_all
 Audio.destroy_all
 Favorite.destroy_all
 Story.destroy_all
 User.destroy_all
-ReadStory.destroy_all
 
 user1 = User.create!(first_name: "Ginette", last_name: "Wagon", email: "test@gmail.com", username: "lewagon", password: "1234567")
 user2 = User.create!(first_name: "John", last_name: "Doe", email: "theuser@gmail.com", username: "anonymous", password: "abcdefg")

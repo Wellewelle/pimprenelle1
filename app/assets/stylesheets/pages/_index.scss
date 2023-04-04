@@ -1,22 +1,28 @@
 // Import page-specific CSS files here.
 @import "home";
 @import "profile";
+
 .container {
   margin: auto;
 }
 
 h1 {
-  color: white;
   margin: auto;
+  margin-top: 15px;
   text-align:center;
+  color: #FFAA4C;
 }
+
 .cards-index {
-  border: 1px solid #ccc;
   border-radius: 5px;
-  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
+  box-shadow: 2px 2px 2px black;
   margin: 20px;
   padding: 20px;
-  background-color: #fff;
+  background-color: whitesmoke;
+}
+
+.card-img-top {
+  box-shadow: 1px 1px 2px darkgrey;
 }
 
 .cards-index h3 {
@@ -25,19 +31,32 @@ h1 {
 
 #picturesize {
   object-fit: cover;
-margin-bottom: 20px;
+  margin-bottom: 20px;
 }
 
 .cards-index p.summaryp {
-  font-size: 18px;
+  font-size: 14px;
   line-height: 1.5;
 }
 
 .cards-index p {
   font-size: 16px;
   line-height: 1.5;
-  color: #555;
+  color: black ;
 }
+
+#sum-container {
+  background-color: #FFF2CC;
+  color: white;
+  font-size: 5px;
+  border-radius: 5px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  padding: 10px;
+  padding-bottom: 1px;
+  box-shadow: 1px 1px 2px darkgrey;
+}
+
 
 .cards-index a {
   display: block;
@@ -50,6 +69,7 @@ margin-bottom: 20px;
   border-radius: 5px;
   padding: 10px 20px;
   text-decoration: none;
+  box-shadow: 1px 1px 2px darkgrey;
 }
 
 .cards-index a:hover {
