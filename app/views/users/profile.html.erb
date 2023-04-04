@@ -13,7 +13,7 @@
       </div>
       <div class="card-category-profile " style="background-color: #F0F0F0;">
         <span style="color: #FFAA4C;; font-weight: bold;">Tes histoires favorites</span>
-        <ol class="list-group list-group-numbered mb-5">
+        <ol class="list-group list-group-numbered mb-3">
         <% @user.favorites.each do |favorite| %>
           <li class="list-group-item d-flex justify-content-between align-items-start">
             <div class="ms-2 me-auto">
@@ -75,9 +75,29 @@
           <% end %>
         </ol>
       </div>
-      <div class="card-category-profile" style="background-color: #F0F0F0;">
-        <span style="color: #FFAA4C; font-weight: bold"><%= link_to "Raconte une nouvelle histoire", new_story_path, class: "linknewstory" %></span>
+      <div class="card-category-profile-last" style="background-color: transparent;">
+        <button type="button" class="icon">
+          <div class="cloud">
+            <div class="puff puff-1"></div>
+            <div class="puff puff-2"></div>
+            <div class="puff puff-3"></div>
+            <div class="puff puff-4"></div>
+            <div class="puff puff-5"></div>
+            <div class="puff puff-6"></div>
+            <div class="puff puff-7"></div>
+            <div class="puff puff-8"></div>
+            <div class="puff puff-9"></div>
+            <div class="puff puff-10"></div>
+            <div class="cloud-core" style="font-weight: bold; color: #FFAA4C;" ><%= link_to "Raconte une histoire", new_story_path, class: "linknewstory" %>
+              <i class="fa-solid fa-pen-to-square"></i>
+            </div>
+          </div>
+        </button>
       </div>
-    <%= link_to "Retour à la page d'accueil", root_path, class:"btn btn-primary", id:"pageretour" %>
 </div>
 </div>
+
+    <%#= link_to "Retour à la page d'accueil", root_path, class:"btn btn-primary", id:"pageretour" %>
+      <%# <div class="card-category-profile-last" style="background-color: #F0F0F0;">
+        <span style="color: #FFAA4C; font-weight: bold"><%= link_to "Racontes une histoire", new_story_path, class: "linknewstory"</span>
+      <%# </div> %>

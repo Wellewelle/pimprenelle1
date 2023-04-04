@@ -7,6 +7,11 @@
   <div class="row mb-3">
     <div class="card text-center">
       <div class="card-body" data-controller="show-content" data-show-content-id-value="<%=@story.id%>">
+        <% if @story.photo.attached? %>
+          <%= cl_image_tag @story.photo.key, crop: :fill, class:"card-img-top rounded-4", id: "picturesize", style:"height: 8rem;" %>
+        <% else %>
+          <img src="https://media.iletaitunehistoire.com//images/biblidcon_053i01.png">
+        <% end %>
         <h5 class="card-title"><%= @story.title %></h5>
         <p class="card-text">Age: <%= @story.age %></p>
         <p class="card-text">Rating: <%= @story.rating %></p>

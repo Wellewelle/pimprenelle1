@@ -13,6 +13,7 @@
             <div class="select-item"><%= f.select :tags, ["Fées", "Chevaliers", "Sorcières", "Magie", "Princes et Princesses", "Animaux", "Monstres", "Rêves"], label: "Ajoutez un tag" %></div>
           </div>
             <%= f.input :content, label: "Racontez...", :input_html => {:style => 'width: 100%', :rows => 15, class: 'response-project'} %>
+            <%= f.input :photo, as: :file %>
             <%= f.input :audio, as: :file %>
             <%= f.button :submit, "Publier mon histoire", class: "btn btn-primary"%>
           <% end %>

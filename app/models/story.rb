@@ -1,7 +1,9 @@
 class Story < ApplicationRecord
   belongs_to :user
   has_many :favorites, through: :users
+  has_many :favorites, dependent: :destroy
   has_many :read_stories, through: :users
+  has_many :read_stories, dependent: :destroy
   # has_many :favorited_by, through: :favorites, source: :user
   # validates :tags, inclusion: {in: []}
   # validates :age
