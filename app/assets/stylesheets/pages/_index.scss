@@ -2,11 +2,14 @@
 @import "home";
 @import "profile";
 
-.container {
-  margin: auto;
+body {
+  background-image: url("background.png");
+  height: 100vh;
+  width: 100vw;
 }
 
 h1 {
+  overflow-y: scroll;
   margin: auto;
   margin-top: 15px;
   text-align:center;

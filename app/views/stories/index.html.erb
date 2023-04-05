@@ -2,7 +2,7 @@
 <div class="container index-card-container">
 <h1 id="index-h1"> 1001 histoires</h1>
 
-
+    <div id="scroll-card">
       <% @stories.each do |story| %>
 
         <div class="cards-index", style="background-color: #F0F0F0">
@@ -38,15 +38,8 @@
 
         <%= link_to "Lire cette histoire", story_path(story) %>
         </div>
-    <% end %>
-</div>
-
-    <% @stories.each do |story| %>
-        <div class="d-none" data-filtres-target="<%= story.genre %>" data-filtres-target="<%= story.tags %>" data-filtres-target="<%=  story.age %>" data-filtres-target="<%= story.length %>">
-          <h3 style="color:#FFAA4C"> <%= story.title %> </h3>
-          <p class= "summaryp"> <%= story.summary %> </p>
-          <p> Durée: <%= story.length %>, Tranche d'âge: <%= story.age %> Genre: <%= story.genre %></p>
-        </div>
-    <% end %>
+      <% end %>
+    </div>
+    </div>
   </div>
 </div>
