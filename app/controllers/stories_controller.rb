@@ -41,18 +41,19 @@ class StoriesController < ApplicationController
 
     if params[:story][:photo].present?
       cloudinary_photo = Cloudinary::Uploader.upload(params[:story][:photo], resource_type: "image")
-      file = Down.open(cloudinary_photo["url"])
+      file = URI.open(cloudinary_photo["url"])
       @story.photo.attach(io: file, filename: params[:story][:photo].original_filename, content_type: params[:story][:photo].content_type)
     end
 
     if params[:story][:audios].present?
-      params[:story][:audios][1..].each do |uploaded_audio|
+      @new_array = params[:story][:audios][1..]
+      @new_array.each do |uploaded_audio|
+        puts "LOREM IPSUM DOLOR SIT AMET !!!"
         cloudinary_audio = Cloudinary::Uploader.upload(uploaded_audio, resource_type: "video")
-        file = Down.open(cloudinary_audio["url"])
+        file = URI.open(cloudinary_audio["url"])
         @story.audios.attach(io: file, filename: uploaded_audio.original_filename, content_type: uploaded_audio.content_type)
       end
     end
-
     if @story.save
       redirect_to stories_path
     else

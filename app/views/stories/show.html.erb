@@ -3,46 +3,28 @@
     background-color: white;
   }
 
-  /* The Modal (background) */
-  .modal {
-    display: none; /* Hidden by default */
-    position: fixed; /* Stay in place */
-    z-index: 1; /* Sit on top */
-    left: 0;
-    top: 0;
-    width: 100%; /* Full width */
-    height: 100%; /* Full height */
-    overflow: auto; /* Enable scroll if needed */
-    background-color: rgb(0,0,0); /* Fallback color */
-    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
-  }
-
-  /* Modal Content/Box */
-  .modal-content {
-    background-color: #fefefe;
-    margin: 15% auto; /* 15% from the top and centered */
-    padding: 20px;
-    border: 1px solid #888;
-    width: 80%; /* Could be more or less, depending on screen size */
-  }
-
-  /* The Close Button */
-  .close {
-    color: #aaa;
-    float: right;
-    font-size: 28px;
+  .card-category {
+    background-size: cover;
+    background-position: center;
+    height: 180px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-size: 24px;
     font-weight: bold;
-  }
-
-  .close:hover,
-  .close:focus {
-    color: black;
-    text-decoration: none;
-    cursor: pointer;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+    border-radius: 5px;
+    box-shadow: 0 0 15px rgba(0,0,0,0.2);
   }
 </style>
 <div class="container">
   <div class="row mb-3">
+    <%= @story.photo %>
+    <%= cl_image_tag @story.photo.key, class: "img-fluid top-image" %>
+    <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= cl_image_tag @story.photo.url %>)">
+      Breakfast
+    </div>
     <div class="card text-center">
       <div class="card-body" data-controller="show-content" data-show-content-id-value="<%=@story.id%>">
         <h5 class="card-title"><%= @story.title %></h5>
@@ -83,42 +65,6 @@
             id: "viewStory",
             data: { show_content_target: "button", action: "click->show-content#show" } %>
 
-            <button id="myBtn">Test</button>
-            <!-- The Modal -->
-            <div id="myModal" class="modal">
-              <!-- Modal content -->
-              <div class="modal-content">
-                <span class="close">&times;</span>
-                <p><%= @story.content %></p>
-              </div>
-            </div>
-            <script>
-              var modal = document.getElementById("myModal");
-
-              // Get the button that opens the modal
-              var btn = document.getElementById("myBtn");
-
-              // Get the <span> element that closes the modal
-              var span = document.getElementsByClassName("close")[0];
-
-              // When the user clicks on the button, open the modal
-              btn.onclick = function() {
-                modal.style.display = "block";
-              }
-
-              // When the user clicks on <span> (x), close the modal
-              span.onclick = function() {
-                modal.style.display = "none";
-              }
-
-              // When the user clicks anywhere outside of the modal, close it
-              window.onclick = function(event) {
-                if (event.target == modal) {
-                  modal.style.display = "none";
-                }
-              }
-            </script>
-
             <button class="btn btn-primary" data-action="click->text-vide#bionique" data-text-vide-target="btnBio"><strong>Lect</strong>ure <strong>Bion</strong>ique</button>
             <button data-text-vide-target="btnReset" data-action="click->text-vide#reset" class="btn btn-primary d-none">Lecture Non-Bionique</button>
       </div>
@@ -141,16 +87,17 @@
         </div>
       </div>
     </div>
-    <%= @story.photo %>
     <div class="col-12 mt-2 d-flex justify-content-center">
       <div id="tttt" class="border rounded p-2" style="width: 20rem;">
         <h5><strong>Audio:</strong></h5>
         <% if @story.audios.attached? %>
-          <% @story.audios.each do |sound| %>
+          <% half_audio_count = (@story.audios.count / 2.0).ceil %>
+          <% @story.audios.each_with_index do |sound, index| %>
+            <% break if index >= half_audio_count %>
             <% audio_url = Cloudinary::Utils.cloudinary_url(sound.key, resource_type: 'video') %>
             <audio controls>
-                <source src="<%= audio_url %>" type="<%= sound.content_type %>">
-                Votre navigateur ne supporte pas l'élément audio.
+              <source src="<%= audio_url %>" type="<%= sound.content_type %>">
+              Votre navigateur ne supporte pas l'élément audio.
             </audio>
           <% end %>
         <% end %>
