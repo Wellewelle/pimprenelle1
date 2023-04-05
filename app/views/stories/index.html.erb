@@ -1,9 +1,10 @@
 
-<div class="container">
-<h1> 1001 histoires</h1>
+<div class="container index-card-container">
+<h1 id="index-h1"> 1001 histoires</h1>
 
-
+    <div id="scroll-card">
       <% @stories.each do |story| %>
+
         <div class="cards-index", style="background-color: #F0F0F0">
         <% if story.photo.attached? %>
           <%= cl_image_tag story.photo.key, crop: :fill, class:"card-img-top rounded-4", id: "picturesize", style:"height: 8rem;" %>
@@ -11,7 +12,7 @@
           <img id="picturesize" class="card-img-top rounded-4" style="height: 8rem;" src="https://media.iletaitunehistoire.com//images/biblidcon_053i01.png">
         <% end %>
           <h3 style="color:#FFAA4C; text-align:center"> <strong><%= story.title %></strong> </h3>
-          <p class= "summaryp"> <%= story.summary %> </p>
+          <div id="sum-container"><p class= "summaryp"> <%= story.summary %> </p></div>
 
             <% word_count = 0 %>
             <% story.content.each_char do |word| %>
@@ -30,20 +31,15 @@
               <% story_length = story.length = "20 minutes ou plus" %>
             <% end %>
 
-          <p style="color: #3E497A"> <strong>Durée:</strong> <%= story_length %></p>
+          <p class="index-tags"><strong><%= story.genre %></strong></p>
+          <p class="index-tags">De <strong><%= story.age %></strong></p>
+          <p class="index-tags"> Durée: <strong><%= story_length %></strong></p>
+          <p class="index-tags">Avec <strong><%= story.tags %></strong></p>
 
-          <p style="color: #3E497A"><strong>Tranche d'âge:</strong> <%= story.age %> </p>
         <%= link_to "Lire cette histoire", story_path(story) %>
         </div>
-    <% end %>
-</div>
-
-    <% @stories.each do |story| %>
-        <div class="d-none" data-filtres-target="<%= story.genre %>" data-filtres-target="<%= story.tags %>" data-filtres-target="<%=  story.age %>" data-filtres-target="<%= story.length %>">
-          <h3 style="color:#FFAA4C"> <%= story.title %> </h3>
-          <p class= "summaryp"> <%= story.summary %> </p>
-          <p> Durée: <%= story.length %>, Tranche d'âge: <%= story.age %> Genre: <%= story.genre %></p>
-        </div>
-    <% end %>
+      <% end %>
+    </div>
+    </div>
   </div>
 </div>

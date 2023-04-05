@@ -1,16 +1,11 @@
-<nav data-controller="toggle">
+<nav>
   <div class="menu">
       <li class="menu-item">
-        <div id="btn-decouvrir">
 
-          <button id="decouvrir" class="btn-category" data-action="click->toggle#activation">
-            <i class="fa-solid fa-cloud-moon"></i>
-          </button>
-
-        </div>
           <div data-toggle-target="onClick" class="submenu d-none">
-          <div id="div-scroll">
+
             <div id="search-window" class="container">
+
               <%= form_with url: "/filtres", class: "form-search ", method: :get do |f| %>
 
                 <div class="mt-5 option-block">
@@ -98,7 +93,6 @@
                       <%= f.submit "Filtrer", data: { action: "click->toggle#desactivation" }, class: "search-submit" %>
                     </div>
               <% end %>
-            </div>
           </div>
           </div>
       </li>

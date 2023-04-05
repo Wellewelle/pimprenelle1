@@ -65,7 +65,7 @@ font-size: 1.2rem;
 }
 
 .fa-cloud-moon {
-  color: #FFAA4C;
+  color: #FFF2CC;
 }
 
 .fa-arrow-down {
@@ -110,6 +110,7 @@ margin-top: 50px;
 .form-search {
   border-radius: 10px;
   background-image: url("search-background.png");
+  background-size: cover;
   border: solid 3px whitesmoke;
   position: fixed;
   z-index: 998;
@@ -120,9 +121,9 @@ margin-top: 50px;
   float: center;
   height: 620px;
   justify-content: center;
-  margin-top: 110px;
-  margin-left: 10px;
-  margin-right: 10px;
+  margin-top: 16vh;
+  margin-left: 6vw;
+  margin-right: 6vw;
   overflow-y: scroll;
 }
 
