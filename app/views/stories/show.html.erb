@@ -10,7 +10,7 @@
         <% if @story.photo.attached? %>
           <%= cl_image_tag @story.photo.key, crop: :fill, class:"card-img-top rounded-4", id: "picturesize", style:"height: 8rem;" %>
         <% else %>
-          <img src="https://media.iletaitunehistoire.com//images/biblidcon_053i01.png">
+           <img id="picturesize" class="card-img-top rounded-4" style="height: 8rem;" src="https://i.pinimg.com/originals/3e/7f/51/3e7f5183864ccbb40d4d68e06dd779b0.jpg">
         <% end %>
         <h5 class="card-title"><%= @story.title %></h5>
         <p class="card-text">Age: <%= @story.age %></p>
@@ -93,7 +93,7 @@
         <%= form.submit "add to favorite", class: "btn btn-success btn-sm", id: "favorite-button"%>
       <% end %>
     <% else %>
-      <p class="alert alert-info text-center" style="position: relative; margin-top: 30px; width: 10%;">you like this story!</p>
+      <p class="alert alert-info text-center" style="position: relative; margin-top: 30px; width: 10%;">Vous aimez cette histoire!</p>
     <% end %>
   <%= button_to "Back to my profile", profile_path, method: :get, class:"mt-3 mb-5 btn btn-secondary" %>
 </div>
