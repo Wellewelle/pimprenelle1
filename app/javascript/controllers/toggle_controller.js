@@ -17,8 +17,8 @@ export default class extends Controller {
   }
 
   desactivation() {
-  console.log("désactivation hello!")
-  this.onClickTarget.classList.remove("active");
+    console.log("désactivation hello!")
+    this.onClickTarget.classList.remove("active");
   }
 
   activation(event) {
