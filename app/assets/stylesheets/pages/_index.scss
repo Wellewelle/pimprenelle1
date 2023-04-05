@@ -106,6 +106,20 @@ h1 {
   text-align: center;
   box-shadow: -1px 15px 30px -12px black;
   margin-bottom: 25px;
+
+  a {
+    display: inline-flex;
+    margin-bottom: 10px;
+    text-align: center;
+    font-size: 18px;
+    color: #fff;
+    background-color: $blue;
+    border-radius: 5px;
+    padding: 10px 20px;
+    text-decoration: none;
+    box-shadow: 1px 1px 2px darkgrey;
+    font-family: "Work Sans", "Helvetica", "sans-serif";
+  }
 }
 
 .audio-card__image {
@@ -134,7 +148,12 @@ h1 {
 
 .audio-card__unit-description {
   padding: 10px;
-  margin-bottom: 10px;
+}
+
+.audio-card__unit-length {
+  font-size: 14px;
+  color: darkgray;
+  font-style: italic;
 }
 
 .audio-card__unit-stats {
