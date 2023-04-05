@@ -118,6 +118,8 @@ GEM
     dotenv-rails (2.8.1)
       dotenv (= 2.8.1)
       railties (>= 3.2)
+    down (5.4.0)
+      addressable (~> 2.8)
     erubi (1.12.0)
     execjs (2.8.1)
     ffi (1.15.5)
@@ -290,6 +292,7 @@ DEPENDENCIES
   debug
   devise
   dotenv-rails
+  down
   font-awesome-sass (~> 6.1)
   importmap-rails
   jbuilder
