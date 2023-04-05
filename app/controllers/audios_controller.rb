@@ -1,4 +1,8 @@
 class AudiosController < ApplicationController
+  def index
+    @stories = Story.all
+  end
+
   def new
     @story = Story.find(params[:story_id])
     @audio = Audio.new

@@ -126,87 +126,123 @@ body {
 .icon div {
 	position: absolute;
 }
+
 .cloud {
-	transition: opacity 0.1s linear;
+  top: 0;
+  width: 9em;
+  height: 5.8em;
+
 }
+
+.pulse-button {
+ height: 20px;
+ width: 20px;
+ justify-content: center;
+ transform: scale(1);
+ animation: pulse 2s infinite;
+
+}
+
+@keyframes pulse {
+  0% {
+   transform: scale(0.95);
+  }
+
+  70% {
+   transform: scale(1);
+  }
+
+  100% {
+   transform: scale(0.95);
+  }
+ }
 /* Cloud */
-.cloud {
-	top: 0;
-	width: 9em;
-	height: 5.8em;
-}
 .puff, .cloud-core {
-	background-color: #fff;
+  background-color: #fff;
+
 }
 .puff {
 	border-radius: 50%;
+
 }
 .puff-1 {
 	top: 2.5em;
 	left: 0;
 	width: 3.3em;
 	height: 3.3em;
+
 }
 .puff-2 {
 	top: 1em;
 	left: 1.2em;
 	width: 3em;
 	height: 3em;
+
 }
 .puff-3 {
 	top: 0;
 	left: 3em;
 	width: 4.6em;
 	height: 4.6em;
+
 }
 .puff-4 {
-	top: 1.8em;
+  top: 1.8em;
 	left: 5em;
 	width: 4em;
 	height: 4em;
+
 }
 .puff-5 {
 	top: 2.3em;
 	left: 2.4em;
 	width: 3.5em;
 	height: 3.5em;
+
 }
 .puff-6 {
 	top: 2.3em;
 	left: 3em;
 	width: 3.5em;
 	height: 3.5em;
+
 }
 .puff-7 {
 	top: 2.4em;
 	left: 1em;
 	width: 1.8em;
 	height: 1.8em;
+
 }
 .puff-8 {
 	top: 1.2em;
 	left: 2.5em;
 	width: 2em;
 	height: 2em;
+
 }
 .puff-9 {
 	top: 1.8em;
 	left: 5.5em;
 	width: 2em;
 	height: 2em;
+
 }
 .puff-10 {
-	top: 3.6em;
+  top: 3.6em;
 	left: 3.5em;
 	width: 2.2em;
 	height: 2.2em;
+
 }
 .cloud-core {
-	top: 1.8em;
+  top: 1.8em;
 	left: 1.8em;
 	width: 5.5em;
 	height: 4em;
+
 }
+
 
 
 // Smallest device

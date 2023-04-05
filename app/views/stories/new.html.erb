@@ -12,7 +12,7 @@
             <div class="select-item"><%= f.select :genre, ["Romance", "Fantaisie", "Aventure", "Amitié", "Science-Fiction", "Humour", "Conte", "Légende"], label: "Donnez un genre à votre histoire" %></div>
             <div class="select-item"><%= f.select :tags, ["Fées", "Chevaliers", "Sorcières", "Magie", "Princes et Princesses", "Animaux", "Monstres", "Rêves"], label: "Ajoutez un tag" %></div>
           </div>
-            <%= f.input :content, label: "Racontez...", :input_html => {:style => 'width: 100%', :rows => 15, class: 'response-project'} %>
+            <%= f.input :content, label: "Racontez...", :input_html => {:style => 'width: 100%', :rows => 10, class: 'response-project'} %>
             <%= f.input :photo, as: :file %>
             <%= f.input :audios, as: :file, input_html: {multiple: true} %>
             <%= f.button :submit, "Publier mon histoire", class: "btn btn-primary publier"%>

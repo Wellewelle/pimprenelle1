@@ -1,14 +1,16 @@
 <div class="navbar navbar-light navbar-lewagon sticky-top">
-      <div class="logo w-100">
+    <div id="ours-et-logo" class="d-flex">
+      <div id="ours" class="w-25">
+        <%= image_tag "teddicon.png", class: "teddy" %>
+      </div>
+      <div class="logo w-75">
         <%= link_to "/", class: "navbar-brand" do %>
           <h1 id="logo">pimprenelle</h1>
         <% end %>
       </div>
+    </div>
       <div class="autocomplete d-flex" data-controller="autocomplete">
-        <input type="text" placeholder="Trouvez votre prochaine histoire..." data-autocomplete-target="input" data-action="input->autocomplete#search" >
+        <input type="text" placeholder="Trouvez votre prochaine histoire..." data-autocomplete-target="input" data-action="input->autocomplete#search" class="form-control" >
         <div class="autocomplete_results" data-autocomplete-target="results"></div>
       </div>
-    <%# <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button> %>
 </div>
