@@ -10,6 +10,7 @@
   align-items: center;
   background: #FFF2CC;
   width: 100%;
+  height: 15%;
   box-shadow: 0px 1px 2px black;
   padding-top: 0;
 }
@@ -41,7 +42,7 @@
 
 .teddy {
   width: 18vw;
-  margin-top: 8px;
+  margin-top: 5px;
   margin-left: 3vw;
 }
 
@@ -56,7 +57,6 @@
 .autocomplete {
   width: 100%;
   justify-content: center;
-  margin-top: 1vh;
 }
 
 [data-controller="autocomplete"] input[type="text"] {
