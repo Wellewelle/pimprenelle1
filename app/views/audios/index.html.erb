@@ -1,28 +1,8 @@
 <div class="container index-card-container">
-<h1 id="index-h1"> Des histoires à écouter</h1>
-      <% @stories.each do |story| %>
-      <% if story.photo.present? && story.audio.present? %>
-        <div class="cards-index", style="background-color: #F0F0F0">
-            <%= cl_image_tag story.photo.key, crop: :fill, class:"card-img-top rounded-4", id: "picturesize", style:"height: 8rem;" %>
-            <h3 style="color:#FFAA4C; text-align:center"> <strong><%= story.title %></strong> </h3>
-            <div id="sum-container"><p class= "summaryp"> <%= story.summary %> </p></div>
-            <p class="index-tags"><strong><%= story.genre %></strong></p>
-            <p class="index-tags">De <strong><%= story.age %></strong></p>
-            <p class="index-tags">Avec <strong><%= story.tags %></strong></p>
-
-          <% audio_url = Cloudinary::Utils.cloudinary_url(story.audio.key, resource_type: 'video') %>
-            <audio controls>
-            <source src="<%= audio_url %>" type="<%= story.audio.content_type %>">
-            Votre navigateur ne supporte pas l'élément audio.
-            </audio>
-            </div>
-            <% end %>
-      <% end %>
-
-
+  <h1 class="mb-3"> Des histoires à écouter</h1>
   <div class="wrapper">
     <% @stories.each do |story| %>
-    <% if story.photo.present? && story.audio.present? %>
+    <% if story.photo.present? && story.audios.present? %>
     <div class="audio-card">
       <div class="audio-card__image audio-card__image--background">
         <%= cl_image_tag story.photo.key, crop: :pad %>
@@ -30,11 +10,13 @@
       <div class="audio-card__unit-name"><%= story.title %></div>
       <div class="audio-card__unit-description"><%= story.summary %></div>
       <div class="audio-card__unit-tags">Tags: <strong><%= story.tags %></strong></div>
-      <% audio_url = Cloudinary::Utils.cloudinary_url(story.audio.key, resource_type: 'video') %>
+      <% story.audios.each do |audio| %>
+      <% audio_url = Cloudinary::Utils.cloudinary_url(audio.key, resource_type: 'video') %>
       <audio controls>
-      <source src="<%= audio_url %>" type="<%= story.audio.content_type %>">
-      Votre navigateur ne supporte pas l'élément audio.
+        <source src="<%= audio_url %>" type="<%= audio.content_type %>">
+        Votre navigateur ne supporte pas l'élément audio.
       </audio>
+    <% end %>
       <div class="audio-card__unit-stats audio-card__unit-stats--barbarian clearfix">
         <div class="one-third bottom-left">
           <div class="stat"><%= story.genre %></div>
