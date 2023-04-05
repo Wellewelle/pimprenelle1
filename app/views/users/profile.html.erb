@@ -1,5 +1,5 @@
 <div class="containerprofile">
-  <h1 class="# mt-4 mb-4" style="font-weight: bold; background-image: url('https://files.slack.com/files-tmb/T02NE0241-F05140AEE20-d734bcdf01/7_720.png');"></h1>
+  <%# <h1 class="# mt-4 mb-4" style="font-weight: bold;"></h1> %>
 
 
     <div class="cardsprofile">
@@ -7,12 +7,12 @@
       <div class="card-category-profile profile-first d-flex justify-content-center align-items-center", id="sizecard" style="background-color: transparent;">
         <%= image_tag "https://www.clipartmax.com/png/small/72-722180_these-are-some-cats-avatar-i-drew-during-my-free-time-black.png", class: "avatar dropdown-toggle fs-3 w-5 mr-2", id: "carditoDropdown"%>
           <div class="d-flex">
-            <p style="margin-left: 39px; margin-right: 41px; text-align: center; color: #F0F0F0; font-weight: bold; font-size: 24px;"> Hello
+            <p style="margin-left: 39px; margin-right: 41px; text-align: center; color: #F0F0F0; font-weight: bold; font-size: 24px;"> Bonjour
             <%= current_user.first_name %>!</p>
           </div>
       </div>
-      <div class="card-category-profile " style="background-color: #F0F0F0;">
-        <span style="color: #FFAA4C;; font-weight: bold;">Tes histoires favorites</span>
+      <div class="card-category-profile-first " style="background-color: #F0F0F0;">
+        <span style="color: #FFAA4C; font-weight: bold;">Tes histoires favorites</span>
         <ol class="list-group list-group-numbered mb-3">
         <% @user.favorites.each do |favorite| %>
           <li class="list-group-item d-flex justify-content-between align-items-start">
@@ -20,7 +20,7 @@
               <div class="fw-bold"><strong><%= link_to favorite.story.title, story_path(favorite.story), class: "linkstory" %></strong></div>
             </div>
             <span class="#"><%= button_to favorite_path(favorite, story_id: favorite.story.id), class: "destroybtn", method: :delete, data: { confirm: 'Are you sure?' } do %>
-              <i class="fa-solid fa-trash-can"></i>
+              <i class="fa-solid fa-trash-can" style="color: #035397;"></i>
             </span>
             <% end %>
           </li>
@@ -44,14 +44,14 @@
               <div class="d-flex" style="gap: 10px;">
                 <div class= "">
                   <span class="order-1"><%= button_to edit_story_path(story), method: :get, class:"btn btn-warning mr-2", id:"editbutton" do %>
-                   <i class="fa-solid fa-pen-nib"></i>
+                   <i class="fa-solid fa-pen-nib"style="color: #035397;"></i>
                   </span>
                   <% end %>
                 </div>
 
                 <div>
                   <span class="order-2"><%= button_to story_path(story), class: "destroybtn ml-1", method: :delete, data: { confirm: 'Are you sure?' } do %>
-                    <i class="fa-solid fa-trash-can"></i>
+                    <i class="fa-solid fa-trash-can" style="color: #035397;"></i>
                   </span>
                   <% end %>
                 </div>
@@ -88,9 +88,7 @@
             <div class="puff puff-8"></div>
             <div class="puff puff-9"></div>
             <div class="puff puff-10"></div>
-            <div class="cloud-core" style="font-weight: bold; color: #FFAA4C;" ><%= link_to "Raconte une histoire", new_story_path, class: "linknewstory" %>
-              <i class="fa-solid fa-pen-to-square"></i>
-            </div>
+            <div class="cloud-core" style="font-weight: bold; color: #FFAA4C;" ><%= link_to "Raconte une histoire", new_story_path, class: "linknewstory" %></div>
           </div>
         </button>
       </div>

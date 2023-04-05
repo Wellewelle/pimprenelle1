@@ -1,13 +1,14 @@
 body {
-  background-image: url("background.png");
+  background-image: url("backgroundmorestars.png");
   background-size: cover;
 }
 .containerprofile {
   margin: 20px;
   text-align: center;
   height: cover;
-  background-image: url("https://res.cloudinary.com/ddd2hwkfz/image/upload/v1680194513/7_epe8pm.png");
+  background-color: transparent;
   background-size: center;
+  font-family: 'Short Stack', cursive;
 }
 
 .cardsprofile {
@@ -16,19 +17,25 @@ body {
   // grid-template-rows: 1fr 1fr 1fr 1fr;
   // grid-gap: 16px;
   min-height: 12vh;
+  border-radius: 5px;
 }
+
+
 
 .card-category-profile {
   color: #035397;
   text-align: center;
   border-radius: 5px;
-  box-shadow: 0 1px 2px rgba(0,0,0,0.2);
   margin-bottom: 20px;
 }
 
 
 .card-category-profile p {
- margin-top: -40px;
+  margin-top: 10px;
+}
+
+.card-category-profile-first {
+border-radius: 5px;
 }
 
 .card-category-profile-last {
@@ -48,6 +55,8 @@ body {
 
 .linknewstory{
   color:#FFAA4C;
+  margin-left: -1px;
+  margin-bottom: -55px;
 }
 
 .btnpage {
@@ -195,7 +204,7 @@ body {
 .cloud-core {
 	top: 1.8em;
 	left: 1.8em;
-	width: 5em;
+	width: 5.5em;
 	height: 4em;
 }
 

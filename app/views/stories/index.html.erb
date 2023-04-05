@@ -9,7 +9,7 @@
         <% if story.photo.attached? %>
           <%= cl_image_tag story.photo.key, crop: :fill, class:"card-img-top rounded-4", id: "picturesize", style:"height: 8rem;" %>
         <% else %>
-          <img id="picturesize" class="card-img-top rounded-4" src="https://media.iletaitunehistoire.com//images/biblidcon_053i01.png">
+          <img id="picturesize" class="card-img-top rounded-4" style="height: 8rem;" src="https://media.iletaitunehistoire.com//images/biblidcon_053i01.png">
         <% end %>
           <h3 style="color:#FFAA4C; text-align:center"> <strong><%= story.title %></strong> </h3>
           <div id="sum-container"><p class= "summaryp"> <%= story.summary %> </p></div>
