@@ -1,7 +1,7 @@
 <div class="container index-card-container">
   <h1 class="mb-3"> Des histoires à écouter</h1>
   <div class="wrapper">
-    <% @stories.each do |story| %>
+    <% @stories.shuffle.each do |story| %>
     <% if story.photo.present? && story.audios.present? %>
     <div class="audio-card">
       <div class="audio-card__image audio-card__image--background">

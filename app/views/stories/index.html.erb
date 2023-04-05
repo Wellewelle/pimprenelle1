@@ -1,7 +1,7 @@
 <div class="container index-card-container">
   <h1 class="mb-3"> 1001 histoires</h1>
   <div class="wrapper">
-    <% @stories.each do |story| %>
+    <% @stories.shuffle.each do |story| %>
     <% if story.photo.present? %>
     <div class="audio-card">
       <div class="audio-card__image audio-card__image--background">
@@ -44,21 +44,6 @@
         </div>
       </div>
     </div>
-    <% end %>
-    <% end %>
-  </div>
-
-    <h4 class="text-center orange mt-4 child">Des histoires à découvrir</h4>
-  <div class="scroll-container">
-    <% @stories.each do |story| %>
-    <% if story.photo.present? %>
-      <div class="scroll-item card rounded-4" style="background: linear-gradient(0deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url(<%= cl_image_path(story.photo.key, crop: :fill) %>);">
-        <div class="card-body p-1">
-          <div class="title-container">
-            <p class="card-title text-center"><%= link_to story.title.upcase, story_path(story), class:"child white" %></p>
-          </div>
-        </div>
-      </div>
     <% end %>
     <% end %>
   </div>
