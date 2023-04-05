@@ -152,41 +152,41 @@ story10.save
 file = URI.open("https://res.cloudinary.com/dyi2oz7zm/image/upload/v1680261825/IMG_3139_j6nk3m.jpg")
 story1.photo.attach(io: file, filename: "IMG_3139_j6nk3m.jpg", content_type: "image/jpg")
 file = URI.open("https://res.cloudinary.com/dyi2oz7zm/video/upload/v1680095816/Float_z5pvtc.mp3")
-story1.audio.attach(io: file, filename: "Float_z5pvtc.mp3", content_type: "audio/mp3")
+story1.audios.attach(io: file, filename: "Float_z5pvtc.mp3", content_type: "audio/mp3")
 story1.save
 
 file = URI.open("https://res.cloudinary.com/dyi2oz7zm/image/upload/v1680261825/IMG_3136_gnnjcn.jpg")
 story2.photo.attach(io: file, filename: "IMG_3136_gnnjcn.jpg", content_type: "image/jpg")
 file = URI.open("https://res.cloudinary.com/dyi2oz7zm/video/upload/v1680095816/Float_z5pvtc.mp3")
-story2.audio.attach(io: file, filename: "Float_z5pvtc.mp3", content_type: "audio/mp3")
+story2.audios.attach(io: file, filename: "Float_z5pvtc.mp3", content_type: "audio/mp3")
 story2.save
 
 file = URI.open("https://res.cloudinary.com/dyi2oz7zm/image/upload/v1680261824/IMG_3135_shsmgh.jpg")
 story3.photo.attach(io: file, filename: "IMG_3135_shsmgh.jpg", content_type: "image/jpg")
 file = URI.open("https://res.cloudinary.com/dyi2oz7zm/video/upload/v1680095816/Float_z5pvtc.mp3")
-story3.audio.attach(io: file, filename: "Float_z5pvtc.mp3", content_type: "audio/mp3")
+story3.audios.attach(io: file, filename: "Float_z5pvtc.mp3", content_type: "audio/mp3")
 story3.save
 
 file = URI.open("https://res.cloudinary.com/dyi2oz7zm/image/upload/v1680261825/IMG_3137_lumsia.gif")
 story4.photo.attach(io: file, filename: "IMG_3137_lumsia.gif", content_type: "image/gif")
 file = URI.open("https://res.cloudinary.com/dyi2oz7zm/video/upload/v1680095816/Float_z5pvtc.mp3")
-story4.audio.attach(io: file, filename: "Float_z5pvtc.mp3", content_type: "audio/mp3")
+story4.audios.attach(io: file, filename: "Float_z5pvtc.mp3", content_type: "audio/mp3")
 story4.save
 
 file = URI.open("https://res.cloudinary.com/dyi2oz7zm/image/upload/v1680261820/IMG_3140_kh2cyu.jpg")
 story5.photo.attach(io: file, filename: "IMG_3140_kh2cyu.jpg", content_type: "image/jpg")
 file = URI.open("https://res.cloudinary.com/dyi2oz7zm/video/upload/v1680095816/Float_z5pvtc.mp3")
-story5.audio.attach(io: file, filename: "Float_z5pvtc.mp3", content_type: "audio/mp3")
+story5.audios.attach(io: file, filename: "Float_z5pvtc.mp3", content_type: "audio/mp3")
 story5.save
 
 file = URI.open("https://res.cloudinary.com/dyi2oz7zm/image/upload/v1680261824/IMG_3138_srkunj.jpg")
 story6.photo.attach(io: file, filename: "IMG_3138_srkunj.jpg", content_type: "image/jpg")
 file = URI.open("https://res.cloudinary.com/dyi2oz7zm/video/upload/v1680095816/Float_z5pvtc.mp3")
-story6.audio.attach(io: file, filename: "Float_z5pvtc.mp3", content_type: "audio/mp3")
+story6.audios.attach(io: file, filename: "Float_z5pvtc.mp3", content_type: "audio/mp3")
 story6.save
 
 file = URI.open("https://res.cloudinary.com/dyi2oz7zm/image/upload/v1680261684/IMG_3141_yif7zj.jpg")
 story7.photo.attach(io: file, filename: "IMG_3141_yif7zj.jpg", content_type: "image/jpg")
 file = URI.open("https://res.cloudinary.com/dyi2oz7zm/video/upload/v1680095816/Float_z5pvtc.mp3")
-story7.audio.attach(io: file, filename: "Float_z5pvtc.mp3", content_type: "audio/mp3")
+story7.audios.attach(io: file, filename: "Float_z5pvtc.mp3", content_type: "audio/mp3")
 story7.save
