@@ -14,6 +14,7 @@ class StoriesController < ApplicationController
   def show
     @story = Story.find(params[:id])
     @likes = @story.rating
+    @audios = @story.audios
   end
 
   def increment
@@ -36,13 +37,39 @@ class StoriesController < ApplicationController
 
   def create
     @story = Story.new(story_params)
-    @story.user_id = current_user.id
+    @story.user = current_user
+
+    if params[:story][:photo].present?
+      cloudinary_photo = Cloudinary::Uploader.upload(params[:story][:photo], resource_type: "image")
+      file = URI.open(cloudinary_photo["url"])
+      @story.photo.attach(io: file, filename: params[:story][:photo].original_filename, content_type: params[:story][:photo].content_type)
+    end
+
+    if params[:story][:audios].present?
+      @new_array = params[:story][:audios][1..]
+      @new_array.each do |uploaded_audio|
+        puts "LOREM IPSUM DOLOR SIT AMET !!!"
+        cloudinary_audio = Cloudinary::Uploader.upload(uploaded_audio, resource_type: "video")
+        file = URI.open(cloudinary_audio["url"])
+        @story.audios.attach(io: file, filename: uploaded_audio.original_filename, content_type: uploaded_audio.content_type)
+      end
+    end
     if @story.save
       redirect_to stories_path
     else
       render :new, status: :unprocessable_entity
     end
   end
+
+  # def create
+  #   @story = Story.new(story_params)
+  #   @story.user_id = current_user
+  #   if @story.save
+  #     redirect_to stories_path
+  #   else
+  #     render :new, status: :unprocessable_entity
+  #   end
+  # end
 
   def edit
     @story = Story.find(params[:id])
@@ -103,6 +130,6 @@ class StoriesController < ApplicationController
   private
 
   def story_params
-    params.require(:story).permit(:title, :summary, :content, :genre, :tags, :rating, :age, :length, :user_id, :photo, :audio)
+    params.require(:story).permit(:title, :summary, :content, :genre, :tags, :rating, :age, :length, :user_id, :photo, audios: [])
   end
 end

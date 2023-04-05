@@ -2,15 +2,35 @@
   #tttt {
     background-color: white;
   }
+
+  .card-category {
+    background-size: cover;
+    background-position: center;
+    height: 180px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-size: 24px;
+    font-weight: bold;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+    border-radius: 5px;
+    box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  }
 </style>
 <div class="container">
   <div class="row mb-3">
+    <%= @story.photo %>
+    <%= cl_image_tag @story.photo.key, class: "img-fluid top-image" %>
+    <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= cl_image_tag @story.photo.url %>)">
+      Breakfast
+    </div>
     <div class="card text-center">
       <div class="card-body" data-controller="show-content" data-show-content-id-value="<%=@story.id%>">
         <% if @story.photo.attached? %>
           <%= cl_image_tag @story.photo.key, crop: :fill, class:"card-img-top rounded-4", id: "picturesize", style:"height: 8rem;" %>
         <% else %>
-          <img src="https://media.iletaitunehistoire.com//images/biblidcon_053i01.png">
+           <img id="picturesize" class="card-img-top rounded-4" style="height: 8rem;" src="https://i.pinimg.com/originals/3e/7f/51/3e7f5183864ccbb40d4d68e06dd779b0.jpg">
         <% end %>
         <h5 class="card-title"><%= @story.title %></h5>
         <p class="card-text">Age: <%= @story.age %></p>
@@ -73,12 +93,16 @@
     <div class="col-12 mt-2 d-flex justify-content-center">
       <div id="tttt" class="border rounded p-2" style="width: 20rem;">
         <h5><strong>Audio:</strong></h5>
-        <% if @story.audio.attached? %>
-            <% audio_url = Cloudinary::Utils.cloudinary_url(@story.audio.key, resource_type: 'video') %>
+        <% if @story.audios.attached? %>
+          <% half_audio_count = (@story.audios.count / 2.0).ceil %>
+          <% @story.audios.each_with_index do |sound, index| %>
+            <% break if index >= half_audio_count %>
+            <% audio_url = Cloudinary::Utils.cloudinary_url(sound.key, resource_type: 'video') %>
             <audio controls>
-                <source src="<%= audio_url %>" type="<%= @story.audio.content_type %>">
-                Votre navigateur ne supporte pas l'élément audio.
+              <source src="<%= audio_url %>" type="<%= sound.content_type %>">
+              Votre navigateur ne supporte pas l'élément audio.
             </audio>
+          <% end %>
         <% end %>
       </div>
     </div>
@@ -93,7 +117,7 @@
         <%= form.submit "add to favorite", class: "btn btn-success btn-sm", id: "favorite-button"%>
       <% end %>
     <% else %>
-      <p class="alert alert-info text-center" style="position: relative; margin-top: 30px; width: 10%;">you like this story!</p>
+      <p class="alert alert-info text-center" style="position: relative; margin-top: 30px; width: 10%;">Vous aimez cette histoire!</p>
     <% end %>
   <%= button_to "Back to my profile", profile_path, method: :get, class:"mt-3 mb-5 btn btn-secondary" %>
 </div>

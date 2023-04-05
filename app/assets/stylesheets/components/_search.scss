@@ -21,9 +21,6 @@
   border-radius: 4px;
 }
 
-img.autocomplete_vignette {
-object-fit: cover;
-}
 
 .submenu {
 position: absolute;
@@ -45,41 +42,12 @@ list-style: none;
 display: block;
 }
 
-#decouvrir {
-position: fixed;
-z-index: 999;
-bottom: 50px;
-border-radius: 10px;
-border-bottom-right-radius: 0 !important;
-border-bottom-left-radius: 0 !important;
-color: #FFAA4C;
-padding: 10px;
-border-radius: 10px;
-border: none;
-text-align: center;
-background: radial-gradient( #035397, #5089C6);
-border: solid 1px whitesmoke;
-padding-left: 40px;
-padding-right: 40px;
-padding-top: 12px;
-padding-bottom: 12px;
-box-shadow: 2px 2px 6px darkgrey;
-font-size: 1.2rem;
-}
-
 .fa-cloud-moon {
   color: #FFF2CC;
 }
 
 .fa-arrow-down {
-  color: #FFAA4C;
-}
-
-#btn-decouvrir {
-justify-content: center;
-width: 100%;
-display: flex;
-margin-top: 50px;
+  color: #FFF2CC;
 }
 
 .btn-category {
@@ -102,11 +70,11 @@ margin-top: 50px;
 }
 
 .search-submit {
-  color: black;
+  color: #FFF2CC;
   padding: 5px;
-  background: radial-gradient(#FFAA4C, #035397);
-  border: solid 1px whitesmoke;
-  box-shadow: 2px 2px 2px darkgrey;
+  background: radial-gradient(#5089C6, #035397);
+  border: none;
+  box-shadow: 1px 1px 2px black;
   border-radius: 5px;
 }
 
@@ -114,7 +82,7 @@ margin-top: 50px;
   border-radius: 10px;
   background-image: url("search-background.png");
   background-size: cover;
-  border: solid 3px whitesmoke;
+  box-shadow: 3px 3px 6px black;
   position: fixed;
   z-index: 998;
   bottom: 50;
@@ -124,9 +92,9 @@ margin-top: 50px;
   float: center;
   height: 620px;
   justify-content: center;
-  margin-top: 120px;
-  margin-left: 10px;
-  margin-right: 10px;
+  margin-top: 18vh;
+  margin-left: 6vw;
+  margin-right: 6vw;
   overflow-y: scroll;
 }
 
@@ -136,11 +104,10 @@ margin-top: 50px;
   padding: 5px;
   font-size: smaller;
   margin-top: 0;
-  color: black;
+  color: #FFF2CC;
   background: radial-gradient(#5089C6, #035397);
-  border: solid 1px whitesmoke;
   border-radius: 5px;
-  box-shadow: 2px 2px 2px darkgrey;
+  box-shadow: 1px 1px 2px black;
   width: 80%;
 }
 

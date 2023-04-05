@@ -1,10 +1,45 @@
-<div class="container">
-  <% @stories.each do |story| %>
-    <div class="white-background">
-      <h3 style="color:orange"> <%= story.title %> </h3>
-      <p> <%= story.summary %> </p>
-      <p> Durée: <%= story.length %>, Tranche d'âge: <%= story.age %>, Genre: <%= story.genre %> </p>
-    <%= link_to "Read this story", story_path(story) %>
+
+
+<div class="container index-card-container">
+
+    <div id="scroll-card">
+      <% @stories.each do |story| %>
+
+        <div class="cards-index", style="background-color: #F0F0F0">
+        <% if story.photo.attached? %>
+          <%= cl_image_tag story.photo.key, crop: :fill, class:"card-img-top rounded-4", id: "picturesize", style:"height: 8rem;" %>
+        <% else %>
+          <img id="picturesize" class="card-img-top rounded-4" style="height: 8rem;" src="https://media.iletaitunehistoire.com//images/biblidcon_053i01.png">
+        <% end %>
+          <h3 style="color:#FFAA4C; text-align:center"> <strong><%= story.title %></strong> </h3>
+          <div id="sum-container"><p class= "summaryp"> <%= story.summary %> </p></div>
+
+            <% word_count = 0 %>
+            <% story.content.each_char do |word| %>
+              <% word_count += 1 %>
+            <% end %>
+              <% word_count/5 %>
+            <% if word_count <= 650 %>
+              <% story_length = story.length = "5 minutes ou moins" %>
+            <% elsif word_count = 651..1300 %>
+              <% story_length = story.length = "5 à 10 minutes" %>
+            <% elsif word_count = 1301..1950 %>
+              <% story_length = story.length = "10 à 15 minutes" %>
+            <% elsif word_count = 1951..2600 %>
+              <% story_length = story.length = "15 à 20 minutes" %>
+            <% elsif word_count >= 2600 %>
+              <% story_length = story.length = "20 minutes ou plus" %>
+            <% end %>
+
+          <p class="index-tags"><strong><%= story.genre %></strong></p>
+          <p class="index-tags">De <strong><%= story.age %></strong></p>
+          <p class="index-tags"> Durée: <strong><%= story_length %></strong></p>
+          <p class="index-tags">Avec <strong><%= story.tags %></strong></p>
+
+        <%= link_to "Lire cette histoire", story_path(story) %>
+        </div>
+      <% end %>
     </div>
-  <% end %>
+    </div>
+  </div>
 </div>

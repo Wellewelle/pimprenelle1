@@ -14,9 +14,9 @@ class FavoritesController < ApplicationController
     @favorite.story = @story
     @favorite.user = current_user
     if @favorite.save!
-      redirect_to story_path(@story), notice: "Added successfully"
+      redirect_to story_path(@story), notice: "Histoire ajoutée aux favoris"
     else
-      redirect_to story_path(@story), alert: "Sorry, something went wrong"
+      redirect_to story_path(@story), alert: "Désolé, une erreur s'est produite"
     end
   end
 
@@ -24,9 +24,9 @@ class FavoritesController < ApplicationController
     @favorite = Favorite.find(params[:id])
     @story = Story.find(params[:favorite], params[:story_id])
     if @favorite.destroy!
-      redirect_to profile_path, notice: "Removed successfully"
+      redirect_to profile_path, notice: "Histoire retirée des favoris"
     else
-      redirect_to profile_path, alert: "Sorry, something went wrong"
+      redirect_to profile_path, alert: "Désolé, une erreur s'est produite"
     end
   end
 

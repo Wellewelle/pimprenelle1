@@ -10,7 +10,10 @@
             <%= f.select :age,["2 à 5 ans", "5 à 8 ans", "8 à 10 ans", "10 à 12 ans", "12 ans et plus"], label: "Tranche d'âge" %>
             <%= f.select :genre, ["Romance", "Fantaisie", "Aventure", "Amitié", "Scien-Fiction", "Humour", "Pour s'endormir", "conte", "légende"], label: "Donnez un genre à votre histoire" %>
             <%= f.select :tags, ["Fées", "Chevaliers", "Sorcières", "Magie", "Princes et Princesses", "Animaux", "Monstres", "Rêves"], label: "Mettez un tag" %>
-            <%= f.input :content, label: "Racontez...", :input_html => {:style => 'width: 100%', :rows => 15, class: 'response-project'} %>
+
+            <%= f.input :content, label: "Racontez...", :input_html => {:style => 'width: 100%', :rows => 10, class: 'response-project'} %>
+            <%= f.input :audio %>
+
             <%= f.button :submit, "Modifier", class: "btn btn-primary"%>
           <% end %>
           <%= link_to "Back to profile", profile_path %>

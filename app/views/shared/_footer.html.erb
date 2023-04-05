@@ -3,26 +3,29 @@
       <li><a href="/"><i class="fa-solid fa-house"></i></a></li>
       <li><a href="/stories"><i class="fa-solid fa-book"></i></a></li>
       <li><a href="/audios"><i class="fa-solid fa-headphones"></i></a></li>
-      <li><a href="#"><i class="fa-solid fa-magnifying-glass"></i></a></li>
-      <div class="login">
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-          <ul class="navbar-nav me-auto">
-            <% if user_signed_in? %>
-              <li class="nav-item active">
-              <li class="nav-item dropdown">
-                <%= image_tag "https://www.clipartmax.com/png/small/72-722180_these-are-some-cats-avatar-i-drew-during-my-free-time-black.png", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
-                <div id="dropdown" class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-                  <%= link_to "My profile", profile_path, class: "dropdown-item" %>
-                  <%= link_to "Log out", destroy_user_session_path, class: "dropdown-item" %>
-                </div>
-              </li>
-            <% else %>
-              <li class="nav-item">
-                <%= link_to "Login", new_user_session_path, class: "nav-link" %>
-              </li>
-            <% end %>
-          </ul>
+      <li><a href="#" data-action="click->toggle#activation"><i class="fa-solid fa-magnifying-glass"></i></a></li>
+
+      <% if user_signed_in? %>
+        <div class="login">
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto">
+                <%# <li class="nav-item active"> %>
+                <li class="nav-item dropdown">
+                  <%= image_tag "https://www.clipartmax.com/png/small/72-722180_these-are-some-cats-avatar-i-drew-during-my-free-time-black.png", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+                  <div id="dropdown" class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+                    <%= link_to "Mon profil", profile_path, class: "dropdown-item" %>
+                    <%= link_to "Déconnexion", destroy_user_session_path, class: "dropdown-item" %>
+                  </div>
+                </li>
+            </ul>
+          </div>
+
         </div>
-      </div>
+        <% else %>
+          <li><%= link_to(new_user_session_path, class: "nav-link") do %>
+                <i class="fa-solid fa-user-astronaut"></i>
+              <% end %>
+          </li>
+        <% end %>
     </ul>
 </footer>
