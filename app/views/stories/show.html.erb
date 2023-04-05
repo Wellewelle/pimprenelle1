@@ -3,96 +3,77 @@
     background-color: white;
   }
 
-  .card-category {
-    background-size: cover;
-    background-position: center;
-    height: 180px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    color: white;
-    font-size: 24px;
-    font-weight: bold;
-    text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
-    border-radius: 5px;
-    box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  #top-image {
+    opacity: 0.3;
   }
 </style>
 <div class="container">
   <div class="row mb-3">
-    <%= @story.photo %>
-    <%= cl_image_tag @story.photo.key, class: "img-fluid top-image" %>
-    <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= cl_image_tag @story.photo.url %>)">
-      Breakfast
+    <div class="col-xs-12 col-sm-4 col-sm-offset-4">
+      <div class="card text-bg-dark rounded-4 mt-3 mb-3">
+        <%= cl_image_tag @story.photo.key, class: "card-img rounded-4", style: "height: 15rem;", id: "top-image" %>
+        <div class="card-img-overlay">
+          <h2 class="fw-bold text-center fs-1 position-absolute top-50 start-50 translate-middle"><strong><%= @story.title %></strong></h2>
+        </div>
+      </div>
     </div>
-    <div class="card text-center">
-      <div class="card-body" data-controller="show-content" data-show-content-id-value="<%=@story.id%>">
-        <% if @story.photo.attached? %>
-          <%= cl_image_tag @story.photo.key, crop: :fill, class:"card-img-top rounded-4", id: "picturesize", style:"height: 8rem;" %>
-        <% else %>
-          <img src="https://media.iletaitunehistoire.com//images/biblidcon_053i01.png">
-        <% end %>
-        <h5 class="card-title"><%= @story.title %></h5>
-        <p class="card-text">Age: <%= @story.age %></p>
-        <p class="card-text">Rating: <%= @story.rating %></p>
-
-            <% @word_count = 0 %>
-            <% @story.content.each_char do |word| %>
-              <% @word_count += 1 %>
-            <% end %>
-              <% @word_count/5 %>
-            <% if @word_count <= 650 %>
-              <% @story_length = @story.length = "5 minutes ou moins" %>
-            <% elsif @word_count = 651..1300 %>
-              <% @story_length = @story.length = "5 à 10 minutes" %>
-            <% elsif @word_count = 1301..1950 %>
-              <% @story_length = @story.length = "10 à 15 minutes" %>
-            <% elsif @word_count = 1951..2600 %>
-              <% @story_length = @story.length = "15 à 20 minutes" %>
-            <% elsif @word_count >= 2600 %>
-              <% @story_length = @story.length = "20 minutes ou plus" %>
-            <% end %>
-
-        <p class="card-text"> Durée: <%= @story_length %></p>
-
-
-
-      <div data-controller="text-vide" id="story-content">
-        <p class="card-text" id="storySpot" data-show-content-target="summary"><%= @story.summary %></p>
-         <p class="card-text d-none" style="text-align: justify;" id="storySpot" data-show-content-target="content" data-show-content-target="content" data-text-vide-target="text"><%= @story.content.gsub('.', '.<br><br>').html_safe %></p>
-        <%= link_to "Voir toute l'histoire",
-            story_read_stories_path(@story),
-            method: :post,
-            remote: true,
-            class: "btn btn-primary",
-            id: "viewStory",
-            data: { show_content_target: "button", action: "click->show-content#show" } %>
-
-            <button class="btn btn-primary" data-action="click->text-vide#bionique" data-text-vide-target="btnBio"><strong>Lect</strong>ure <strong>Bion</strong>ique</button>
-            <button data-text-vide-target="btnReset" data-action="click->text-vide#reset" class="btn btn-primary d-none">Lecture Non-Bionique</button>
+  </div>
+  <div class="row mb-3">
+    <div class="col-xs-12 col-sm-4 col-sm-offset-4">
+      <ul class="list-group list-group-horizontal mb-3 rounded-5">
+        <li class="list-group-item"><p class="card-text"><strong>Age </strong><%= @story.age %></p></li>
+        <li class="list-group-item"><p class="card-text"><strong>Rating </strong><%= @story.rating %></p></li>
+          <% @word_count = 0 %>
+          <% @story.content.each_char do |word| %>
+            <% @word_count += 1 %>
+          <% end %>
+            <% @word_count/5 %>
+          <% if @word_count <= 650 %>
+            <% @story_length = @story.length = "5 minutes ou moins" %>
+          <% elsif @word_count = 651..1300 %>
+            <% @story_length = @story.length = "5 à 10 minutes" %>
+          <% elsif @word_count = 1301..1950 %>
+            <% @story_length = @story.length = "10 à 15 minutes" %>
+          <% elsif @word_count = 1951..2600 %>
+            <% @story_length = @story.length = "15 à 20 minutes" %>
+          <% elsif @word_count >= 2600 %>
+            <% @story_length = @story.length = "20 minutes ou plus" %>
+          <% end %>
+        <li class="list-group-item"><p class="card-text"><strong>Durée </strong><%= @story_length %></p></li>
+      </ul>
+      <div class="card text-center rounded-4">
+        <div class="card-body" data-controller="show-content" data-show-content-id-value="<%=@story.id%>">
+          <div data-controller="text-vide" id="story-content">
+            <p class="card-text" id="storySpot" data-show-content-target="summary"><%= @story.summary %></p>
+            <p class="card-text d-none" style="text-align: justify;" id="storySpot" data-show-content-target="content" data-show-content-target="content" data-text-vide-target="text"><%= @story.content.gsub('.', '.<br><br>').html_safe %></p>
+            <div class="btn-group w-75" role="group" aria-label="Basic example">
+              <%= link_to "Voir toute l'histoire", story_read_stories_path(@story), method: :post, remote: true, class: "btn btn-primary", id: "viewStory", data: { show_content_target: "button", action: "click->show-content#show" } %>
+              <button class="btn btn-primary" data-action="click->text-vide#bionique" data-text-vide-target="btnBio"><strong>Lect</strong>ure <strong>Bion</strong>ique</button>
+              <button data-text-vide-target="btnReset" data-action="click->text-vide#reset" class="btn btn-primary d-none">Lecture Non-Bionique</button>
+            </div>
+          </div>
+        </div>
       </div>
-      </div>
-
     </div>
   </div>
 
   <div class="row mt-3 mb-3">
-    <div class="col-12 mb-2">
-      <div class="card p-3 w-auto">
+    <div class="col-12 mb-2 d-flex justify-content-center">
+      <div class="card p-3 rounded-4" style="width: 20rem;">
         <h5 class="mb-2 text-center">Donne ton avis 😊</h5>
         <div class="d-flex justify-content-evenly" data-controller="edit-rating">
             <%= form_with url: increment_story_path(@story), data: {edit_rating_target: "upbtn", action: "submit->edit-rating#increment"}, method: :post do |f| %>
-              <%= f.submit "UP", class:"btn btn-primary" %>
+              <%= f.submit "Aime", class:"btn btn-primary" %>
             <% end %>
             <%= form_with url: decrease_story_path(@story), data: {edit_rating_target: "dwnbtn", action: "submit->edit-rating#decrease"}, method: :post do |f| %>
-              <%= f.submit "DWN", class:"btn btn-primary" %>
+              <%= f.submit "Aime pas", class:"btn btn-primary" %>
             <% end %>
         </div>
       </div>
     </div>
     <div class="col-12 mt-2 d-flex justify-content-center">
-      <div id="tttt" class="border rounded p-2" style="width: 20rem;">
-        <h5><strong>Audio:</strong></h5>
+      <div id="tttt" class="border rounded-4 p-2" style="width: 20rem;" data-controller="add-audio">
+        <h5><strong>Audios:</strong></h5>
         <% if @story.audios.attached? %>
           <% half_audio_count = (@story.audios.count / 2.0).ceil %>
           <% @story.audios.each_with_index do |sound, index| %>
@@ -103,21 +84,33 @@
               Votre navigateur ne supporte pas l'élément audio.
             </audio>
           <% end %>
+        <% else %>
+          <h5 class="text-center">Il n'y a pas d'audios</h5>
+        <% end %>
+
+        <button type="button" class="btn btn-info rounded-circle" data-add-audio-target="addmore" data-action="click->add-audio#showform"><i class="fa-solid fa-circle-plus" style="color: #000000;"></i></button>
+        <%= simple_form_for :audios, html: {class: "d-none", data: {add_audio_target: "content", action: "submit->add-audio#insert"}} do |f| %>
+          <%= f.input :audios, as: :file, input_html: { multiple: true } %>
+          <%= f.button :submit, class: "btn btn-primary btn-sm" %>
         <% end %>
       </div>
     </div>
   </div>
-
-  <%= button_to "Retour", stories_path, method: :get, class:"mt-2 ms-2 mb-3 btn btn-primary" %>
-
+  <div class="d-flex justify-content-center">
   <% favorite = Favorite.find_by(story: @story, user: current_user) %>
     <% if favorite == nil %>
       <%= form_with(url: favorites_path, method: :post, local: true) do |form| %>
         <%= form.hidden_field :story_id, value: @story.id, name: 'favorite[story_id]'%>
-        <%= form.submit "add to favorite", class: "btn btn-success btn-sm", id: "favorite-button"%>
+        <%= form.submit "Ajouter aux favoris", class: "btn btn-success btn-sm", id: "favorite-button"%>
       <% end %>
     <% else %>
-      <p class="alert alert-info text-center" style="position: relative; margin-top: 30px; width: 10%;">you like this story!</p>
+      <p class="alert alert-info text-center" style="position: relative; margin-top: 30px; width: 10%;">Tu as aimé cette histoire!</p>
     <% end %>
-  <%= button_to "Back to my profile", profile_path, method: :get, class:"mt-3 mb-5 btn btn-secondary" %>
+  </div>
+  <div class="d-flex justify-content-center">
+    <div class="btn-group w-75 mt-3 mb-5" role="group" aria-label="Basic mixed styles example">
+      <%= button_to "Retour vers les histoires", stories_path, method: :get, class:"btn btn-primary" %>
+      <%= button_to "Retour vers le profile", profile_path, method: :get, class:"btn btn-secondary" %>
+    </div>
+  </div>
 </div>
