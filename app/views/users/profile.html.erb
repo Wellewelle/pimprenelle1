@@ -12,7 +12,7 @@
           </div>
       </div>
       <div class="card-category-profile-first " style="background-color: #F0F0F0;">
-        <span style="color: #FFAA4C; font-weight: bold;">Tes histoires favorites</span>
+        <span style="color: #FFAA4C; font-weight: bold;">Vos histoires favorites</span>
         <ol class="list-group list-group-numbered mb-3">
         <% @user.favorites.each do |favorite| %>
           <li class="list-group-item d-flex justify-content-between align-items-start">
@@ -28,7 +28,7 @@
         </ol>
       </div>
       <div class="card-category-profile" style="background-color: #F0F0F0;">
-        <span style="color: #FFAA4C; font-weight: bold"> Tes histoires crées</span>
+        <span style="color: #FFAA4C; font-weight: bold"> Vos histoires crées</span>
         <ol class="list-group list-group-numbered">
         <% @user.stories.each do |story| %>
           <li class="list-group-item d-flex justify-content-between align-items-center">
@@ -62,7 +62,7 @@
         </ol>
       </div>
       <div class="card-category-profile" style="background-color: #F0F0F0;">
-        <span style="color: #FFAA4C; font-weight: bold"> Tes histoires en cours</span>
+        <span style="color: #FFAA4C; font-weight: bold"> Vos histoires en cours</span>
         <ol class="list-group list-group-numbered">
           <% @user.read_stories.includes(:story).each do |read_story| %>
           <li class="list-group-item d-flex justify-content-between align-items-center">
@@ -76,7 +76,7 @@
         </ol>
       </div>
       <div class="card-category-profile-last" style="background-color: transparent;">
-        <button type="button" class="icon">
+        <button type="button" class="icon d-flex pulse-button">
           <div class="cloud">
             <div class="puff puff-1"></div>
             <div class="puff puff-2"></div>
@@ -88,7 +88,7 @@
             <div class="puff puff-8"></div>
             <div class="puff puff-9"></div>
             <div class="puff puff-10"></div>
-            <div class="cloud-core" style="font-weight: bold; color: #FFAA4C;" ><%= link_to "Raconte une histoire", new_story_path, class: "linknewstory" %></div>
+            <div class="cloud-core" style="font-weight: bold; color: #FFAA4C;" ><%= link_to "Raconter une histoire", new_story_path, class: "linknewstory" %></div>
           </div>
         </button>
       </div>
