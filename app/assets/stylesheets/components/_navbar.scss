@@ -5,10 +5,13 @@
 }
 
 .navbar-lewagon {
+  position: fixed;
   z-index: 999;
   align-items: center;
   background: #FFF2CC;
   width: 100%;
+  box-shadow: 0px 1px 2px black;
+  padding-top: 0;
 }
 
 .navbar-brand {
@@ -32,16 +35,28 @@
   height: 100%;
 }
 
+#ours-et-logo {
+  flex-grow: 0.5;
+}
+
+.teddy {
+  width: 18vw;
+  margin-top: 8px;
+  margin-left: 3vw;
+}
+
 #logo {
   text-align: center;
   font-family: 'Send Flowers', cursive;
   color: #FFAA4C;
   font-size: 45px;
+  overflow-y: clip !important;
 }
 
 .autocomplete {
   width: 100%;
   justify-content: center;
+  margin-top: 1vh;
 }
 
 [data-controller="autocomplete"] input[type="text"] {
