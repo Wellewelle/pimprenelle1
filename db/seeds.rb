@@ -137,56 +137,575 @@ story7 = Story.create!(title: "Le Viking Aux Cent Cornes", summary: "L'ostentati
 story8 = Story.create!(title: "La maison de l'escargot", summary: "Un petit escargot trouve une solution à ses problèmes de randonnée grâce à une découverte surprenante", content: "Il était une fois un pauvre escargot qui souffrait beaucoup à chaque fois qu'il partait en randonnée, car il avait du mal à suivre le rythme de ses compagnons. La coccinelle était aussi rapide qu'une souris, le mille-pattes, avec ses mille pattes, ignorait la fatigue, le scarabée prenait même le temps de faire des escapades vers les fleurs. Le pauvre petit escargot, lui, peinait, soufflait, transpirait tout seul et loin derrière, abandonné par les autres qui n'avaient plus la patience de l'attendre. Quand le petit escargot parvenait enfin à rejoindre le groupe, les autres petites bêtes s'étaient déjà bien reposées, avaient bien mangé et après avoir bien joué, avaient préparé le campement et dormaient depuis bien longtemps. Et comme il n'y avait plus de place, le petit escargot devait coucher à la belle étoile. Mais chaque matin, obstiné, il reprenait la route, espérant toujours rattraper ses amis. Pour ne pas s'ennuyer pendant le parcours, il sifflotait, regardait à droite et à gauche, saluait les petites bêtes qu'il rencontrait. Un jour qu'il avançait le nez en l'air pour admirer le vol d'un beau papillon, le petit escargot buta sur une surface dure qui lui fit perdre l'équilibre. « Ça alors, mais qu'est-ce que c'est ? » se demanda-t-il car il n'avait jamais vu une chose pareille (ce qui est normal puisqu'il s'agissait d'un coquillage perdu par un enfant qui l'avait ramené du bord de mer.) D'un naturel curieux, et comme la chose ne bougeait pas, le petit escargot alla voir de plus près et inspecta l'intérieur attentivement. En y pénétrant, il s'aperçut qu'elle était parfaitement à sa taille et de plus très légère à porter. « C'est super ! », jubila alors le petit escargot, « je vais m'en faire une maison. » Et il se mit en route, le coquillage sur le dos. Quand il arriva au campement, tout le monde dormait déjà mais le lendemain matin, en sortant de son coquillage, le petit escargot remporta un très grand succès et toutes les petites bêtes ressentaient une pointe d'envie. Ainsi, le petit escargot n'avait plus besoin de se construire une maison chaque nuit, il ne craignait plus ni le grand soleil, ni la pluie et pouvait faire une sieste quand il le voulait. Les petites bêtes de la forêt cherchèrent alors toutes une maison à se mettre sur le dos, mais en fin de compte il n'y en eut que pour l'escargot.", genre: "Aventure", age: "5 à 8 ans", tags: "Escargot, Amis, Nature", rating: 3, user_id: user2.id)
 file = URI.open("https://res.cloudinary.com/ddd2hwkfz/image/upload/v1680616618/Pimprenelle/biblidhis_027i01_s1p2et.png")
 story8.photo.attach(io: file, filename: "biblidhis_027i01_s1p2et.png", content_type: "image/jpg")
+file = URI.open("https://res.cloudinary.com/dyi2oz7zm/video/upload/v1680095816/Float_z5pvtc.mp3")
+story8.audio.attach(io: file, filename: "Float_z5pvtc.mp3", content_type: "audio/mp3")
 story8.save
 
 story9 = Story.create!(title: "Roland", summary: "Roland découvre qu'il peut donner vie à ses dessins et envoie un zèbre et des ours en classe", content: "Roland était en retard. « Va au coin », dit le maître, et Roland obéit. Mais, au coin, il n'y avait rien à faire, alors Roland prit son crayon et dessina un tigre allongé sur le mur. Puis il dit : « CRACK » et le tigre devint vivant. Le tigre s'étira, se déroula de tout son long et dit bonjour au maître très poliment. Le maître répondit : « Il n'y a pas de place pour toi ici. » Il ouvrit la porte et, sans un mot de plus, le tigre sortit. « Récréation, tout le monde dehors maintenant », dit le maître. « Sauf toi, Roland. Tu restes ici. Et attention, plus de « CRACK », je te prie ». Roland resta seul dans la classe. Comme il s'ennuyait, il prit son cahier, dessina un zèbre, arracha la page et la colla à la fenêtre. Dans la cour, les autres garçons faisaient une bataille de boules de neige. Une des boules frappa la vitre, le verre fit « CRACK » en se cassant, et le zèbre devint vivant. D'un bond il fut dans la cour et d'un bond il franchit le mur. Le maître n'avait rien vu car il avait reçu une boule de neige dans l'œil. Heureusement, pas très dure. Après la récréation, la classe reprit. Dehors, le vent soufflait fort. Par la vitre cassée, la neige entrait à gros flocons et s'entassait sur le plancher. Roland avait oublié ce que le maître lui avait dit. Il dessina donc vingt sapins, trois ours noirs, deux ours bruns et un ruisseau et dit : « CRACK ! CRACK ! CRACK ! CRACK ! ». Le ruisseau se mit à couler et les ours à marcher sur la neige du plancher ! Alors le maître dit aux enfants de rentrer chez eux car il faisait vraiment trop froid.", genre: "Fantaisie", age: "5 à 8 ans", tags: "Dessin, Animaux, Ecole", rating: 4, user_id: user2.id)
 file = URI.open("https://res.cloudinary.com/ddd2hwkfz/image/upload/v1680622995/Pimprenelle/biblidhis_011i01_ksfkgy.png")
 story9.photo.attach(io: file, filename: "biblidhis_011i01_ksfkgy.png", content_type: "image/jpg")
+file = URI.open("https://res.cloudinary.com/dyi2oz7zm/video/upload/v1680095816/Float_z5pvtc.mp3")
+story9.audio.attach(io: file, filename: "Float_z5pvtc.mp3", content_type: "audio/mp3")
 story9.save
 
 story10 = Story.create!(title: "L'hermine et l'hiver", summary: "L'hermine se promène seule en hiver, mais découvre que son pelage blanc la protège des prédateurs", content: "Un jour d'hiver, alors que la forêt était recouverte d'un beau manteau blanc, l'hermine se promenait pendant que ses amis dormaient en attendant le retour du printemps. « Que vais-je bien pouvoir faire, se demanda-t-elle, je m'ennuie toute seule » Elle essaya bien de réveiller quelques-uns de ses amis : l'écureuil, le hérisson, mais elle n'y parvint pas. « Bon, se dit-elle, puisque tout le monde dort et même Hector, le grand ours, je vais en profiter pour le taquiner. » Elle s'approcha doucement du museau d'Hector et souffla très fort. Celui-ci, qui ne dormait que d'un œil, poussa un grognement de mécontentement si impressionnant que l'hermine devint blanche de peur et s'enfuit à toutes pattes. Cependant, en se promenant ainsi le poil tout blanc, elle s'aperçut qu'on ne la remarquait pas et pouvait facilement échapper au loup et au renard. C'est pourquoi maintenant l'hermine garde son manteau blanc l'hiver en se faisant peur toute seule.", genre: "Aventure", age: "2 à 5 ans", tags: "Animaux, Hiver, Couleurs", rating: 3, user_id: user2.id)
 file = URI.open("https://res.cloudinary.com/ddd2hwkfz/image/upload/v1680622976/Pimprenelle/biblidhis_028i01_vajy4u.png")
 story10.photo.attach(io: file, filename: "biblidhis_028i01_vajy4u.png", content_type: "image/jpg")
+file = URI.open("https://res.cloudinary.com/dyi2oz7zm/video/upload/v1680095816/Float_z5pvtc.mp3")
+story10.audio.attach(io: file, filename: "Float_z5pvtc.mp3", content_type: "audio/mp3")
 story10.save
+
+story11 = Story.create!(title: "Le Chêne et le Roseau", summary: "Le Chêne se moque du Roseau, mais leur résistance face à la tempête révèle leur vrai caractère.", content: "Le Chêne un jour dit au Roseau :
+  Vous avez bien sujet d'accuser la Nature ;
+  Un Roitelet pour vous est un pesant fardeau.
+  Le moindre vent qui d'aventure
+  Fait rider la face de l'eau,
+  Vous oblige à baisser la tête :
+  Cependant que mon front, au Caucase pareil,
+  Non content d'arrêter les rayons du Soleil,
+  Brave l'effort de la tempête.
+  Tout vous est Aquilon, tout me semble Zéphir.
+  Encor si vous naissiez à l'abri du feuillage
+  Dont je couvre le voisinage,
+  Vous n'auriez pas tant à souffrir :
+  Je vous défendrais de l'orage ;
+  Mais vous naissez le plus souvent
+  Sur les humides bords des Royaumes du vent.
+  La nature envers vous me semble bien injuste.
+  — Votre compassion, lui répondit l'Arbuste,
+  Part d'un bon naturel ; mais quittez ce souci.
+  Les vents me sont moins qu'à vous redoutables.
+  Je plie, et ne romps pas. Vous avez jusqu'ici
+  Contre leurs coups épouvantables
+  Résisté sans courber le dos ;
+  Mais attendons la fin. Comme il disait ces mots
+  Du bout de l'horizon accourt avec furie
+  Le plus terrible des enfants
+  Que le Nord eût porté jusque-là dans ses flancs.
+  L'Arbre tient bon ; le Roseau plie.
+  Le vent redouble ses efforts,
+  Et fait si bien qu'il déracine
+  Celui de qui la tête au Ciel était voisine,
+  Et dont les pieds touchaient à l'Empire des Morts.", genre: "Conte", age: "5 à 8 ans", tags: "Nature, Tempête, Résilience", rating: 4, user_id: user1.id)
+
+file = URI.open("https://res.cloudinary.com/ddd2hwkfz/image/upload/v1680681734/Pimprenelle/biblidpoe_002i01_tfnno1.png")
+story11.photo.attach(io: file, filename: "biblidpoe_002i01_tfnno1.png", content_type: "image/jpg")
+file = URI.open("https://res.cloudinary.com/dyi2oz7zm/video/upload/v1680095816/Float_z5pvtc.mp3")
+story11.audio.attach(io: file, filename: "Float_z5pvtc.mp3", content_type: "audio/mp3")
+story11.save
+
+story12 = Story.create!(
+  title: "Le Hareng Saur",
+  summary: "Une histoire simple et amusante mettant en fureur les gens graves et amusant les enfants petits",
+  content: "Il était un grand mur blanc — nu, nu, nu,
+  Contre le mur une échelle — haute, haute, haute,
+  Et, par terre, un hareng saur — sec, sec, sec.
+  Il vient, tenant dans ses mains — sales, sales, sales,
+  Un marteau lourd, un grand clou — pointu, pointu, pointu,
+  Un peloton de ficelle — gros, gros, gros.
+  Alors il monte à l'échelle — haute, haute, haute,
+  Et plante le clou pointu — toc, toc, toc,
+  Tout en haut du grand mur blanc — nu, nu, nu.
+  Il laisse aller le marteau — qui tombe, qui tombe, qui tombe,
+  Attache au clou la ficelle — longue, longue, longue,
+  Et, au bout, le hareng saur — sec, sec, sec.
+  Il redescend de l'échelle — haute, haute, haute,
+  L'emporte avec le marteau — lourd, lourd, lourd ;
+  Et puis, il s'en va ailleurs — loin, loin, loin.
+  Et, depuis, le hareng saur — sec, sec, sec,
+  Au bout de cette ficelle — longue, longue, longue,
+  Très lentement se balance — toujours, toujours, toujours.",
+  genre: "Humour",
+  age: "2 à 5 ans",
+  tags: "Nourriture, Animaux, Farce",
+  rating: 4,
+  user_id: user2.id
+)
+
+file = URI.open("https://res.cloudinary.com/ddd2hwkfz/image/upload/v1680681886/Pimprenelle/biblidpoe_006i01_c5xnff.png")
+story12.photo.attach(io: file, filename: "biblidpoe_006i01_c5xnff.png", content_type: "image/jpg")
+file = URI.open("https://res.cloudinary.com/dyi2oz7zm/video/upload/v1680095816/Float_z5pvtc.mp3")
+story12.audio.attach(io: file, filename: "Float_z5pvtc.mp3", content_type: "audio/mp3")
+story12.save
+
+
+story13 = Story.create!(title: "Le Renard et le Bouc",
+  summary: "La ruse peut se retourner contre soi. Réfléchis avant d'agir.",
+  content: "Capitaine Renard allait de compagnie
+  Avec son ami Bouc des plus haut encornés.
+  Celui-ci ne voyait pas plus loin que son nez ;
+  L'autre était passé maître en fait de tromperie.
+  La soif les obligea de descendre en un puits.
+  Là chacun d'eux se désaltère.
+  Après qu'abondamment tous deux en eurent pris,
+  Le Renard dit au Bouc : Que ferons-nous, compère ?
+  Ce n'est pas tout de boire, il faut sortir d'ici.
+  Lève tes pieds en haut, et tes cornes aussi :
+  Mets-les contre le mur. Le long de ton échine
+  Je grimperai premièrement ;
+  Puis sur tes cornes m'élevant,
+  A l'aide de cette machine,
+  De ce lieu-ci je sortirai,
+  Après quoi je t'en tirerai.
+  — Par ma barbe, dit l'autre, il est bon ; et je loue
+  Les gens bien sensés comme toi.
+  Je n'aurais jamais, quant à moi,
+  Trouvé ce secret, je l'avoue.
+  Le Renard sort du puits, laisse son compagnon,
+  Et vous lui fait un beau sermon
+  Pour l'exhorter à patience.
+  Si le ciel t'eût, dit-il, donné par excellence
+  Autant de jugement que de barbe au menton,
+  Tu n'aurais pas, à la légère,
+  Descendu dans ce puits. Or, adieu, j'en suis hors.
+  Tâche de t'en tirer, et fais tous tes efforts :
+  Car pour moi, j'ai certaine affaire
+  Qui ne me permet pas d'arrêter en chemin.
+  En toute chose il faut considérer la fin.",
+  genre: "Conte",
+  age: "5 à 8 ans",
+  tags: "Animaux, Ruse, Morale",
+  rating: 4,
+  user_id: user1.id)
+
+
+file = URI.open("https://res.cloudinary.com/ddd2hwkfz/image/upload/v1680681982/Pimprenelle/biblidpoe_020i01_hprpds.png")
+story13.photo.attach(io: file, filename: "biblidpoe_020i01_hprpds.png", content_type: "image/jpg")
+file = URI.open("https://res.cloudinary.com/dyi2oz7zm/video/upload/v1680095816/Float_z5pvtc.mp3")
+story13.audio.attach(io: file, filename: "Float_z5pvtc.mp3", content_type: "audio/mp3")
+story13.save
+
+
+story14 = Story.create!(
+  title: "Mon lit est un bateau",
+  summary: "La nuit, un petit matelot prend la mer dans son lit, direction l'inconnu.",
+  content: "Mon lit est un petit bateau ;
+  Nounou m'aide à y embarquer,
+  Me met l'habit de matelot,
+  Me pousse dans l'obscurité.
+
+  De nuit, à bon bord, je dérive,
+  Salue mes amis sur la rive ;
+  Je ferme les yeux, vogue au loin,
+  Et ne vois ni n'entends plus rien.
+
+  Parfois j'emporte des objets
+  Qu'emportent les bons matelots
+  Peut-être un morceau de gâteau,
+  Ou bien encore quelques jouets.
+
+  Toute la nuit nous dérivons ;
+  Mais quand le jour revient briller,
+  Rentré dans ma chambre, au ponton
+  Je vois mon vaisseau amarré.",
+  genre: "Aventure",
+  age: "2 à 5 ans",
+  tags: "Mer, Enfance, Imagination",
+  rating: 4,
+  user_id: user2.id
+)
+
+file = URI.open("https://res.cloudinary.com/ddd2hwkfz/image/upload/v1680682130/Pimprenelle/biblidpoe_007i01_ytl5dg.png")
+story14.photo.attach(io: file, filename: "biblidpoe_007i01_ytl5dg.png", content_type: "image/jpg")
+file = URI.open("https://res.cloudinary.com/dyi2oz7zm/video/upload/v1680095816/Float_z5pvtc.mp3")
+story14.audio.attach(io: file, filename: "Float_z5pvtc.mp3", content_type: "audio/mp3")
+story14.save
+
+story15 = Story.create!(
+  title: "Le Héron",
+  summary: "Un héron trop exigeant finit par se retrouver affamé. Ne soyons pas trop difficiles dans nos choix.",
+  content: "Un jour, sur ses longs pieds, allait je ne sais où,
+Le Héron au long bec emmanché d'un long cou.
+Il côtoyait une rivière.
+L'onde était transparente ainsi qu'aux plus beaux jours ;
+Ma commère la carpe y faisait mille tours
+Avec le brochet son compère.
+Le Héron en eût fait aisément son profit :
+Tous approchaient du bord, l'oiseau n'avait qu'à prendre ;
+Mais il crut mieux faire d'attendre
+Qu'il eût un peu plus d'appétit.
+Il vivait de régime, et mangeait à ses heures.
+Après quelques moments l'appétit vint : l'oiseau
+S'approchant du bord vit sur l'eau
+Des Tanches qui sortaient du fond de ces demeures.
+Le mets ne lui plut pas ; il s'attendait à mieux
+Et montrait un goût dédaigneux
+Comme le rat du bon Horace.
+Moi des Tanches ? dit-il, moi Héron que je fasse
+Une si pauvre chère ? Et pour qui me prend-on ?
+La Tanche rebutée il trouva du goujon.
+Du goujon ! c'est bien là le dîner d'un Héron !
+J'ouvrirais pour si peu le bec ! aux Dieux ne plaise !
+Il l'ouvrit pour bien moins : tout alla de façon
+Qu'il ne vit plus aucun poisson.
+La faim le prit, il fut tout heureux et tout aise
+De rencontrer un limaçon.
+Ne soyons pas si difficiles :
+Les plus accommodants ce sont les plus habiles :
+On hasarde de perdre en voulant trop gagner,
+Gardez-vous de rien dédaigner ;
+Surtout quand vous avez à peu près votre compte.
+Bien des gens y sont pris ; ce n'est pas aux Hérons
+Que je parle ; écoutez, humains, un autre conte ;
+Vous verrez que chez vous j'ai puisé ces leçons.",
+  genre: "Conte",
+  age: "5 à 8 ans",
+  tags: "Animaux, Morale, Choix",
+  rating: 4,
+  user_id: user1.id
+)
+
+file = URI.open("https://res.cloudinary.com/ddd2hwkfz/image/upload/v1680682281/Pimprenelle/biblidpoe_012i01_movfn1.png")
+story15.photo.attach(io: file, filename: "biblidpoe_012i01_movfn1.png", content_type: "image/jpg")
+file = URI.open("https://res.cloudinary.com/dyi2oz7zm/video/upload/v1680095816/Float_z5pvtc.mp3")
+story15.audio.attach(io: file, filename: "Float_z5pvtc.mp3", content_type: "audio/mp3")
+story15.save
+
+
+story16 = Story.create!(title: "Le Petit Poisson et le Pêcheur",
+  summary: "Un jeune poisson est capturé par un pêcheur, qui refuse de le libérer malgré ses supplications.",
+  content: "Petit poisson deviendra grand,
+Pourvu que Dieu lui prête vie.
+Mais le lâcher en attendant,
+Je tiens pour moi que c'est folie ;
+Car de le rattraper il n'est pas trop certain.
+Un Carpeau qui n'était encore que fretin
+Fut pris par un Pêcheur au bord d'une rivière.
+Tout fait nombre, dit l'homme en voyant son butin ;
+Voilà commencement de chère et de festin :
+Mettons-le en notre gibecière.
+Le pauvre Carpillon lui dit en sa manière :
+Que ferez-vous de moi ? je ne saurais fournir
+Au plus qu'une demi-bouchée ;
+Laissez-moi Carpe devenir :
+Je serai par vous repêchée.
+Quelque gros Partisan m'achètera bien cher,
+Au lieu qu'il vous en faut chercher
+Peut-être encor cent de ma taille
+Pour faire un plat. Quel plat ? croyez-moi ; rien qui vaille.
+— Rien qui vaille ? Eh bien soit, repartit le Pêcheur ;
+Poisson, mon bel ami, qui faites le Prêcheur,
+Vous irez dans la poêle ; et vous avez beau dire,
+Dès ce soir on vous fera frire.
+Un tien vaut, ce dit-on, mieux que deux tu l'auras :
+L'un est sûr, l'autre ne l'est pas.",
+  genre: "Conte",
+  age: "5 à 8 ans",
+  tags: "Animaux, Amitié, Morale",
+  rating: 4,
+  user_id: user2.id)
+
+file = URI.open("https://res.cloudinary.com/ddd2hwkfz/image/upload/v1680682596/Pimprenelle/biblidpoe_018i01_canjgb.png")
+story16.photo.attach(io: file, filename: "biblidpoe_018i01_canjgb.png", content_type: "image/jpg")
+file = URI.open("https://res.cloudinary.com/dyi2oz7zm/video/upload/v1680095816/Float_z5pvtc.mp3")
+story16.audio.attach(io: file, filename: "Float_z5pvtc.mp3", content_type: "audio/mp3")
+story16.save
+
+
+story17 = Story.create!(title: "Le Soleil et la Lune",
+  summary: "Le Soleil et la Lune décident de manger leurs enfants, mais la Lune trahit le Soleil qui perd tous les siens.",
+  content: "Le Soleil un jour dit à la Lune :
+« Ma chère amie, nous avons beaucoup trop d'enfants, qui nous causent bien du tourment, mangeons-les.
+— Je suis de votre avis, répondit la Lune, mais ce serait trop horrible de manger ses propres enfants. Envoyez-moi chaque jour un des vôtres, et je vous ferai servir, en retour, un des miens. »
+Le Soleil accepta et la Lune reçut dès le lendemain un des fils de son ami. Elle n'y toucha pas, mais l'arrosant d'une nouvelle sauce, le renvoya au Soleil qui, sans se méfier et croyant qu'il s'agissait d'un enfant de la Lune, le mangea.
+Ainsi firent-ils tous les jours… Et le Soleil perdit tous ses enfants. La Lune, par contre, conserva tous les siens. C'est pourquoi on peut voir, le jour, le Soleil seul au firmament, tandis que la Lune, la nuit, est entourée de sa nombreuse progéniture d'étoiles.
+Lorsque le Soleil comprit la trahison de son amie, il s'élança furieux après elle et la poursuite continue encore de nos jours. Parfois, il arrive que le Soleil rattrape la vieille coquine de Lune et commence à la dévorer. Alors, les villageois, effrayés à l'idée que le Soleil réussisse à accomplir sa vengeance et quitte le monde des hommes, le privant ainsi de sa chaleur et de sa lumière, crient en frappant sur des calebasses : « Lâche-la, lâche-la. »
+Et le Soleil, impressionné par le bruit, renonce, mais pour un temps seulement, à sa vengeance.",
+  genre: "Conte",
+  age: "10 à 12 ans",
+  tags: "Mythologie, Aventure, Fantaisie",
+  rating: 3,
+  user_id: user1.id)
+
+file = URI.open("https://res.cloudinary.com/ddd2hwkfz/image/upload/v1680682868/Pimprenelle/biblidcon_081i01_glm7t2.png")
+story17.photo.attach(io: file, filename: "biblidcon_081i01_glm7t2.png", content_type: "image/jpg")
+file = URI.open("https://res.cloudinary.com/dyi2oz7zm/video/upload/v1680095816/Float_z5pvtc.mp3")
+story17.audio.attach(io: file, filename: "Float_z5pvtc.mp3", content_type: "audio/mp3")
+story17.save
+
+story18 = Story.create!(title: "Le Canari Merveilleux",
+  summary: "Baffo, une petite fille mal élevée, achète un canari au marché, mais il se transforme en aigrette et l'emmène en haut d'un arbre.",
+  content: "Baffo était une petite fille mal élevée. Elle passait son temps à se battre avec ses camarades et refusait obstinément de travailler. De plus, elle ne pouvait voir un objet sans y toucher.
+Ses parents la punissaient souvent, mais c'était peine perdue : elle n'en devenait pas meilleure pour cela.
+Un jour, au marché, Baffo vit des petits canaris blancs. Elle en prit un au creux de sa main et demanda au marchand voisin : « Quel est le prix de ce canari ?
+— Je n'en sais rien, répondit l'homme. Mais, de toute façon, il n'est pas à vendre ! »
+Sans prêter attention à ces paroles, Baffo jeta à terre vingt pièces et s'éloigna en emportant le canari. « Quand le marchand s'en reviendra, se dit-elle, il trouvera l'argent à la place du canari. »
+Or ces petits canaris blancs n'étaient autres que des aigrettes qui, à chaque jour de marché, se transformaient pour vivre un peu au milieu des hommes.
+Avant que Baffo ait atteint sa case, le canari redevint aigrette. L'oiseau saisit alors la petite fille et s'envola avec elle jusqu'au sommet d'un grand arbre. Puis, déposant Baffo sur une grosse branche, il reprit son vol et disparut.
+Baffo poussa des cris, suppliant les passants de prévenir ses parents.
+Ceux-ci accoururent, amenant avec eux leur chien noir qui grimpa à l'arbre et en redescendit avec Baffo.
+La leçon profita à la fillette qui se corrigea de son indiscipline. Et, par reconnaissance, elle n'oublia jamais, chaque fois qu'elle mangeait son couscous, d'en donner la première et la dernière poignée au gros chien noir qui l'avait tirée de ce mauvais pas.",
+  genre: "Conte",
+  age: "5 à 8 ans",
+  tags: "Animaux, Morale, Apprentissage",
+  rating: 5,
+  user_id: user2.id)
+
+file = URI.open("https://res.cloudinary.com/ddd2hwkfz/image/upload/v1680683208/Pimprenelle/biblidcon_004i01_mqzeta.png")
+story18.photo.attach(io: file, filename: "biblidcon_004i01_mqzeta.png", content_type: "image/jpg")
+story18.save
+
+
+story19 = Story.create!(title: "Le Garçon et les Autruches", summary: "Tous les animaux fuient le garçon, sauf les autruches qui deviennent ses amies fidèles.", content: "Il y avait un garçon qui s'en alla seul dans le monde. Il alla dans la plaine déserte. Tous les animaux le fuyaient.
+  Il alla d'abord aux gazelles ; elles le fuirent.
+  Il alla aux antilopes ; elles le fuirent.
+  Il alla aux impalas ; ils le fuirent.
+  Il alla aux zèbres ; ils le fuirent.
+  Il alla aux lions ; ils le fuirent.
+  Il alla aux girafes ; elles le fuirent.
+  Il alla aux éléphants ; ils le fuirent.
+  Et toujours ainsi jusqu'à ce qu'il arrivât aux autruches ; elles restèrent près de lui. Il habita avec elles et il devint leur compagnon. Quand elles se couchaient, elles ouvraient leurs ailes et il s'endormait entre elles. Elles l'habillaient de leurs plumes. Il mangeait leur nourriture, excepté les petites pierres qui étaient trop dures pour lui. Quand il grandit, ses cheveux grandirent avec lui et il en vint à les porter traînant à terre.
+
+  Un jour, des hommes montèrent sur des chevaux pour chasser les autruches. Ils suivirent le garçon à la trace car il était parmi elles. Ils les suivirent jusqu'à ce qu'elles se lèvent de dessous un arbre.
+
+  Les épines de l'arbre saisirent le garçon et le retinrent jusqu'à ce que les hommes le trouvent près de mourir.
+  Ils l'oignirent de parfums ; le garçon reprit ses sens. Il leur dit : « Les autruches sont meilleures que tous les animaux. »
+
+  Lorsque les siens apprirent cela, ils dirent : « Nous jurons de ne jamais tuer les autruches à cause du bien que nous savons d'elles. »", genre: "Conte", age: "10 à 12 ans", tags: "Animaux, Amitié, Courage", rating: 4, user_id: user1.id)
+
+
+file = URI.open("https://res.cloudinary.com/ddd2hwkfz/image/upload/v1680683461/Pimprenelle/biblidcon_009i01_fvc1fb.png")
+story19.photo.attach(io: file, filename: "biblidcon_009i01_fvc1fb.png", content_type: "image/jpg")
+story19.save
+
+
+story20 = Story.create!(
+  title: "Le Renard et la Cigogne",
+  summary: "Un renard invite une cigogne à dîner, mais il la trompe en servant son repas dans un vase trop étroit.",
+  content: "Compère le Renard se mit un jour en frais, et retint à dîner commère la Cigogne.
+  Le régal fut petit, et sans beaucoup d'apprêts ;
+  Le galand pour toute besogne
+  Avait un brouet clair (il vivait chichement).
+  Ce brouet fut par lui servi sur une assiette :
+  La Cigogne au long bec n'en put attraper miette ;
+  Et le drôle eut lapé le tout en un moment.
+  Pour se venger de cette tromperie,
+  À quelque temps de là, la Cigogne le prie.
+  Volontiers, lui dit-il, car avec mes amis
+  Je ne fais point cérémonie.
+  À l'heure dite il courut au logis
+  De la Cigogne son hôtesse,
+  Loua très fort la politesse,
+  Trouva le dîner cuit à point.
+  Bon appétit surtout ; Renards n'en manquent point.
+  Il se réjouissait à l'odeur de la viande
+  Mise en menus morceaux, et qu'il croyait friande.
+  On servit, pour l'embarrasser,
+  En un vase à long col et d'étroite embouchure
+  Le bec de la Cigogne y pouvait bien passer,
+  Mais le museau du Sire était d'autre mesure.
+  Il lui fallut à jeun retourner au logis,
+  Honteux comme un Renard qu'une Poule aurait pris,
+  Serrant la queue, et portant bas l'oreille.
+  Trompeurs, c'est pour vous que j'écris :
+  Attendez-vous à la pareille.",
+  genre: "Conte",
+  age: "5 à 8 ans",
+  tags: "Animaux, Nourriture, Tromperie",
+  rating: 3,
+  user_id: user2.id
+)
+
+file = URI.open("https://res.cloudinary.com/ddd2hwkfz/image/upload/v1680683848/Pimprenelle/biblidpoe_005i01_p4jb28.png")
+story20.photo.attach(io: file, filename: "biblidpoe_005i01_p4jb28.png", content_type: "image/jpg")
+story20.save
+
+story21 = Story.create!(title: "Le Corbeau et le Renard", summary: "Un corbeau vaniteux se fait flatter par un renard pour lui voler son fromage.", content: "Maître Corbeau, sur un arbre perché,
+  Tenait en son bec un fromage.
+  Maître Renard, par l'odeur alléché,
+  Lui tint à peu près ce langage :
+  Et bonjour, Monsieur du Corbeau.
+  Que vous êtes joli ! que vous me semblez beau !
+  Sans mentir, si votre ramage
+  Se rapporte à votre plumage,
+  Vous êtes le Phénix des hôtes de ces bois.
+  À ces mots, le Corbeau ne se sent pas de joie ;
+  Et pour montrer sa belle voix,
+  Il ouvre un large bec, laisse tomber sa proie.
+  Le Renard s'en saisit, et dit : Mon bon Monsieur,
+  Apprenez que tout flatteur
+  Vit aux dépens de celui qui l'écoute.
+  Cette leçon vaut bien un fromage, sans doute.
+  Le Corbeau honteux et confus
+  Jura, mais un peu tard, qu'on ne l'y prendrait plus.", genre: "Conte", age: "5 à 8 ans", tags: "Animaux, Morale, Humour", rating: 4, user_id: user1.id)
+
+
+file = URI.open("https://res.cloudinary.com/ddd2hwkfz/image/upload/v1680684029/Pimprenelle/biblidpoe_001i01_evsh7c.png")
+story21.photo.attach(io: file, filename: "biblidpoe_001i01_evsh7c.png", content_type: "image/jpg")
+story21.save
+
+story22 = Story.create!(title: "Le Lion et le Rat", summary: "Même le plus petit peut être utile, comme le rat qui sauva le lion pris dans les rets.", content: "Il faut, autant qu'on peut, obliger tout le monde :
+  On a souvent besoin d'un plus petit que soi.
+  De cette vérité deux Fables feront foi,
+  Tant la chose en preuves abonde.
+  Entre les pattes d'un Lion
+  Un Rat sortit de terre assez à l'étourdie.
+  Le Roi des animaux, en cette occasion,
+  Montra ce qu'il était, et lui donna la vie.
+  Ce bienfait ne fut pas perdu.
+  Quelqu'un aurait-il jamais cru
+  Qu'un Lion d'un Rat eût affaire ?
+  Cependant il avint qu'au sortir des forêts
+  Ce Lion fut pris dans des rets
+  Dont ses rugissements ne le purent défaire.
+  Sire Rat accourut, et fit tant par ses dents
+  Qu'une maille rongée emporta tout l'ouvrage,
+  Patience et longueur de temps
+  Font plus que force ni que rage.", genre: "Conte", age: "5 à 8 ans", tags: "Animaux", rating: 4, user_id: user2.id)
+
+file = URI.open("https://res.cloudinary.com/ddd2hwkfz/image/upload/v1680684154/Pimprenelle/biblidpoe_015i01_a1wqbz.png")
+story22.photo.attach(io: file, filename: "biblidpoe_015i01_a1wqbz.png", content_type: "image/jpg")
+story22.save
+
+story23 = Story.create!(
+  title: "Le Loup et la Cigogne",
+  summary: "Les Loups ne font pas de bons convives, comme la Cigogne en fit l'expérience.",
+  content: "Les Loups mangent gloutonnement.
+Un Loup donc étant de frairie,
+Se pressa, dit-on, tellement
+Qu'il en pensa perdre la vie.
+Un os lui demeura bien avant au gosier.
+De bonheur pour ce Loup, qui ne pouvait crier,
+Près de là passe une Cigogne.
+Il lui fait signe, elle accourt.
+Voilà l'Opératrice aussitôt en besogne.
+Elle retira l'os ; puis pour un si bon tour
+Elle demanda son salaire.
+Votre salaire ? dit le Loup :
+Vous riez, ma bonne commère.
+Quoi ! ce n'est pas encor beaucoup
+D'avoir de mon gosier retiré votre cou ?
+Allez, vous êtes une ingrate ;
+Ne tombez jamais sous ma patte.",
+  genre: "Conte",
+  age: "5 à 8 ans",
+  tags: "Animaux, Amitié, Humour",
+  rating: 4,
+  user_id: user1.id
+)
+
+file = URI.open("https://res.cloudinary.com/ddd2hwkfz/image/upload/v1680684289/Pimprenelle/biblidpoe_017i01_rumzel.png")
+story23.photo.attach(io: file, filename: "biblidpoe_017i01_rumzel.png", content_type: "image/jpg")
+story23.save
+
+story24 = Story.create!(
+  title: "Le Loup et l'Agneau",
+  summary: "Un loup cherche querelle à un agneau innocent en se servant de fausses accusations.",
+  content: "La raison du plus fort est toujours la meilleure :
+Nous l'allons montrer tout à l'heure.
+Un Agneau se désaltérait
+Dans le courant d'une onde pure.
+Un Loup survient à jeun qui cherchait aventure,
+Et que la faim en ces lieux attirait.
+Qui te rend si hardi de troubler mon breuvage ?
+Dit cet animal plein de rage :
+Tu seras châtié de ta témérité.
+— Sire, répond l'Agneau, que votre Majesté
+Ne se mette pas en colère ;
+Mais plutôt qu'elle considère
+Que je me vas désaltérant
+Dans le courant,
+Plus de vingt pas au-dessous d'Elle,
+Et que par conséquent, en aucune façon,
+Je ne puis troubler sa boisson.
+— Tu la troubles, reprit cette bête cruelle,
+Et je sais que de moi tu médis l'an passé.
+— Comment l'aurais-je fait si je n'étais pas né ?
+Reprit l'Agneau, je tette encor ma mère.
+— Si ce n'est toi, c'est donc ton frère.
+— Je n'en ai point.
+— C'est donc quelqu'un des tiens :
+Car vous ne m'épargnez guère,
+Vous, vos bergers, et vos chiens.
+On me l'a dit : il faut que je me venge.
+Là-dessus, au fond des forêts
+Le Loup l'emporte, et puis le mange,
+Sans autre forme de procès.",
+  genre: "Conte",
+  age: "5 à 8 ans",
+  tags: "Animaux, Morale, Mensonge",
+  rating: 5,
+  user_id: user2.id
+)
+
+file = URI.open("https://res.cloudinary.com/ddd2hwkfz/image/upload/v1680684431/Pimprenelle/biblidpoe_016i01_iqlod8.png")
+story24.photo.attach(io: file, filename: "biblidpoe_016i01_iqlod8.png", content_type: "image/jpg")
+story24.save
+
+
+story25 = Story.create!(
+  title: "Le Lièvre et la Tortue",
+  summary: "Une course contre la montre pour déterminer qui est le plus rapide, le lièvre ou la tortue.",
+  content: "Rien ne sert de courir ; il faut partir à point.
+Le Lièvre et la Tortue en sont un témoignage.
+Gageons, dit celle-ci, que vous n'atteindrez point
+Sitôt que moi ce but. — Sitôt ? Êtes-vous sage ?
+Repartit l'animal léger.
+Ma commère, il vous faut purger
+Avec quatre grains d'ellébore.
+— Sage ou non, je parie encore.
+Ainsi fut fait : et de tous deux
+On mit près du but les enjeux :
+Savoir quoi, ce n'est pas l'affaire,
+Ni de quel juge l'on convint.
+Notre Lièvre n'avait que quatre pas à faire ;
+J'entends de ceux qu'il fait lorsque prêt d'être atteint
+Il s'éloigne des chiens, les renvoie aux Calendes,
+Et leur fait arpenter les landes.
+Ayant, dis-je, du temps de reste pour brouter,
+Pour dormir, et pour écouter
+D'où vient le vent, il laisse la Tortue
+Aller son train de Sénateur.
+Elle part, elle s'évertue ;
+Elle se hâte avec lenteur.
+Lui cependant méprise une telle victoire,
+Tient la gageure à peu de gloire,
+Croit qu'il y va de son honneur
+De partir tard. Il broute, il se repose,
+Il s'amuse à toute autre chose
+Qu'à la gageure. À la fin quand il vit
+Que l'autre touchait presque au bout de la carrière,
+Il partit comme un trait ; mais les élans qu'il fit
+Furent vains : la Tortue arriva la première.
+Eh bien ! lui cria-t-elle, avais-je pas raison ?
+De quoi vous sert votre vitesse ?
+Moi, l'emporter ! et que serait-ce
+Si vous portiez une maison ?",
+  genre: "Conte",
+  age: "5 à 8 ans",
+  tags: "Animaux, Course, Leçon",
+  rating: 4,
+  user_id: user1.id
+)
+
+file = URI.open("https://res.cloudinary.com/ddd2hwkfz/image/upload/v1680684539/Pimprenelle/biblidpoe_004i01_ajaxqg.png")
+story25.photo.attach(io: file, filename: "biblidpoe_004i01_ajaxqg.png", content_type: "image/jpg")
+story25.save
 
 file = URI.open("https://res.cloudinary.com/dyi2oz7zm/image/upload/v1680261825/IMG_3139_j6nk3m.jpg")
 story1.photo.attach(io: file, filename: "IMG_3139_j6nk3m.jpg", content_type: "image/jpg")
-file = URI.open("https://res.cloudinary.com/dyi2oz7zm/video/upload/v1680095816/Float_z5pvtc.mp3")
-story1.audios.attach(io: file, filename: "Float_z5pvtc.mp3", content_type: "audio/mp3")
 story1.save
 
 file = URI.open("https://res.cloudinary.com/dyi2oz7zm/image/upload/v1680261825/IMG_3136_gnnjcn.jpg")
 story2.photo.attach(io: file, filename: "IMG_3136_gnnjcn.jpg", content_type: "image/jpg")
-file = URI.open("https://res.cloudinary.com/dyi2oz7zm/video/upload/v1680095816/Float_z5pvtc.mp3")
-story2.audios.attach(io: file, filename: "Float_z5pvtc.mp3", content_type: "audio/mp3")
 story2.save
 
 file = URI.open("https://res.cloudinary.com/dyi2oz7zm/image/upload/v1680261824/IMG_3135_shsmgh.jpg")
 story3.photo.attach(io: file, filename: "IMG_3135_shsmgh.jpg", content_type: "image/jpg")
-file = URI.open("https://res.cloudinary.com/dyi2oz7zm/video/upload/v1680095816/Float_z5pvtc.mp3")
-story3.audios.attach(io: file, filename: "Float_z5pvtc.mp3", content_type: "audio/mp3")
 story3.save
 
 file = URI.open("https://res.cloudinary.com/dyi2oz7zm/image/upload/v1680261825/IMG_3137_lumsia.gif")
 story4.photo.attach(io: file, filename: "IMG_3137_lumsia.gif", content_type: "image/gif")
-file = URI.open("https://res.cloudinary.com/dyi2oz7zm/video/upload/v1680095816/Float_z5pvtc.mp3")
-story4.audios.attach(io: file, filename: "Float_z5pvtc.mp3", content_type: "audio/mp3")
 story4.save
 
 file = URI.open("https://res.cloudinary.com/dyi2oz7zm/image/upload/v1680261820/IMG_3140_kh2cyu.jpg")
 story5.photo.attach(io: file, filename: "IMG_3140_kh2cyu.jpg", content_type: "image/jpg")
-file = URI.open("https://res.cloudinary.com/dyi2oz7zm/video/upload/v1680095816/Float_z5pvtc.mp3")
-story5.audios.attach(io: file, filename: "Float_z5pvtc.mp3", content_type: "audio/mp3")
 story5.save
 
 file = URI.open("https://res.cloudinary.com/dyi2oz7zm/image/upload/v1680261824/IMG_3138_srkunj.jpg")
 story6.photo.attach(io: file, filename: "IMG_3138_srkunj.jpg", content_type: "image/jpg")
-file = URI.open("https://res.cloudinary.com/dyi2oz7zm/video/upload/v1680095816/Float_z5pvtc.mp3")
-story6.audios.attach(io: file, filename: "Float_z5pvtc.mp3", content_type: "audio/mp3")
 story6.save
 
 file = URI.open("https://res.cloudinary.com/dyi2oz7zm/image/upload/v1680261684/IMG_3141_yif7zj.jpg")
 story7.photo.attach(io: file, filename: "IMG_3141_yif7zj.jpg", content_type: "image/jpg")
-file = URI.open("https://res.cloudinary.com/dyi2oz7zm/video/upload/v1680095816/Float_z5pvtc.mp3")
-story7.audios.attach(io: file, filename: "Float_z5pvtc.mp3", content_type: "audio/mp3")
 story7.save

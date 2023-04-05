@@ -1,0 +1,58 @@
+<div class="container index-card-container">
+<h1 id="index-h1"> Des histoires à écouter</h1>
+      <% @stories.each do |story| %>
+      <% if story.photo.present? && story.audio.present? %>
+        <div class="cards-index", style="background-color: #F0F0F0">
+            <%= cl_image_tag story.photo.key, crop: :fill, class:"card-img-top rounded-4", id: "picturesize", style:"height: 8rem;" %>
+            <h3 style="color:#FFAA4C; text-align:center"> <strong><%= story.title %></strong> </h3>
+            <div id="sum-container"><p class= "summaryp"> <%= story.summary %> </p></div>
+            <p class="index-tags"><strong><%= story.genre %></strong></p>
+            <p class="index-tags">De <strong><%= story.age %></strong></p>
+            <p class="index-tags">Avec <strong><%= story.tags %></strong></p>
+
+          <% audio_url = Cloudinary::Utils.cloudinary_url(story.audio.key, resource_type: 'video') %>
+            <audio controls>
+            <source src="<%= audio_url %>" type="<%= story.audio.content_type %>">
+            Votre navigateur ne supporte pas l'élément audio.
+            </audio>
+            </div>
+            <% end %>
+      <% end %>
+
+
+  <div class="wrapper">
+    <% @stories.each do |story| %>
+    <% if story.photo.present? && story.audio.present? %>
+    <div class="audio-card">
+      <div class="audio-card__image audio-card__image--background">
+        <%= cl_image_tag story.photo.key, crop: :pad %>
+      </div>
+      <div class="audio-card__unit-name"><%= story.title %></div>
+      <div class="audio-card__unit-description"><%= story.summary %></div>
+      <div class="audio-card__unit-tags">Tags: <strong><%= story.tags %></strong></div>
+      <% audio_url = Cloudinary::Utils.cloudinary_url(story.audio.key, resource_type: 'video') %>
+      <audio controls>
+      <source src="<%= audio_url %>" type="<%= story.audio.content_type %>">
+      Votre navigateur ne supporte pas l'élément audio.
+      </audio>
+      <div class="audio-card__unit-stats audio-card__unit-stats--barbarian clearfix">
+        <div class="one-third bottom-left">
+          <div class="stat"><%= story.genre %></div>
+          <div class="stat-value">Genre</div>
+        </div>
+
+        <div class="one-third">
+          <div class="stat"><%= story.age %></div>
+          <div class="stat-value">âge</div>
+        </div>
+
+        <div class="one-third no-border">
+          <div class="stat">2mn30</div>
+          <div class="stat-value">Durée</div>
+        </div>
+      </div>
+    </div>
+    <% end %>
+    <% end %>
+  </div>
+</div>

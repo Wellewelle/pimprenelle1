@@ -19,4 +19,5 @@ Rails.application.routes.draw do
   get '/profile', to: 'users#profile'
 
   resources :audios, only: [:new, :create]
+  get '/audios', to: 'audios#index'
 end
