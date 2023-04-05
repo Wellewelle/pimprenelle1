@@ -5,7 +5,9 @@ footer {
   bottom: 0;
   width: 100%;
   z-index: 999;
+  box-shadow: 0px -1px 2px black;
   ul {
+      width: 100%;
       list-style: none;
       display: flex;
       justify-content: space-between;
@@ -20,4 +22,8 @@ footer {
             font-size: 2rem;
             }
   }
+}
+
+.fa-user-astronaut {
+  color: #FFAA4C;
 }
