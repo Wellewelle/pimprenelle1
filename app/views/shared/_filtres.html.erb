@@ -6,13 +6,12 @@
 
             <div id="search-window" class="container">
 
-              <%= form_with url: "/filtres", class: "form-search ", method: :get do |f| %>
+              <%= form_with url: "/filtres", class: "form-search", method: :get do |f| %>
 
                 <div class="mt-5 option-block">
-                  <button data-action="click->toggle#toggle" class="category-title">
-                  <h2><i class="fa-solid fa-arrow-down"></i>  GENRE  <i class="fa-solid fa-arrow-down"></i></h2></button>
+                  <h2 class="category-title">Que cherches-tu?</h2>
                   <br>
-                    <div data-toggle-target="toggleCategories" class="d-none form-block d-flex flex-wrap">
+                    <div class="form-block d-flex flex-wrap">
                       <%= check_box_tag("Romance", nil, false, class: "option-tag") %>
                       <%= label_tag("Romance", nil, class: "option-label") %>
                       <%= check_box_tag("Fantaisie", nil, false, class: "option-tag") %>
@@ -32,10 +31,10 @@
                     </div>
                 </div>
 
-                <div data-controller="toggle" class="mt-5 option-block">
-                  <button data-action="click->toggle#toggle" class="category-title"><h2><i class="fa-solid fa-arrow-down"></i>  TAGS  <i class="fa-solid fa-arrow-down"></i></h2></button>
+                <div class="mt-5 option-block d-none">
+                  <h2 class="category-title">TAGS</h2>
                   <br>
-                    <div data-toggle-target="toggleCategories" class="d-none form-block d-flex flex-wrap">
+                    <div class="form-block d-flex flex-wrap">
                       <%= check_box_tag("Fées", nil, false, class: "option-tag") %>
                       <%= label_tag("Fées", nil, class: "option-label") %>
                       <%= check_box_tag("Chevaliers", nil, false, class: "option-tag") %>
@@ -55,10 +54,10 @@
                     </div>
                 </div>
 
-                <div data-controller="toggle" class="mt-5 option-block">
-                  <button data-action="click->toggle#toggle" class="category-title"><h2><i class="fa-solid fa-arrow-down"></i>  TRANCHE D'ÂGE  <i class="fa-solid fa-arrow-down"></i></h2></button>
+                <div class="mt-5 option-block">
+                  <h2 class="category-title">Quel Âge as-tu?</h2>
                   <br>
-                    <div data-toggle-target="toggleCategories" class="d-none form-block d-flex flex-wrap">
+                    <div id="category-age" class="form-block d-flex flex-wrap">
                         <%= check_box_tag("2 à 5 ans", nil, false, class: "option-tag") %>
                         <%= label_tag("2 à 5 ans", nil, class: "option-label") %>
                         <%= check_box_tag("5 à 8 ans", nil, false, class: "option-tag") %>
@@ -72,10 +71,10 @@
                     </div>
                 </div>
 
-                <div data-controller="toggle" class="mt-5 option-block">
-                  <button data-action="click->toggle#toggle" class="category-title"><h2><i class="fa-solid fa-arrow-down"></i>  DURÉE  <i class="fa-solid fa-arrow-down"></i></h2></button>
+                <div class="mt-5 option-block">
+                  <h2 class="category-title">Combien de temps as-tu?</h2>
                   <br>
-                    <div data-toggle-target="toggleCategories" class="d-none form-block d-flex flex-wrap">
+                    <div id="category-length" class="form-block d-flex flex-wrap">
                         <%= check_box_tag("5 minutes ou moins", nil, false, class: "option-tag") %>
                         <%= label_tag("5 minutes ou moins", nil, class: "option-label") %>
                         <%= check_box_tag("5 à 10 minutes", nil, false, class: "option-tag") %>
