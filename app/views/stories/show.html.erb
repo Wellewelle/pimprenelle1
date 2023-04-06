@@ -6,23 +6,40 @@
   #top-image {
     opacity: 0.3;
   }
+
+  /*#thedata {
+    border-bottom-right-radius: 5px;
+    border-bottom-left-radius: 5px;
+  }*/
 </style>
 <div class="container">
   <div class="row mb-3">
-    <div class="col-xs-12 col-sm-4 col-sm-offset-4">
+    <div class="col-12">
       <div class="card text-bg-dark rounded-4 mt-3 mb-3">
         <%= cl_image_tag @story.photo.key, class: "card-img rounded-4", style: "height: 15rem;", id: "top-image" %>
         <div class="card-img-overlay">
           <h2 class="fw-bold text-center fs-1 position-absolute top-50 start-50 translate-middle"><strong><%= @story.title %></strong></h2>
+          <div style="position: absolute; bottom:0; right:0">
+            <% favorite = Favorite.find_by(story: @story, user: current_user) %>
+            <% if favorite == nil %>
+              <%= form_with(url: favorites_path, method: :post, local: true) do |form| %>
+                <%= form.hidden_field :story_id, value: @story.id, name: 'favorite[story_id]'%>
+                <%# = form.submit "Ajouter aux favoris", class: "btn btn-success btn-sm rounded-4 border-0", id: "favorite-button", style: "background-color: #FFAA4C;" %>
+                <%= button_tag(type: "submit", class:"btn rounded-4 text-white") do %>
+                  <%= icon('fa-regular', 'star') %>
+                <% end %>
+              <% end %>
+            <% end %>
+          </div>
         </div>
       </div>
     </div>
   </div>
   <div class="row mb-3">
-    <div class="col-xs-12 col-sm-4 col-sm-offset-4">
-      <ul class="list-group list-group-horizontal mb-3 rounded-5">
-        <li class="list-group-item"><p class="card-text"><strong>Age </strong><%= @story.age %></p></li>
-        <li class="list-group-item"><p class="card-text"><strong>Rating </strong><%= @story.rating %></p></li>
+    <div class="col-12 d-flex justify-content-center">
+      <ul class="list-group list-group-horizontal mb-3" id="thedata" style="width: 20rem;">
+        <li class="list-group-item rounded-end rounded-4 border-start-0" style="background-color: #FFAA4C;"><p class="card-text text-white"><strong>Age </strong><%= @story.age %></p></li>
+        <li class="list-group-item" style="background-color: #FFAA4C;"><p class="card-text text-white"><strong>Rating </strong><%= @story.rating %></p></li>
           <% @word_count = 0 %>
           <% @story.content.each_char do |word| %>
             <% @word_count += 1 %>
@@ -39,40 +56,30 @@
           <% elsif @word_count >= 2600 %>
             <% @story_length = @story.length = "20 minutes ou plus" %>
           <% end %>
-        <li class="list-group-item"><p class="card-text"><strong>Durée </strong><%= @story_length %></p></li>
+        <li class="list-group-item rounded-4 rounded-start" style="background-color: #FFAA4C;"><p class="card-text text-white"><strong>Durée </strong><%= @story_length %></p></li>
       </ul>
-      <div class="card text-center rounded-4">
+    </div>
+  </div>
+  <div class="row mb-3">
+    <div class="col-12 d-flex justify-content-center">
+      <div class="card text-center rounded-4" style="width: 20rem;">
         <div class="card-body" data-controller="show-content" data-show-content-id-value="<%=@story.id%>">
           <div data-controller="text-vide" id="story-content">
             <p class="card-text" id="storySpot" data-show-content-target="summary"><%= @story.summary %></p>
-            <p class="card-text d-none" style="text-align: justify;" id="storySpot" data-show-content-target="content" data-show-content-target="content" data-text-vide-target="text"><%= @story.content.gsub('.', '.<br><br>').html_safe %></p>
-            <div class="btn-group w-75" role="group" aria-label="Basic example">
-              <%= link_to "Voir toute l'histoire", story_read_stories_path(@story), method: :post, remote: true, class: "btn btn-primary", id: "viewStory", data: { show_content_target: "button", action: "click->show-content#show" } %>
-              <button class="btn btn-primary" data-action="click->text-vide#bionique" data-text-vide-target="btnBio"><strong>Lect</strong>ure <strong>Bion</strong>ique</button>
-              <button data-text-vide-target="btnReset" data-action="click->text-vide#reset" class="btn btn-primary d-none">Lecture Non-Bionique</button>
+            <button class="btn btn-primary rounded-4 d-none border-0 mb-2" data-show-content-target="bionicbtn" data-action="click->text-vide#bionique" data-text-vide-target="btnBio" style="background-color: #FFAA4C;"><strong>Lect</strong>ure <strong>Bion</strong>ique</button>
+            <button data-text-vide-target="btnReset" data-action="click->text-vide#reset" class="btn btn-primary d-none rounded-4 border-0 mb-2" style="background-color: #FFAA4C;">Lecture Non-Bionique</button>
+            <p class="card-text d-none rounded-4 border-0" style="text-align: justify;" id="storySpot" data-show-content-target="content" data-text-vide-target="text"><%= @story.content.gsub('.', '.<br><br>').html_safe %></p>
+            <div>
+              <%= link_to "Voir toute l'histoire", story_read_stories_path(@story), method: :post, remote: true, class: "btn btn-primary rounded-4 border-0", id: "viewStory", data: { show_content_target: "button", action: "click->show-content#show" }, style: "background-color: #FFAA4C;" %>
             </div>
           </div>
         </div>
       </div>
     </div>
   </div>
-
   <div class="row mt-3 mb-3">
     <div class="col-12 mb-2 d-flex justify-content-center">
-      <div class="card p-3 rounded-4" style="width: 20rem;">
-        <h5 class="mb-2 text-center">Donne ton avis 😊</h5>
-        <div class="d-flex justify-content-evenly" data-controller="edit-rating">
-            <%= form_with url: increment_story_path(@story), data: {edit_rating_target: "upbtn", action: "submit->edit-rating#increment"}, method: :post do |f| %>
-              <%= f.submit "Aime", class:"btn btn-primary" %>
-            <% end %>
-            <%= form_with url: decrease_story_path(@story), data: {edit_rating_target: "dwnbtn", action: "submit->edit-rating#decrease"}, method: :post do |f| %>
-              <%= f.submit "Aime pas", class:"btn btn-primary" %>
-            <% end %>
-        </div>
-      </div>
-    </div>
-    <div class="col-12 mt-2 d-flex justify-content-center">
-      <div id="tttt" class="border rounded-4 p-2" style="width: 20rem;" data-controller="add-audio">
+      <div id="tttt" class="border rounded-4 p-3" style="width: 20rem;" data-controller="add-audio">
         <h5><strong>Audios:</strong></h5>
         <% if @story.audios.attached? %>
           <% half_audio_count = (@story.audios.count / 2.0).ceil %>
@@ -88,29 +95,37 @@
           <h5 class="text-center">Il n'y a pas d'audios</h5>
         <% end %>
 
-        <button type="button" class="btn btn-info rounded-circle" data-add-audio-target="addmore" data-action="click->add-audio#showform"><i class="fa-solid fa-circle-plus" style="color: #000000;"></i></button>
+        <button type="button" class="btn btn-info rounded-circle border-0" data-add-audio-target="addmore" data-action="click->add-audio#showform" style="background-color: #FFAA4C;"><i class="fa-solid fa-circle-plus" style="color: #000000;"></i></button>
         <%= simple_form_for :audios, html: {class: "d-none", data: {add_audio_target: "content", action: "submit->add-audio#insert"}} do |f| %>
-          <%= f.input :audios, as: :file, input_html: { multiple: true } %>
-          <%= f.button :submit, class: "btn btn-primary btn-sm" %>
+          <%= f.input :audios, as: :file, input_html: { multiple: true }, class: "form-control" %>
+          <%= f.button :submit, class: "btn btn-primary btn-sm rounded-4 border-0", style: "background-color: #FFAA4C;" %>
         <% end %>
+      </div>
+    </div>
+    <div class="col-12 mt-2 d-flex justify-content-center">
+      <div class="card p-3 rounded-4" style="width: 20rem;">
+        <h5 class="mb-2 text-center"><strong>Tu as aimé ?</strong></h5>
+        <div class="d-flex justify-content-evenly" data-controller="edit-rating">
+          <%= form_with url: increment_story_path(@story), data: {edit_rating_target: "upbtn", action: "submit->edit-rating#increment"}, method: :post do %>
+            <%= button_tag(type: "submit", class:"btn btn-primary rounded-4 text-white border-0", style: "background-color: #FFAA4C;") do %>
+              <%= icon('fa-regular', 'thumbs-up') %>
+              J'aime
+            <% end %>
+          <% end %>
+
+          <% favorite = Favorite.find_by(story: @story, user: current_user) %>
+          <% if favorite == nil %>
+            <%= form_with(url: favorites_path, method: :post, local: true) do |form| %>
+              <%= form.hidden_field :story_id, value: @story.id, name: 'favorite[story_id]'%>
+              <%= form.submit "Ajouter aux favoris", class: "btn btn-success rounded-4 border-0 text-white", id: "favorite-button", style: "background-color: #FFAA4C;" %>
+            <% end %>
+          <% else %>
+            <!--<p class="alert alert-info text-center" style="position: relative; margin-top: 30px; width: 10%;">Vous aimez cette histoire!</p>-->
+          <% end %>
+        </div>
       </div>
     </div>
   </div>
   <div class="d-flex justify-content-center">
-  <% favorite = Favorite.find_by(story: @story, user: current_user) %>
-    <% if favorite == nil %>
-      <%= form_with(url: favorites_path, method: :post, local: true) do |form| %>
-        <%= form.hidden_field :story_id, value: @story.id, name: 'favorite[story_id]'%>
-        <%= form.submit "Ajouter aux favoris", class: "btn btn-success btn-sm", id: "favorite-button"%>
-      <% end %>
-    <% else %>
-      <p class="alert alert-info text-center" style="position: relative; margin-top: 30px; width: 10%;">Vous aimez cette histoire!</p>
-    <% end %>
-  </div>
-  <div class="d-flex justify-content-center">
-    <div class="btn-group w-75 mt-3 mb-5" role="group" aria-label="Basic mixed styles example">
-      <%= button_to "Retour vers les histoires", stories_path, method: :get, class:"btn btn-primary" %>
-      <%= button_to "Retour vers le profile", profile_path, method: :get, class:"btn btn-secondary" %>
-    </div>
   </div>
 </div>

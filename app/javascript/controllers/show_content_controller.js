@@ -2,7 +2,7 @@ import { Controller } from "@hotwired/stimulus"
 
 // Connects to data-controller="show-content"
 export default class extends Controller {
-  static targets = ["summary", "content", "button"]
+  static targets = ["summary", "content", "button", "bionicbtn"]
   static values = { id: Number }
 
   connect() {
@@ -14,6 +14,7 @@ export default class extends Controller {
     this.summaryTarget.classList.toggle("d-none");
     this.contentTarget.classList.toggle("d-none");
     this.buttonTarget.classList.add("d-none");
+    this.bionicbtnTarget.classList.remove("d-none");
 
     const id = this.idValue
     const url = `/stories/${id}/read_stories`
