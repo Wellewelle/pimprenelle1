@@ -1,7 +1,7 @@
 <div class="container index-card-container">
   <h1 class="mb-3"> Des histoires à écouter</h1>
   <div class="wrapper">
-    <% @stories.each do |story| %>
+    <% @stories.shuffle.each do |story| %>
     <% if story.photo.present? && story.audios.present? %>
     <div class="audio-card">
       <div class="audio-card__image audio-card__image--background">
@@ -9,7 +9,6 @@
       </div>
       <div class="audio-card__unit-name"><%= story.title %></div>
       <div class="audio-card__unit-description"><%= story.summary %></div>
-      <div class="audio-card__unit-tags">Tags: <strong><%= story.tags %></strong></div>
       <% story.audios.each do |audio| %>
       <% audio_url = Cloudinary::Utils.cloudinary_url(audio.key, resource_type: 'video') %>
       <audio controls>
@@ -17,7 +16,7 @@
         Votre navigateur ne supporte pas l'élément audio.
       </audio>
     <% end %>
-      <div class="audio-card__unit-stats audio-card__unit-stats--barbarian clearfix">
+      <div class="audio-card__unit-stats audio-card__unit-stats clearfix">
         <div class="one-third bottom-left">
           <div class="stat"><%= story.genre %></div>
           <div class="stat-value">Genre</div>
@@ -29,8 +28,8 @@
         </div>
 
         <div class="one-third no-border">
-          <div class="stat">2mn30</div>
-          <div class="stat-value">Durée</div>
+          <div class="stat"><%= story.rating %>/5</div>
+          <div class="stat-value">Note</div>
         </div>
       </div>
     </div>
