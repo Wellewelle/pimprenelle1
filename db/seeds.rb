@@ -715,8 +715,8 @@ story27 = Story.create!(title: "Le Royaume des Nuages",
 
 file = URI.open("https://res.cloudinary.com/ddd2hwkfz/image/upload/v1680775692/Pimprenelle/MTgwMzA4MDUxMDUy_cvn3ds.jpg")
 story27.photo.attach(io: file, filename: "MTgwMzA4MDUxMDUy_cvn3ds.jpg", content_type: "image/jpg")
-file = URI.open("https://res.cloudinary.com/dyi2oz7zm/video/upload/v1680095816/Float_z5pvtc.mp3")
-story27.audios.attach(io: file, filename: "Float_z5pvtc.mp3", content_type: "audio/mp3")
+file = URI.open("https://res.cloudinary.com/dyi2oz7zm/video/upload/v1680813511/tinywow_Le_royaume_des_nuages_klsngp_18987587_xubm30.mp3")
+story27.audios.attach(io: file, filename: "tinywow_Le_royaume_des_nuages_klsngp_18987587_xubm30.mp3", content_type: "audio/mp3")
 story27.save
 
 file = URI.open("https://res.cloudinary.com/dyi2oz7zm/image/upload/v1680261825/IMG_3139_j6nk3m.jpg")
