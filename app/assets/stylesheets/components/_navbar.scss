@@ -10,7 +10,7 @@
   align-items: center;
   background: #FFF2CC;
   width: 100%;
-  height: 15%;
+  height: 12%;
   box-shadow: 0px 1px 2px black;
   padding-top: 0;
 }
@@ -38,25 +38,29 @@
 
 #ours-et-logo {
   flex-grow: 0.5;
+  margin-bottom: auto;
 }
 
 .teddy {
-  width: 18vw;
+  width: 16vw;
   margin-top: 5px;
-  margin-left: 3vw;
+  margin-left: 2vw;
 }
 
 #logo {
+  margin-block: 10px;
   text-align: center;
   font-family: 'Send Flowers', cursive;
   color: #FFAA4C;
-  font-size: 45px;
+  font-size: 42px;
   overflow-y: clip !important;
 }
 
 .autocomplete {
   width: 100%;
   justify-content: center;
+  align-self: baseline;
+  height: 3vh;
 }
 
 [data-controller="autocomplete"] input[type="text"] {
