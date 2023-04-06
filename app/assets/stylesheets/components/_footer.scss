@@ -16,7 +16,7 @@ footer {
       padding: 0;
       li a {
           color: #FFAA4C;
-          text-decoration: none;
+          text-decoration: none !important;
       }
             i {
             font-size: 2rem;
@@ -26,4 +26,8 @@ footer {
 
 .fa-user-astronaut {
   color: #FFAA4C;
+}
+
+.fa-magnifying-glass{
+  text-decoration: none !important;
 }
