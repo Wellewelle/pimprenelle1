@@ -10,7 +10,7 @@
             <%= f.input :genre, collection: ["Romance", "Fantaisie", "Aventure", "Amitié", "Science-Fiction", "Humour", "Pour s'endormir", "Conte", "Légende"], label: false, prompt: "Genre", input_html: { class: "w-100", style: "border-radius: 5px; color: #FFAA4C; " } %>
             <%= f.input :age, collection: ["2 à 5 ans", "5 à 8 ans", "8 à 10 ans", "10 à 12 ans", "12 ans et plus"], label: false, prompt: "Age", input_html: { class: "w-100", style: "border-radius: 5px; color: #FFAA4C;" } %>
             <%#= f.input :tags, collection: ["Fées", "Chevaliers", "Sorcières", "Magie", "Princes et Princesses", "Animaux", "Monstres", "Rêves"], label: false, prompt: "Tag", input_html: { class: "w-100", style: "border-radius: 5px; color: #FFAA4C;" } %>
-            <%= f.input :content, label: "Racontez...", :input_html => {:style => 'width: 100%', :rows => 10, class: 'response-project'} %>
+            <%= f.input :content, label: "Raconte...", :input_html => {:style => 'width: 100%', :rows => 10, class: 'response-project'} %>
             <%= f.input :photo, as: :file %>
             <%= f.input :audios, as: :file, input_html: {multiple: true} %>
             <%= f.button :submit, "Publier mon histoire", class: "btn btn-primary publier", style: "background-color: #FFAA4C; color: white; border-radius: 10px; box-shadow: 1px 1px 2px rgba(0,0,0,0.1);"%>
