@@ -7,10 +7,10 @@ export default class extends Controller {
     console.log("Hello from toggle_controller.js")
   }
 
-  toggle(event) {
-    event.preventDefault()
-    this.toggleCategoriesTarget.classList.toggle("d-none");
-  }
+  // toggle(event) {
+  //   event.preventDefault()
+  //   this.toggleCategoriesTarget.classList.toggle("d-none");
+  // }
 
   toggle_in_index() {
     this.toggle_in_index.classList.toggle("d-none");

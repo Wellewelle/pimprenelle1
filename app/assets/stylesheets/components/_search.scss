@@ -30,7 +30,8 @@ list-style: none;
 }
 
 .submenu li a {
-  padding: 12px 24px;
+  padding-top: 10vh;
+  padding-bottom: 10vh;
   color: #333;
   background-color: #fff;
   text-decoration: none;
@@ -70,9 +71,9 @@ display: block;
 }
 
 .search-submit {
-  color: #FFF2CC;
+  color: white;
   padding: 5px;
-  background: radial-gradient(#5089C6, #035397);
+  background: radial-gradient(#035397, #001E6C);
   border: none;
   box-shadow: 1px 1px 2px black;
   border-radius: 5px;
@@ -80,39 +81,22 @@ display: block;
 
 .form-search {
   border-radius: 10px;
-  background-image: url("search-background.png");
+  background-color:#fff2ccc9;
   background-size: cover;
   box-shadow: 3px 3px 6px black;
   position: fixed;
-  z-index: 998;
-  bottom: 50;
+  z-index: 999;
+  // bottom: 50;
   top: 0;
   left: 0;
   right: 0;
   float: center;
   height: 620px;
   justify-content: center;
-  margin-top: 18vh;
-  margin-left: 6vw;
-  margin-right: 6vw;
+  margin-top: 15vh;
+  margin-left: 5vw;
+  margin-right: 5vw;
   overflow-y: scroll;
-}
-
-.category-title {
-  align-self: center;
-  opacity: 1;
-  padding: 5px;
-  font-size: smaller;
-  margin-top: 0;
-  color: #FFF2CC;
-  background: radial-gradient(#5089C6, #035397);
-  border-radius: 5px;
-  box-shadow: 1px 1px 2px black;
-  width: 80%;
-}
-
-.category-title:active {
-  opacity: 0.8;
 }
 
 #search-window {
@@ -130,10 +114,11 @@ display: block;
   padding: 0;
 }
 
-.form-block {
+.form-block{
   display: flex;
   justify-content: space-around;
   align-self: center;
+  width: 80%;
 }
 
 .option-btn {
@@ -146,19 +131,32 @@ display: block;
   transform: scale(0);
 }
 
+.category-title {
+  align-self: center;
+  text-align: center;
+  font-size: 0.7rem;
+  border-radius: 50rem;
+  opacity: 1;
+  padding: 5px;
+  margin-top: 0;
+  color: white;
+  background: radial-gradient(#5089C6, #035397);
+  box-shadow: 1px 1px 2px black;
+  width: 80%;
+}
+
 .option-tag + label {
-  // display: inline-block !important;
   font-size: 0.7rem !important;
   border-radius: 50rem !important;
   padding: 0.1rem 0.5rem !important;
   background: radial-gradient( #035397, #5089C6) !important;
-  color: #FFAA4C !important;
-  border: 1px solid #035397 !important;
-  margin-right: 0.6rem !important;
+  color: white !important;
+  box-shadow: 1px 1px 2px darkgray;
+  margin-right: 0.4rem !important;
   margin-bottom: 0.4rem !important;
 }
 
 .option-tag:checked + label {
   background: #035397 !important;
-  color: white !important;
+  color: whitesmoke !important;
 }

@@ -12,7 +12,7 @@ export default class extends Controller {
 
     allTexts.forEach((paragraph) => {
       const highlightedText = textVide(paragraph.innerText);
-      paragraph.innerHTML = highlightedText;
+      paragraph.innerHTML = highlightedText.replaceAll('.', '.<br><br>');
     })
 
     this.btnResetTarget.classList.remove("d-none")
