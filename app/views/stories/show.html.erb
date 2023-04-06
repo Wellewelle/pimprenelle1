@@ -11,58 +11,77 @@
     border-bottom-right-radius: 5px;
     border-bottom-left-radius: 5px;
   }*/
+
+  .btn {
+    font-family: 'Short Stack', cursive;
+  }
+
+  html * {
+    /*font-family: "Work Sans", "Helvetica", "sans-serif";*/
+    font-family: 'Work Sans';
+  }
 </style>
 <div class="container">
   <div class="row mb-3">
     <div class="col-12">
-      <div class="card text-bg-dark rounded-4 mt-3 mb-3">
-        <%= cl_image_tag @story.photo.key, class: "card-img rounded-4", style: "height: 15rem;", id: "top-image" %>
+      <div class="card text-bg-dark rounded-4 rounded-bottom border-0 mt-3">
+        <%= cl_image_tag @story.photo.key, class: "card-img rounded-4 rounded-bottom", style: "height: 15rem;", id: "top-image" %>
         <div class="card-img-overlay">
           <h2 class="fw-bold text-center fs-1 position-absolute top-50 start-50 translate-middle"><strong><%= @story.title %></strong></h2>
-          <div style="position: absolute; bottom:0; right:0">
+          <div style="position: absolute; bottom:0; right:3%">
             <% favorite = Favorite.find_by(story: @story, user: current_user) %>
             <% if favorite == nil %>
               <%= form_with(url: favorites_path, method: :post, local: true) do |form| %>
                 <%= form.hidden_field :story_id, value: @story.id, name: 'favorite[story_id]'%>
                 <%# = form.submit "Ajouter aux favoris", class: "btn btn-success btn-sm rounded-4 border-0", id: "favorite-button", style: "background-color: #FFAA4C;" %>
-                <%= button_tag(type: "submit", class:"btn rounded-4 text-white") do %>
+                <%= button_tag(type: "submit", class:"btn rounded-4 text-white shadow-none") do %>
                   <%= icon('fa-regular', 'star') %>
                 <% end %>
               <% end %>
+            <% else %>
+              <button class="btn shadow-none"><i class="fa-solid fa-star" style="color: #ffffff;"></i></button>
             <% end %>
           </div>
+        </div>
+      </div>
+      <div class="audio-card__unit-stats audio-card__unit-stats clearfix mt-0 d-flex align-items-stretch">
+        <div class="one-third bottom-left">
+          <div class="stat"><strong>Age</strong></div>
+          <div class="stat-value"><%= @story.age %></div>
+        </div>
+
+        <div class="one-third">
+          <div class="stat"><strong>J'aimes</strong></div>
+          <div class="stat-value"><%= @story.rating %></div>
+        </div>
+
+        <% @word_count = 0 %>
+        <% @story.content.each_char do |word| %>
+          <% @word_count += 1 %>
+        <% end %>
+          <% @word_count/5 %>
+        <% if @word_count <= 650 %>
+          <% @story_length = @story.length = "5 minutes ou moins" %>
+        <% elsif @word_count = 651..1300 %>
+          <% @story_length = @story.length = "5 à 10 minutes" %>
+        <% elsif @word_count = 1301..1950 %>
+          <% @story_length = @story.length = "10 à 15 minutes" %>
+        <% elsif @word_count = 1951..2600 %>
+          <% @story_length = @story.length = "15 à 20 minutes" %>
+        <% elsif @word_count >= 2600 %>
+          <% @story_length = @story.length = "20 minutes ou plus" %>
+        <% end %>
+
+        <div class="one-third no-border">
+          <div class="stat"><strong>Durée</strong></div>
+          <div class="stat-value"><%= @story_length %></div>
         </div>
       </div>
     </div>
   </div>
   <div class="row mb-3">
     <div class="col-12 d-flex justify-content-center">
-      <ul class="list-group list-group-horizontal mb-3" id="thedata" style="width: 20rem;">
-        <li class="list-group-item rounded-end rounded-4 border-start-0" style="background-color: #FFAA4C;"><p class="card-text text-white"><strong>Age </strong><%= @story.age %></p></li>
-        <li class="list-group-item" style="background-color: #FFAA4C;"><p class="card-text text-white"><strong>Rating </strong><%= @story.rating %></p></li>
-          <% @word_count = 0 %>
-          <% @story.content.each_char do |word| %>
-            <% @word_count += 1 %>
-          <% end %>
-            <% @word_count/5 %>
-          <% if @word_count <= 650 %>
-            <% @story_length = @story.length = "5 minutes ou moins" %>
-          <% elsif @word_count = 651..1300 %>
-            <% @story_length = @story.length = "5 à 10 minutes" %>
-          <% elsif @word_count = 1301..1950 %>
-            <% @story_length = @story.length = "10 à 15 minutes" %>
-          <% elsif @word_count = 1951..2600 %>
-            <% @story_length = @story.length = "15 à 20 minutes" %>
-          <% elsif @word_count >= 2600 %>
-            <% @story_length = @story.length = "20 minutes ou plus" %>
-          <% end %>
-        <li class="list-group-item rounded-4 rounded-start" style="background-color: #FFAA4C;"><p class="card-text text-white"><strong>Durée </strong><%= @story_length %></p></li>
-      </ul>
-    </div>
-  </div>
-  <div class="row mb-3">
-    <div class="col-12 d-flex justify-content-center">
-      <div class="card text-center rounded-4" style="width: 20rem;">
+      <div class="card text-center rounded-4">
         <div class="card-body" data-controller="show-content" data-show-content-id-value="<%=@story.id%>">
           <div data-controller="text-vide" id="story-content">
             <p class="card-text" id="storySpot" data-show-content-target="summary"><%= @story.summary %></p>
@@ -79,31 +98,34 @@
   </div>
   <div class="row mt-3 mb-3">
     <div class="col-12 mb-2 d-flex justify-content-center">
-      <div id="tttt" class="border rounded-4 p-3" style="width: 20rem;" data-controller="add-audio">
+      <div id="tttt" class="border rounded-4 p-3" style="width: 23rem;" data-controller="add-audio">
         <h5><strong>Audios:</strong></h5>
-        <% if @story.audios.attached? %>
-          <% half_audio_count = (@story.audios.count / 2.0).ceil %>
-          <% @story.audios.each_with_index do |sound, index| %>
-            <% break if index >= half_audio_count %>
-            <% audio_url = Cloudinary::Utils.cloudinary_url(sound.key, resource_type: 'video') %>
-            <audio controls>
-              <source src="<%= audio_url %>" type="<%= sound.content_type %>">
-              Votre navigateur ne supporte pas l'élément audio.
-            </audio>
+        <div class="d-flex justify-content-center mb-2">
+          <% if @story.audios.attached? %>
+            <% half_audio_count = (@story.audios.count / 2.0).ceil %>
+            <% @story.audios.each_with_index do |sound, index| %>
+              <% break if index >= half_audio_count %>
+              <% audio_url = Cloudinary::Utils.cloudinary_url(sound.key, resource_type: 'video') %>
+              <audio controls>
+                <source src="<%= audio_url %>" type="<%= sound.content_type %>">
+                Votre navigateur ne supporte pas l'élément audio.
+              </audio>
+            <% end %>
+          <% else %>
+            <h5 class="text-center">Il n'y a pas d'audios</h5>
           <% end %>
-        <% else %>
-          <h5 class="text-center">Il n'y a pas d'audios</h5>
-        <% end %>
-
-        <button type="button" class="btn btn-info rounded-circle border-0 w-auto" data-add-audio-target="addmore" data-action="click->add-audio#showform" style="background-color: #FFAA4C;"><i class="fa-solid fa-circle-plus" style="color: #000000;"></i></button>
-        <%= simple_form_for :audios, html: {class: "d-none", data: {add_audio_target: "content", action: "submit->add-audio#insert"}} do |f| %>
-          <%= f.input :audios, as: :file, input_html: { multiple: true }, class: "form-control" %>
-          <%= f.button :submit, class: "btn btn-primary btn-sm rounded-4 border-0", style: "background-color: #FFAA4C;" %>
-        <% end %>
+        </div>
+        <div class="d-flex justify-content-center">
+          <button type="button" class="btn btn-info rounded-circle border-0 w-auto" data-add-audio-target="addmore" data-action="click->add-audio#showform" style="background-color: #FFAA4C;"><i class="fa-solid fa-circle-plus" style="color: #000000;"></i></button>
+          <%= simple_form_for :audios, html: {class: "d-none", data: {add_audio_target: "content", action: "submit->add-audio#insert"}} do |f| %>
+            <%= f.input :audios, as: :file, input_html: { multiple: true }, class: "form-control" %>
+            <%= f.button :submit, class: "btn btn-primary btn-sm rounded-4 border-0", style: "background-color: #FFAA4C;" %>
+          <% end %>
+        </div>
       </div>
     </div>
     <div class="col-12 mt-2 d-flex justify-content-center">
-      <div class="card p-3 rounded-4" style="width: 20rem;">
+      <div class="card p-3 rounded-4" style="width: 23rem;">
         <h5 class="mb-2 text-center"><strong>Tu as aimé ?</strong></h5>
         <div class="d-flex justify-content-evenly" data-controller="edit-rating">
           <%= form_with url: increment_story_path(@story), data: {edit_rating_target: "upbtn", action: "submit->edit-rating#increment"}, method: :post do %>
@@ -125,7 +147,5 @@
         </div>
       </div>
     </div>
-  </div>
-  <div class="d-flex justify-content-center">
   </div>
 </div>
