@@ -95,7 +95,7 @@
           <h5 class="text-center">Il n'y a pas d'audios</h5>
         <% end %>
 
-        <button type="button" class="btn btn-info rounded-circle border-0" data-add-audio-target="addmore" data-action="click->add-audio#showform" style="background-color: #FFAA4C;"><i class="fa-solid fa-circle-plus" style="color: #000000;"></i></button>
+        <button type="button" class="btn btn-info rounded-circle border-0 w-auto" data-add-audio-target="addmore" data-action="click->add-audio#showform" style="background-color: #FFAA4C;"><i class="fa-solid fa-circle-plus" style="color: #000000;"></i></button>
         <%= simple_form_for :audios, html: {class: "d-none", data: {add_audio_target: "content", action: "submit->add-audio#insert"}} do |f| %>
           <%= f.input :audios, as: :file, input_html: { multiple: true }, class: "form-control" %>
           <%= f.button :submit, class: "btn btn-primary btn-sm rounded-4 border-0", style: "background-color: #FFAA4C;" %>
