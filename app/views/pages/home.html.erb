@@ -1,41 +1,60 @@
 <div class="container-fluid">
-  <h2 class="text-center orange mt-2 child">Il était une fois...</h2>
+  <div class="banner-homepage">
+    <div class="banner-content">
+      <p>Pimprenelle, l'appli magique qui fait voyager ton imagination !</p>
+    </div>
+  </div>
 
-<div class="d-grid gap-2 mb-4 text-center">
-  <%= link_to "/stories/new" do %>
-    <button id="creation" class="btn btn-primary rounded-5 fs-5 w-100" style="height: 5rem;" type="button">Créer votre histoire</button>
-  <% end %>
-</div>
+  <div class="d-grid gap-2 mt-4 mb-4 text-center">
+    <%= link_to "/stories" do %>
+      <button id="creation" class="btn btn-primary rounded-5 fs-5 w-100" style="height: 5rem;" type="button">Découvrez nos histoires !</button>
+    <% end %>
+  </div>
 
-  <h4 class="text-center orange mt-2 child">Vos histoires en cours</h4>
+    <p class="titres text-center white mt-4 child">Histoires audios pour 2 ans et +</p>
   <div class="scroll-container">
-    <% @stories.each do |story| %>
+    <% @stories.shuffle.each do |story| %>
+    <% if story.audios.attached? %>
+    <div id="box2" class="scroll-item card rounded-4" style="width: 10rem;">
+    <% if story.photo.attached? %>
+          <%= cl_image_tag story.photo.key, crop: :fill, class:"card-img-top rounded-4", id: "picturesize", style:"height: 8rem;" %>
+        <% else %>
+          <img id="picturesize" class="card-img-top rounded-4" style="height: 8rem;" src="https://i.pinimg.com/originals/3e/7f/51/3e7f5183864ccbb40d4d68e06dd779b0.jpg">
+        <% end %>
+        <p class="card-title text-center"><%= link_to story.title, story_path(story) %></p>
+    </div>
+    <% end %>
+    <% end %>
+  </div>
+
+  <p class="titres text-center white mt-2 child">Nos plus beaux contes</h6>
+  <div class="scroll-container">
+    <% @stories.where(genre:"Conte").shuffle.each do |story| %>
+    <div id="box1" class="scroll-item card rounded-4" style="width: 10rem;">
+    <% if story.photo.attached? %>
+          <%= cl_image_tag story.photo.key, crop: :fill, class:"card-img-top rounded-4", id: "picturesize", style:"height: 8rem;" %>
+        <% else %>
+          <img id="picturesize" class="card-img-top rounded-4" style="height: 8rem;" src="https://i.pinimg.com/originals/3e/7f/51/3e7f5183864ccbb40d4d68e06dd779b0.jpg">
+        <% end %>
+        <p class="card-title text-center"><%= link_to story.title, story_path(story) %></p>
+    </div>
+    <% end %>
+  </div>
+
+
+      <p class="titres text-center white mt-2 child">À l'aventure !</h6>
+  <div id="box3" class="scroll-container mb-5">
+    <% @stories.where(genre:"Aventure").shuffle.each do |story| %>
     <div class="scroll-item card rounded-4" style="width: 10rem;">
     <% if story.photo.attached? %>
           <%= cl_image_tag story.photo.key, crop: :fill, class:"card-img-top rounded-4", id: "picturesize", style:"height: 8rem;" %>
         <% else %>
           <img id="picturesize" class="card-img-top rounded-4" style="height: 8rem;" src="https://i.pinimg.com/originals/3e/7f/51/3e7f5183864ccbb40d4d68e06dd779b0.jpg">
         <% end %>
-      <div class="card-body p-1">
-        <p class="card-title text-center"><%= link_to story.title, story_path(story), class:"orange child" %></p>
-        <p class="card-text text-center child"> Lu à <strong><%= rand(20..100) %>%</strong></p>
-      </div>
+        <p class="card-title text-center"><%= link_to story.title, story_path(story) %></p>
     </div>
     <% end %>
   </div>
-
-  <h4 class="text-center orange mt-4 child">Des histoires à découvrir</h4>
-  <div class="scroll-container">
-    <% @stories.each do |story| %>
-    <% if story.photo.present? %>
-      <div class="scroll-item card rounded-4" style="background: linear-gradient(0deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url(<%= cl_image_path(story.photo.key, crop: :fill) %>);">
-        <div class="card-body p-1">
-          <div class="title-container">
-            <p class="card-title text-center"><%= link_to story.title.upcase, story_path(story), class:"child white" %></p>
-          </div>
-        </div>
-      </div>
-    <% end %>
-    <% end %>
+  <br>
+  <br>
   </div>
-</div>

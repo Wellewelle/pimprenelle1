@@ -30,7 +30,7 @@ story1 = Story.create!(title: "Les mauvais voisins", summary: "De très mauvais 
   <h2>Chapitre 3 : La réconciliation</h2>
   <p>Tous deux se sont retrouvés dans un hôpital et ont dû passer un certain temps à partager une chambre là-bas. Au début, ils ont refusé de se parler, mais un jour, fatigués du silence, ils se sont mis à parler. Au fil du temps, ils sont devenus amis, jusqu'au jour où ils ont finalement osé discuter de l'incident du morceau de papier. Ils ont réalisé que tout cela n'avait été qu'un malentendu et que s'ils s'étaient parlé la première fois - au lieu de tirer des conclusions hâtives sur de mauvaises intentions - rien de tout cela ne serait arrivé. Mieux encore, ils auraient toujours leurs maisons.</p>
 
-  <p>Cependant, à la fin, le fait qu'ils parlaient et soient devenus amis les a beaucoup aidés à se remettre de leurs blessures et à travailler ensemble pour reconstruire leurs maisons.</p>", genre: "Fantaisie", age: "8 à 10 ans", tags: "Princes et Princesses", rating: 3, user_id: user1.id)
+  <p>Cependant, à la fin, le fait qu'ils parlaient et soient devenus amis les a beaucoup aidés à se remettre de leurs blessures et à travailler ensemble pour reconstruire leurs maisons.</p>", genre: "Fantaisie", age: "8 à 10 ans", tags: "Princes et Princesses", rating: rand(21..82), user_id: user2.id)
 
 story2 = Story.create!(title: "Un poulpe en détresse", summary: "Nous devons aller sauver la pieuvre!", content: "<h2>Chapitre 1 - Un piège inattendu</h2>
   <p>Il était une fois une pieuvre timide et silencieuse. Il se déplaçait presque toujours seul car, bien qu'il veuille avoir beaucoup d'amis, il était trop gêné.</p> <p>Un jour, la pieuvre essayait d'attraper une huître très glissante. Avant qu'il ne s'en rende compte, il s'était attaché en un nœud massif et il ne pouvait pas bouger. Il a essayé de toutes ses forces de se dégager, mais ce n'était pas bon. Finalement, malgré la grande gêne qu'il ressentait d'être vu dans un tel enchevêtrement, il dut demander de l'aide aux poissons qui passaient. De nombreux poissons passèrent à la nage, l'ignorant, mais un petit poisson très gentil offrit son aide pour détacher tous ces tentacules de toutes ces ventouses.</p>
@@ -43,7 +43,7 @@ story2 = Story.create!(title: "Un poulpe en détresse", summary: "Nous devons al
 
   <p>Alors le gros poisson s'éloigna, tout irrité.</p>
   <h2>Chapitre 4 - La reconnaissance des autres poissons</h2>
-  <p>Dès qu'il fut parti, tous les poissons qui s'étaient cachés vinrent féliciter la pieuvre d'avoir été si courageuse. Puis le petit poisson leur raconta à tous comment il avait aidé la pieuvre quelques jours plus tôt, mais il n'avait jamais vu quelqu'un être aussi reconnaissant qu'il finisse par faire quelque chose d'aussi dangereux. En entendant cela, les autres poissons ont découvert à quel point la pieuvre timide était gentille, et tout le monde autour était désireux d'être l'ami d'une pieuvre aussi courageuse et honorable.</p>", genre: "Romance", age: "8 à 10 ans", tags: "Fées", rating: 5, user_id: user1.id)
+  <p>Dès qu'il fut parti, tous les poissons qui s'étaient cachés vinrent féliciter la pieuvre d'avoir été si courageuse. Puis le petit poisson leur raconta à tous comment il avait aidé la pieuvre quelques jours plus tôt, mais il n'avait jamais vu quelqu'un être aussi reconnaissant qu'il finisse par faire quelque chose d'aussi dangereux. En entendant cela, les autres poissons ont découvert à quel point la pieuvre timide était gentille, et tout le monde autour était désireux d'être l'ami d'une pieuvre aussi courageuse et honorable.</p>", genre: "Romance", age: "8 à 10 ans", tags: "Fées", rating: rand(21..82), user_id: user2.id)
 
 story3 = Story.create!(title: "Princesse du Feu", summary: "Il était une fois une princesse incroyablement riche, belle et sage. Fatiguée des faux prétendants qui ne s'intéressaient qu'à son argent, elle annonça qu'elle n'épouserait que celui qui parviendrait à lui offrir le cadeau le plus précieux, le plus tendre et le plus sincère de tous.", content: "Il était une fois une princesse incroyablement riche, belle et sage. Fatiguée des faux prétendants qui ne s'intéressaient qu'à son argent, elle annonça qu'elle n'épouserait que celui qui parviendrait à lui offrir le cadeau le plus précieux, le plus tendre et le plus sincère de tous.
   Le palais s'est rempli de fleurs et de cadeaux de toutes sortes, de lettres décrivant l'amour éternel et de poèmes amoureux. Parmi tous ces merveilleux cadeaux, elle a trouvé un caillou, un simple caillou sale. Intriguée, elle a exigé de voir celui qui avait offert ce cadeau. Malgré sa curiosité, elle a fait semblant d'être très offensée par le cadeau lorsque le jeune homme lui a été présenté. Il lui a expliqué comme ça,
@@ -53,7 +53,7 @@ story3 = Story.create!(title: "Princesse du Feu", summary: "Il était une fois u
 
   Au cours des mois suivants, elle entreprit de changer le royaume et consacra sa vie, sa sagesse et ses richesses à séparer ce qui a vraiment de la valeur de ce qui ne l'est pas. Elle a renoncé au luxe, aux bijoux, à l'excès ; et cela signifiait que tout le monde dans le royaume avait maintenant de la nourriture à manger et des livres à lire. Tant de personnes sont sorties de leur interaction avec la princesse enchantées par son caractère et son charisme. Sa simple présence transmettait une telle chaleur humaine qu'ils ont commencé à l'appeler \"La Princesse du Feu\".
 
-  Et comme pour le caillou, le feu de sa présence fit fondre la dureté du cœur du jeune homme. Et comme il l'avait promis, il devint si tendre et prévenant qu'il rendit la princesse heureuse jusqu'à la fin de ses jours.", genre: "Aventure", age: "8 à 10 ans", tags: "Chevaliers", rating: 3, user_id: user2.id)
+  Et comme pour le caillou, le feu de sa présence fit fondre la dureté du cœur du jeune homme. Et comme il l'avait promis, il devint si tendre et prévenant qu'il rendit la princesse heureuse jusqu'à la fin de ses jours.", genre: "Aventure", age: "8 à 10 ans", tags: "Chevaliers", rating: rand(21..82), user_id: user2.id)
 
 story4 = Story.create!(title: "Noir et blanc", summary: "Respectez-vous toujours les uns les autres !", content: "Il y a très, très longtemps, quand tout commençait à peine, et même les planètes et les étoiles étaient si jeunes qu'elles allaient encore à l'école, il y avait une classe spéciale qui était la préférée de tout le monde, ayant de loin les camarades de classe les plus amusants. Les membres de la classe étaient un groupe de couleurs plutôt espiègles; du noir et blanc au rouge et bleu, jaune et tout le reste. Ils espéraient devenir de merveilleuses couleurs, et c'est pour cela qu'ils s'entraînaient.
 
@@ -73,7 +73,7 @@ story4 = Story.create!(title: "Noir et blanc", summary: "Respectez-vous toujours
   Un peu plus tard, noir et blanc entrèrent dans la salle de classe, la trouvant vide.
   Tout le monde félicitait tellement les autres couleurs pour leur merveilleuse performance que le noir et le blanc - vraiment la plus amusante et la plus joyeuse de toutes les couleurs - n'osaient pas demander à faire partie de l'arc-en-ciel, et à partir de ce moment-là, ils se sont forcés à être ponctuel et responsable.
 
-  En effet, ils ont si bien réussi cela qu'ils ne voient plus d'inconvénient à être exclus de l'arc-en-ciel. Ils sont maintenant les plus sérieux et les plus importants de toutes les couleurs, et personne ne peut rien faire sans eux.", genre: "Fantaisie", age: "8 à 10 ans", tags: "Animaux", rating: 3, user_id: user2.id )
+  En effet, ils ont si bien réussi cela qu'ils ne voient plus d'inconvénient à être exclus de l'arc-en-ciel. Ils sont maintenant les plus sérieux et les plus importants de toutes les couleurs, et personne ne peut rien faire sans eux.", genre: "Fantaisie", age: "8 à 10 ans", tags: "Animaux", rating: rand(21..82), user_id: user2.id )
 
 story5 = Story.create!(title: "Une porte ouverte sur le monde", summary: "Vous devez faire attention à ne pas devenir accro aux ordinateurs. Ils peuvent nous séparer de la vie quotidienne et du monde naturel.", content: "Albert était fou d'ordinateurs et de jeux vidéo. Il pouvait passer des heures et des heures devant l'écran, et même si ses parents avaient du mal à y croire, il en appréciait vraiment chaque minute. Il quittait à peine son siège. Lorsque les gens l'encourageaient à s'impliquer dans la vie normale, il répondait :
 
@@ -93,7 +93,7 @@ story5 = Story.create!(title: "Une porte ouverte sur le monde", summary: "Vous d
 
   Et aujourd'hui encore, Albert apprend et découvre de nouvelles choses sur les animaux et la nature. Maintenant, il utilise également l'ordinateur pour le faire. Cependant, chaque fois que quelqu'un lui pose des questions à ce sujet, il pointe du doigt ses animaux de compagnie et dit :
 
-  -\"Ils sont définitivement ma porte d'entrée sur le monde, ils sont bien plus que vous ne le pensez.\"", genre: "Fantaisie", age: "8 à 10 ans", tags: "Animaux", rating: 3, user_id: user1.id)
+  -\"Ils sont définitivement ma porte d'entrée sur le monde, ils sont bien plus que vous ne le pensez.\"", genre: "Fantaisie", age: "8 à 10 ans", tags: "Animaux", rating: rand(21..82), user_id: user2.id)
 
 story6 = Story.create!(title: "Le Roi Invisible de la Jungle", summary: "Vous ne pouvez pas mentir et exagérer indéfiniment. Si vous ne pouvez pas tenir parole, tôt ou tard vous serez découvert.", content: "Dans la jungle de Maluba vivait une mouche appelée Mozzie, et Mozzie pouvait rugir comme un lion. Il a découvert sa capacité spéciale alors qu'il était encore très jeune et, en grandissant, il a voyagé jusqu'aux confins de Maluba, où personne ne le connaîtrait. Dès qu'il arrivait, il se déchaînait avec son rugissement pétrifiant, se déplaçant ici et là, effrayant tout le monde. Il utilisait toujours la même méthode, se cachant derrière des buissons, et laissant échapper un rugissement menaçant ; puis il volait rapidement derrière sa victime et rugissait à nouveau :
 
@@ -119,7 +119,7 @@ story6 = Story.create!(title: "Le Roi Invisible de la Jungle", summary: "Vous ne
 
   Cependant, Mozzie ne pouvait ni mordre ni frapper la tortue, sa seule option était de continuer à rugir et à menacer. Pourtant, le fou Tuga Tuga n'arrêtait pas de rire, ne prêtant aucune attention aux furieux avertissements du lion. Après quelques minutes, il était clair que le lion n'allait exécuter aucune de ses menaces, et un petit oiseau audacieux s'est joint à Tuga Tuga, se moquant du lion. Mozzie a essayé d'effrayer le petit oiseau, mais cela n'a pas fonctionné. Peu à peu, les autres animaux ont commencé à se joindre à eux. Enfin, tous les animaux se moquaient de l'invisible Léon, l'appelant des choses comme : « le lion qui aboie mais ne mord pas », « le roi sans sujets » ou « le fantôme ». Le Roi Lion, celui qui ne fait rien »…
 
-  Et ainsi se terminèrent les beaux jours de bonheur de Mozzie ; la mouche qui rugissait, qui menaçait, qui mentait tellement… tellement que quand venait le temps de tenir parole, il n'y avait plus moyen de le faire.", genre: "Fantaisie", age: "8 à 10 ans", tags: "Animaux", rating: 3, user_id: user2.id)
+  Et ainsi se terminèrent les beaux jours de bonheur de Mozzie ; la mouche qui rugissait, qui menaçait, qui mentait tellement… tellement que quand venait le temps de tenir parole, il n'y avait plus moyen de le faire.", genre: "Fantaisie", age: "8 à 10 ans", tags: "Animaux", rating: rand(21..82), user_id: user2.id)
 
 story7 = Story.create!(title: "Le Viking Aux Cent Cornes", summary: "L'ostentation n'apporte rien de positif. Tôt ou tard, cela deviendra une faiblesse.", content: "Olav Brutolsen était le plus terrible de tous les Vikings. Avec seulement ses mains nues, il pouvait combattre un taureau pour le soumettre en quelques secondes. Pour s'assurer que les gens sachent exactement qui il était, son casque et sa cape étaient ornés de ses trophées de victoire. Il avait plus de cent cornes sur son casque, et mille pierres précieuses sur son manteau. une pierre pour chaque ennemi qu'il avait vaincu.
 
@@ -131,24 +131,24 @@ story7 = Story.create!(title: "Le Viking Aux Cent Cornes", summary: "L'ostentati
 
   Mais ce coup n'est jamais venu. Olav avait attaqué pendant plus de cinq minutes et au bout de dix minutes, il est tombé au sol, comme mort.
 
-  De nombreux spectateurs pensaient que le jeune homme devait être une sorte de sorcier, mais le garçon, qui était un étudiant en médecine du nom de Virtensen, avait démontré à tout le monde à quel point la fierté et l'ostentation d'Olav avaient suffi à le faire tomber sous le poids de son casque. et manteau. Quand Olav revint à lui, comme un bon guerrier, il accepta sa défaite. A partir de ce jour, il se débarrasse des trophées inutiles sur son casque et son manteau, et revient à des vêtements simples. Maintenant, partout où il marchait, il était comme n'importe qui d'autre. Partout, c'est-à-dire, sauf lorsqu'il marchait sur le champ de bataille, où il était reconnu non pas pour ses nombreuses cornes ou son manteau orné de bijoux, mais pour sa férocité inégalée.", genre: "Conte", age: "8 à 10 ans", tags: "Animaux", rating: 3, user_id: user2.id)
+  De nombreux spectateurs pensaient que le jeune homme devait être une sorte de sorcier, mais le garçon, qui était un étudiant en médecine du nom de Virtensen, avait démontré à tout le monde à quel point la fierté et l'ostentation d'Olav avaient suffi à le faire tomber sous le poids de son casque. et manteau. Quand Olav revint à lui, comme un bon guerrier, il accepta sa défaite. A partir de ce jour, il se débarrasse des trophées inutiles sur son casque et son manteau, et revient à des vêtements simples. Maintenant, partout où il marchait, il était comme n'importe qui d'autre. Partout, c'est-à-dire, sauf lorsqu'il marchait sur le champ de bataille, où il était reconnu non pas pour ses nombreuses cornes ou son manteau orné de bijoux, mais pour sa férocité inégalée.", genre: "Conte", age: "8 à 10 ans", tags: "Animaux", rating: rand(21..82), user_id: user2.id)
 
 
-story8 = Story.create!(title: "La maison de l'escargot", summary: "Un petit escargot trouve une solution à ses problèmes de randonnée grâce à une découverte surprenante", content: "Il était une fois un pauvre escargot qui souffrait beaucoup à chaque fois qu'il partait en randonnée, car il avait du mal à suivre le rythme de ses compagnons. La coccinelle était aussi rapide qu'une souris, le mille-pattes, avec ses mille pattes, ignorait la fatigue, le scarabée prenait même le temps de faire des escapades vers les fleurs. Le pauvre petit escargot, lui, peinait, soufflait, transpirait tout seul et loin derrière, abandonné par les autres qui n'avaient plus la patience de l'attendre. Quand le petit escargot parvenait enfin à rejoindre le groupe, les autres petites bêtes s'étaient déjà bien reposées, avaient bien mangé et après avoir bien joué, avaient préparé le campement et dormaient depuis bien longtemps. Et comme il n'y avait plus de place, le petit escargot devait coucher à la belle étoile. Mais chaque matin, obstiné, il reprenait la route, espérant toujours rattraper ses amis. Pour ne pas s'ennuyer pendant le parcours, il sifflotait, regardait à droite et à gauche, saluait les petites bêtes qu'il rencontrait. Un jour qu'il avançait le nez en l'air pour admirer le vol d'un beau papillon, le petit escargot buta sur une surface dure qui lui fit perdre l'équilibre. « Ça alors, mais qu'est-ce que c'est ? » se demanda-t-il car il n'avait jamais vu une chose pareille (ce qui est normal puisqu'il s'agissait d'un coquillage perdu par un enfant qui l'avait ramené du bord de mer.) D'un naturel curieux, et comme la chose ne bougeait pas, le petit escargot alla voir de plus près et inspecta l'intérieur attentivement. En y pénétrant, il s'aperçut qu'elle était parfaitement à sa taille et de plus très légère à porter. « C'est super ! », jubila alors le petit escargot, « je vais m'en faire une maison. » Et il se mit en route, le coquillage sur le dos. Quand il arriva au campement, tout le monde dormait déjà mais le lendemain matin, en sortant de son coquillage, le petit escargot remporta un très grand succès et toutes les petites bêtes ressentaient une pointe d'envie. Ainsi, le petit escargot n'avait plus besoin de se construire une maison chaque nuit, il ne craignait plus ni le grand soleil, ni la pluie et pouvait faire une sieste quand il le voulait. Les petites bêtes de la forêt cherchèrent alors toutes une maison à se mettre sur le dos, mais en fin de compte il n'y en eut que pour l'escargot.", genre: "Aventure", age: "5 à 8 ans", tags: "Escargot, Amis, Nature", rating: 3, user_id: user2.id)
+story8 = Story.create!(title: "La maison de l'escargot", summary: "Un petit escargot trouve une solution à ses problèmes de randonnée grâce à une découverte surprenante", content: "Il était une fois un pauvre escargot qui souffrait beaucoup à chaque fois qu'il partait en randonnée, car il avait du mal à suivre le rythme de ses compagnons. La coccinelle était aussi rapide qu'une souris, le mille-pattes, avec ses mille pattes, ignorait la fatigue, le scarabée prenait même le temps de faire des escapades vers les fleurs. Le pauvre petit escargot, lui, peinait, soufflait, transpirait tout seul et loin derrière, abandonné par les autres qui n'avaient plus la patience de l'attendre. Quand le petit escargot parvenait enfin à rejoindre le groupe, les autres petites bêtes s'étaient déjà bien reposées, avaient bien mangé et après avoir bien joué, avaient préparé le campement et dormaient depuis bien longtemps. Et comme il n'y avait plus de place, le petit escargot devait coucher à la belle étoile. Mais chaque matin, obstiné, il reprenait la route, espérant toujours rattraper ses amis. Pour ne pas s'ennuyer pendant le parcours, il sifflotait, regardait à droite et à gauche, saluait les petites bêtes qu'il rencontrait. Un jour qu'il avançait le nez en l'air pour admirer le vol d'un beau papillon, le petit escargot buta sur une surface dure qui lui fit perdre l'équilibre. « Ça alors, mais qu'est-ce que c'est ? » se demanda-t-il car il n'avait jamais vu une chose pareille (ce qui est normal puisqu'il s'agissait d'un coquillage perdu par un enfant qui l'avait ramené du bord de mer.) D'un naturel curieux, et comme la chose ne bougeait pas, le petit escargot alla voir de plus près et inspecta l'intérieur attentivement. En y pénétrant, il s'aperçut qu'elle était parfaitement à sa taille et de plus très légère à porter. « C'est super ! », jubila alors le petit escargot, « je vais m'en faire une maison. » Et il se mit en route, le coquillage sur le dos. Quand il arriva au campement, tout le monde dormait déjà mais le lendemain matin, en sortant de son coquillage, le petit escargot remporta un très grand succès et toutes les petites bêtes ressentaient une pointe d'envie. Ainsi, le petit escargot n'avait plus besoin de se construire une maison chaque nuit, il ne craignait plus ni le grand soleil, ni la pluie et pouvait faire une sieste quand il le voulait. Les petites bêtes de la forêt cherchèrent alors toutes une maison à se mettre sur le dos, mais en fin de compte il n'y en eut que pour l'escargot.", genre: "Aventure", age: "5 à 8 ans", tags: "Escargot, Amis, Nature", rating: rand(21..82), user_id: user2.id)
 file = URI.open("https://res.cloudinary.com/ddd2hwkfz/image/upload/v1680616618/Pimprenelle/biblidhis_027i01_s1p2et.png")
 story8.photo.attach(io: file, filename: "biblidhis_027i01_s1p2et.png", content_type: "image/jpg")
 file = URI.open("https://res.cloudinary.com/dyi2oz7zm/video/upload/v1680095816/Float_z5pvtc.mp3")
 story8.audios.attach(io: file, filename: "Float_z5pvtc.mp3", content_type: "audio/mp3")
 story8.save
 
-story9 = Story.create!(title: "Roland", summary: "Roland découvre qu'il peut donner vie à ses dessins et envoie un zèbre et des ours en classe", content: "Roland était en retard. « Va au coin », dit le maître, et Roland obéit. Mais, au coin, il n'y avait rien à faire, alors Roland prit son crayon et dessina un tigre allongé sur le mur. Puis il dit : « CRACK » et le tigre devint vivant. Le tigre s'étira, se déroula de tout son long et dit bonjour au maître très poliment. Le maître répondit : « Il n'y a pas de place pour toi ici. » Il ouvrit la porte et, sans un mot de plus, le tigre sortit. « Récréation, tout le monde dehors maintenant », dit le maître. « Sauf toi, Roland. Tu restes ici. Et attention, plus de « CRACK », je te prie ». Roland resta seul dans la classe. Comme il s'ennuyait, il prit son cahier, dessina un zèbre, arracha la page et la colla à la fenêtre. Dans la cour, les autres garçons faisaient une bataille de boules de neige. Une des boules frappa la vitre, le verre fit « CRACK » en se cassant, et le zèbre devint vivant. D'un bond il fut dans la cour et d'un bond il franchit le mur. Le maître n'avait rien vu car il avait reçu une boule de neige dans l'œil. Heureusement, pas très dure. Après la récréation, la classe reprit. Dehors, le vent soufflait fort. Par la vitre cassée, la neige entrait à gros flocons et s'entassait sur le plancher. Roland avait oublié ce que le maître lui avait dit. Il dessina donc vingt sapins, trois ours noirs, deux ours bruns et un ruisseau et dit : « CRACK ! CRACK ! CRACK ! CRACK ! ». Le ruisseau se mit à couler et les ours à marcher sur la neige du plancher ! Alors le maître dit aux enfants de rentrer chez eux car il faisait vraiment trop froid.", genre: "Fantaisie", age: "5 à 8 ans", tags: "Dessin, Animaux, Ecole", rating: 4, user_id: user2.id)
+story9 = Story.create!(title: "Roland", summary: "Roland découvre qu'il peut donner vie à ses dessins et envoie un zèbre et des ours en classe", content: "Roland était en retard. « Va au coin », dit le maître, et Roland obéit. Mais, au coin, il n'y avait rien à faire, alors Roland prit son crayon et dessina un tigre allongé sur le mur. Puis il dit : « CRACK » et le tigre devint vivant. Le tigre s'étira, se déroula de tout son long et dit bonjour au maître très poliment. Le maître répondit : « Il n'y a pas de place pour toi ici. » Il ouvrit la porte et, sans un mot de plus, le tigre sortit. « Récréation, tout le monde dehors maintenant », dit le maître. « Sauf toi, Roland. Tu restes ici. Et attention, plus de « CRACK », je te prie ». Roland resta seul dans la classe. Comme il s'ennuyait, il prit son cahier, dessina un zèbre, arracha la page et la colla à la fenêtre. Dans la cour, les autres garçons faisaient une bataille de boules de neige. Une des boules frappa la vitre, le verre fit « CRACK » en se cassant, et le zèbre devint vivant. D'un bond il fut dans la cour et d'un bond il franchit le mur. Le maître n'avait rien vu car il avait reçu une boule de neige dans l'œil. Heureusement, pas très dure. Après la récréation, la classe reprit. Dehors, le vent soufflait fort. Par la vitre cassée, la neige entrait à gros flocons et s'entassait sur le plancher. Roland avait oublié ce que le maître lui avait dit. Il dessina donc vingt sapins, trois ours noirs, deux ours bruns et un ruisseau et dit : « CRACK ! CRACK ! CRACK ! CRACK ! ». Le ruisseau se mit à couler et les ours à marcher sur la neige du plancher ! Alors le maître dit aux enfants de rentrer chez eux car il faisait vraiment trop froid.", genre: "Fantaisie", age: "5 à 8 ans", tags: "Dessin, Animaux, Ecole", rating: rand(21..82), user_id: user2.id)
 file = URI.open("https://res.cloudinary.com/ddd2hwkfz/image/upload/v1680622995/Pimprenelle/biblidhis_011i01_ksfkgy.png")
 story9.photo.attach(io: file, filename: "biblidhis_011i01_ksfkgy.png", content_type: "image/jpg")
 file = URI.open("https://res.cloudinary.com/dyi2oz7zm/video/upload/v1680095816/Float_z5pvtc.mp3")
 story9.audios.attach(io: file, filename: "Float_z5pvtc.mp3", content_type: "audio/mp3")
 story9.save
 
-story10 = Story.create!(title: "L'hermine et l'hiver", summary: "L'hermine se promène seule en hiver, mais découvre que son pelage blanc la protège des prédateurs", content: "Un jour d'hiver, alors que la forêt était recouverte d'un beau manteau blanc, l'hermine se promenait pendant que ses amis dormaient en attendant le retour du printemps. « Que vais-je bien pouvoir faire, se demanda-t-elle, je m'ennuie toute seule » Elle essaya bien de réveiller quelques-uns de ses amis : l'écureuil, le hérisson, mais elle n'y parvint pas. « Bon, se dit-elle, puisque tout le monde dort et même Hector, le grand ours, je vais en profiter pour le taquiner. » Elle s'approcha doucement du museau d'Hector et souffla très fort. Celui-ci, qui ne dormait que d'un œil, poussa un grognement de mécontentement si impressionnant que l'hermine devint blanche de peur et s'enfuit à toutes pattes. Cependant, en se promenant ainsi le poil tout blanc, elle s'aperçut qu'on ne la remarquait pas et pouvait facilement échapper au loup et au renard. C'est pourquoi maintenant l'hermine garde son manteau blanc l'hiver en se faisant peur toute seule.", genre: "Aventure", age: "2 à 5 ans", tags: "Animaux, Hiver, Couleurs", rating: 3, user_id: user2.id)
+story10 = Story.create!(title: "L'hermine et l'hiver", summary: "L'hermine se promène seule en hiver, mais découvre que son pelage blanc la protège des prédateurs", content: "Un jour d'hiver, alors que la forêt était recouverte d'un beau manteau blanc, l'hermine se promenait pendant que ses amis dormaient en attendant le retour du printemps. « Que vais-je bien pouvoir faire, se demanda-t-elle, je m'ennuie toute seule » Elle essaya bien de réveiller quelques-uns de ses amis : l'écureuil, le hérisson, mais elle n'y parvint pas. « Bon, se dit-elle, puisque tout le monde dort et même Hector, le grand ours, je vais en profiter pour le taquiner. » Elle s'approcha doucement du museau d'Hector et souffla très fort. Celui-ci, qui ne dormait que d'un œil, poussa un grognement de mécontentement si impressionnant que l'hermine devint blanche de peur et s'enfuit à toutes pattes. Cependant, en se promenant ainsi le poil tout blanc, elle s'aperçut qu'on ne la remarquait pas et pouvait facilement échapper au loup et au renard. C'est pourquoi maintenant l'hermine garde son manteau blanc l'hiver en se faisant peur toute seule.", genre: "Aventure", age: "2 à 5 ans", tags: "Animaux, Hiver, Couleurs", rating: rand(21..82), user_id: user2.id)
 file = URI.open("https://res.cloudinary.com/ddd2hwkfz/image/upload/v1680622976/Pimprenelle/biblidhis_028i01_vajy4u.png")
 story10.photo.attach(io: file, filename: "biblidhis_028i01_vajy4u.png", content_type: "image/jpg")
 file = URI.open("https://res.cloudinary.com/dyi2oz7zm/video/upload/v1680095816/Float_z5pvtc.mp3")
@@ -186,7 +186,7 @@ story11 = Story.create!(title: "Le Chêne et le Roseau", summary: "Le Chêne se 
   Le vent redouble ses efforts,
   Et fait si bien qu'il déracine
   Celui de qui la tête au Ciel était voisine,
-  Et dont les pieds touchaient à l'Empire des Morts.", genre: "Conte", age: "5 à 8 ans", tags: "Nature, Tempête, Résilience", rating: 4, user_id: user1.id)
+  Et dont les pieds touchaient à l'Empire des Morts.", genre: "Conte", age: "5 à 8 ans", tags: "Nature, Tempête, Résilience", rating: rand(21..82), user_id: user2.id)
 
 file = URI.open("https://res.cloudinary.com/ddd2hwkfz/image/upload/v1680681734/Pimprenelle/biblidpoe_002i01_tfnno1.png")
 story11.photo.attach(io: file, filename: "biblidpoe_002i01_tfnno1.png", content_type: "image/jpg")
@@ -218,8 +218,7 @@ story12 = Story.create!(
   genre: "Humour",
   age: "2 à 5 ans",
   tags: "Nourriture, Animaux, Farce",
-  rating: 4,
-  user_id: user2.id
+  rating: rand(21..82), user_id: user2.id
 )
 
 file = URI.open("https://res.cloudinary.com/ddd2hwkfz/image/upload/v1680681886/Pimprenelle/biblidpoe_006i01_c5xnff.png")
@@ -265,8 +264,7 @@ story13 = Story.create!(title: "Le Renard et le Bouc",
   genre: "Conte",
   age: "5 à 8 ans",
   tags: "Animaux, Ruse, Morale",
-  rating: 4,
-  user_id: user1.id)
+  rating: rand(21..82), user_id: user2.id)
 
 
 file = URI.open("https://res.cloudinary.com/ddd2hwkfz/image/upload/v1680681982/Pimprenelle/biblidpoe_020i01_hprpds.png")
@@ -301,8 +299,7 @@ story14 = Story.create!(
   genre: "Aventure",
   age: "2 à 5 ans",
   tags: "Mer, Enfance, Imagination",
-  rating: 4,
-  user_id: user2.id
+  rating: rand(21..82), user_id: user2.id
 )
 
 file = URI.open("https://res.cloudinary.com/ddd2hwkfz/image/upload/v1680682130/Pimprenelle/biblidpoe_007i01_ytl5dg.png")
@@ -351,8 +348,7 @@ Vous verrez que chez vous j'ai puisé ces leçons.",
   genre: "Conte",
   age: "5 à 8 ans",
   tags: "Animaux, Morale, Choix",
-  rating: 4,
-  user_id: user1.id
+  rating: rand(21..82), user_id: user2.id
 )
 
 file = URI.open("https://res.cloudinary.com/ddd2hwkfz/image/upload/v1680682281/Pimprenelle/biblidpoe_012i01_movfn1.png")
@@ -392,8 +388,7 @@ L'un est sûr, l'autre ne l'est pas.",
   genre: "Conte",
   age: "5 à 8 ans",
   tags: "Animaux, Amitié, Morale",
-  rating: 4,
-  user_id: user2.id)
+  rating: rand(21..82), user_id: user2.id)
 
 file = URI.open("https://res.cloudinary.com/ddd2hwkfz/image/upload/v1680682596/Pimprenelle/biblidpoe_018i01_canjgb.png")
 story16.photo.attach(io: file, filename: "biblidpoe_018i01_canjgb.png", content_type: "image/jpg")
@@ -414,8 +409,7 @@ Et le Soleil, impressionné par le bruit, renonce, mais pour un temps seulement,
   genre: "Conte",
   age: "10 à 12 ans",
   tags: "Mythologie, Aventure, Fantaisie",
-  rating: 3,
-  user_id: user1.id)
+  rating: rand(21..82), user_id: user2.id)
 
 file = URI.open("https://res.cloudinary.com/ddd2hwkfz/image/upload/v1680682868/Pimprenelle/biblidcon_081i01_glm7t2.png")
 story17.photo.attach(io: file, filename: "biblidcon_081i01_glm7t2.png", content_type: "image/jpg")
@@ -438,8 +432,7 @@ La leçon profita à la fillette qui se corrigea de son indiscipline. Et, par re
   genre: "Conte",
   age: "5 à 8 ans",
   tags: "Animaux, Morale, Apprentissage",
-  rating: 5,
-  user_id: user2.id)
+  rating: rand(21..82), user_id: user2.id)
 
 file = URI.open("https://res.cloudinary.com/ddd2hwkfz/image/upload/v1680683208/Pimprenelle/biblidcon_004i01_mqzeta.png")
 story18.photo.attach(io: file, filename: "biblidcon_004i01_mqzeta.png", content_type: "image/jpg")
@@ -461,7 +454,7 @@ story19 = Story.create!(title: "Le Garçon et les Autruches", summary: "Tous les
   Les épines de l'arbre saisirent le garçon et le retinrent jusqu'à ce que les hommes le trouvent près de mourir.
   Ils l'oignirent de parfums ; le garçon reprit ses sens. Il leur dit : « Les autruches sont meilleures que tous les animaux. »
 
-  Lorsque les siens apprirent cela, ils dirent : « Nous jurons de ne jamais tuer les autruches à cause du bien que nous savons d'elles. »", genre: "Conte", age: "10 à 12 ans", tags: "Animaux, Amitié, Courage", rating: 4, user_id: user1.id)
+  Lorsque les siens apprirent cela, ils dirent : « Nous jurons de ne jamais tuer les autruches à cause du bien que nous savons d'elles. »", genre: "Conte", age: "10 à 12 ans", tags: "Animaux, Amitié, Courage", rating: rand(21..82), user_id: user2.id)
 
 
 file = URI.open("https://res.cloudinary.com/ddd2hwkfz/image/upload/v1680683461/Pimprenelle/biblidcon_009i01_fvc1fb.png")
@@ -502,8 +495,7 @@ story20 = Story.create!(
   genre: "Conte",
   age: "5 à 8 ans",
   tags: "Animaux, Nourriture, Tromperie",
-  rating: 3,
-  user_id: user2.id
+  rating: rand(21..82), user_id: user2.id
 )
 
 file = URI.open("https://res.cloudinary.com/ddd2hwkfz/image/upload/v1680683848/Pimprenelle/biblidpoe_005i01_p4jb28.png")
@@ -527,7 +519,7 @@ story21 = Story.create!(title: "Le Corbeau et le Renard", summary: "Un corbeau v
   Vit aux dépens de celui qui l'écoute.
   Cette leçon vaut bien un fromage, sans doute.
   Le Corbeau honteux et confus
-  Jura, mais un peu tard, qu'on ne l'y prendrait plus.", genre: "Conte", age: "5 à 8 ans", tags: "Animaux, Morale, Humour", rating: 4, user_id: user1.id)
+  Jura, mais un peu tard, qu'on ne l'y prendrait plus.", genre: "Conte", age: "5 à 8 ans", tags: "Animaux, Morale, Humour", rating: rand(21..82), user_id: user2.id)
 
 
 file = URI.open("https://res.cloudinary.com/ddd2hwkfz/image/upload/v1680684029/Pimprenelle/biblidpoe_001i01_evsh7c.png")
@@ -551,7 +543,7 @@ story22 = Story.create!(title: "Le Lion et le Rat", summary: "Même le plus peti
   Sire Rat accourut, et fit tant par ses dents
   Qu'une maille rongée emporta tout l'ouvrage,
   Patience et longueur de temps
-  Font plus que force ni que rage.", genre: "Conte", age: "5 à 8 ans", tags: "Animaux", rating: 4, user_id: user2.id)
+  Font plus que force ni que rage.", genre: "Conte", age: "5 à 8 ans", tags: "Animaux", rating: rand(21..82), user_id: user2.id)
 
 file = URI.open("https://res.cloudinary.com/ddd2hwkfz/image/upload/v1680684154/Pimprenelle/biblidpoe_015i01_a1wqbz.png")
 story22.photo.attach(io: file, filename: "biblidpoe_015i01_a1wqbz.png", content_type: "image/jpg")
@@ -580,8 +572,7 @@ Ne tombez jamais sous ma patte.",
   genre: "Conte",
   age: "5 à 8 ans",
   tags: "Animaux, Amitié, Humour",
-  rating: 4,
-  user_id: user1.id
+  rating: rand(21..82), user_id: user2.id
 )
 
 file = URI.open("https://res.cloudinary.com/ddd2hwkfz/image/upload/v1680684289/Pimprenelle/biblidpoe_017i01_rumzel.png")
@@ -624,8 +615,7 @@ Sans autre forme de procès.",
   genre: "Conte",
   age: "5 à 8 ans",
   tags: "Animaux, Morale, Mensonge",
-  rating: 5,
-  user_id: user2.id
+  rating: rand(21..82), user_id: user2.id
 )
 
 file = URI.open("https://res.cloudinary.com/ddd2hwkfz/image/upload/v1680684431/Pimprenelle/biblidpoe_016i01_iqlod8.png")
@@ -674,13 +664,60 @@ Si vous portiez une maison ?",
   genre: "Conte",
   age: "5 à 8 ans",
   tags: "Animaux, Course, Leçon",
-  rating: 4,
-  user_id: user1.id
+  rating: rand(21..82), user_id: user2.id
 )
 
 file = URI.open("https://res.cloudinary.com/ddd2hwkfz/image/upload/v1680684539/Pimprenelle/biblidpoe_004i01_ajaxqg.png")
 story25.photo.attach(io: file, filename: "biblidpoe_004i01_ajaxqg.png", content_type: "image/jpg")
 story25.save
+
+story26 = Story.create!(title: "La Forêt des Lumières",
+  summary: "Une fillette découvre une forêt enchantée où les animaux l'aident à retrouver son chemin.",
+  content: "Il était une fois, une petite fille nommée Lila qui vivait dans un petit village près d'une forêt. Un jour, alors qu'elle se promenait, elle s'éloigna un peu trop du sentier et se perdit. Alors que la nuit tombait, Lila commença à s'inquiéter. Soudain, elle remarqua que les arbres autour d'elle étaient ornés de lumières scintillantes et colorées.
+
+  Curieuse, Lila suivit les lumières et rencontra un groupe d'animaux qui parlaient. Il y avait un cerf, un écureuil et un hibou. Les animaux lui dirent que la forêt était magique et que les lumières étaient là pour aider ceux qui étaient perdus. Les animaux décidèrent de l'aider à retrouver son chemin.
+
+  Ils l'emmenèrent à travers la forêt, et Lila découvrit des endroits merveilleux et des créatures fantastiques. Les animaux lui montrèrent des fleurs qui brillaient dans l'obscurité et des papillons aux ailes scintillantes. Finalement, les animaux l'accompagnèrent jusqu'à l'orée de la forêt, où elle put apercevoir les lumières de son village.
+
+  Lila remercia chaleureusement ses nouveaux amis et promit de ne jamais oublier la Forêt des Lumières Magiques. Elle retourna chez elle, le cœur rempli de gratitude et d'émerveillement pour les merveilles qu'elle avait découvertes.",
+
+  genre: "Conte",
+  age: "5 à 8 ans",
+  tags: "Animaux, Magie, Aventure",
+  rating: 75,
+  user_id: user1.id)
+
+file = URI.open("https://res.cloudinary.com/ddd2hwkfz/image/upload/v1680775103/Pimprenelle/OTIweDEwODAuanBn_tjfp4f.jpg")
+story26.photo.attach(io: file, filename: "OTIweDEwODAuanBn_tjfp4f.jpg", content_type: "image/jpg")
+file = URI.open("https://res.cloudinary.com/dyi2oz7zm/video/upload/v1680095816/Float_z5pvtc.mp3")
+story26.audios.attach(io: file, filename: "Float_z5pvtc.mp3", content_type: "audio/mp3")
+story26.save
+
+story27 = Story.create!(title: "Le Royaume des Nuages",
+  summary: "Un garçon courageux traverse une série d'épreuves pour sauver un royaume caché dans les nuages.",
+  content: "Dans un village lointain vivait un jeune garçon nommé Tom. Un jour, alors qu'il jouait près de la rivière, il trouva un étrange objet brillant. C'était une clé en or, attachée à un ballon qui flottait dans les airs. Comme par magie, le ballon emmena Tom vers les cieux, où il découvrit un royaume caché parmi les nuages. Ce royaume était peuplé d'êtres merveilleux, tels que des licornes, des dragons et des fées.
+
+  La reine du royaume, une fée gracieuse, expliqua à Tom que leur monde était en danger. Un sorcier maléfique avait volé le Cœur du Royaume, une pierre précieuse qui donnait vie aux nuages et permettait au royaume de flotter. Sans elle, les nuages commenceraient à s'effondrer, et le royaume serait perdu. La clé en or que Tom avait trouvée était la clé pour retrouver le Cœur du Royaume.
+
+  Tom décida de venir en aide aux habitants du royaume. La reine lui confia une quête pour traverser les terres dangereuses et retrouver le Cœur du Royaume. Avec l'aide de ses nouveaux amis, un dragon nommé Blaze et une licorne appelée Lune, Tom se prépara pour son aventure.
+
+  Ils traversèrent des forêts enchantées, des montagnes escarpées et des rivières tumultueuses. À chaque étape, ils durent surmonter de nombreux défis, comme résoudre des énigmes et affronter des créatures redoutables. Finalement, ils arrivèrent au sombre château du sorcier maléfique. Grâce à la clé en or, ils pénétrèrent à l'intérieur et affrontèrent le sorcier dans une bataille épique.
+
+  Après une lutte acharnée, Tom et ses amis réussirent à vaincre le sorcier et à récupérer le Cœur du Royaume. Ils le ramenèrent à la reine, qui le replaça à sa place, sauvant ainsi le royaume. La reine remercia Tom pour son courage et son altruisme, et lui offrit la possibilité de rester dans le royaume. Cependant, Tom décida de retourner dans son village avec Blaze et Lune, qui devinrent ses compagnons pour la vie.
+
+  De retour chez lui, Tom raconta ses aventures à ses amis et à sa famille. Le Royaume des Nuages Flottants était désormais en sécurité, et Tom avait appris que le courage, l'amitié et la persévérance pouvaient surmonter les plus grands obstacles.",
+
+  genre: "Aventure",
+  age: "9 à 10 ans",
+  tags: "Magie, Amis, Courage",
+  rating: 80,
+  user_id: user1.id)
+
+file = URI.open("https://res.cloudinary.com/ddd2hwkfz/image/upload/v1680775692/Pimprenelle/MTgwMzA4MDUxMDUy_cvn3ds.jpg")
+story27.photo.attach(io: file, filename: "MTgwMzA4MDUxMDUy_cvn3ds.jpg", content_type: "image/jpg")
+file = URI.open("https://res.cloudinary.com/dyi2oz7zm/video/upload/v1680095816/Float_z5pvtc.mp3")
+story27.audios.attach(io: file, filename: "Float_z5pvtc.mp3", content_type: "audio/mp3")
+story27.save
 
 file = URI.open("https://res.cloudinary.com/dyi2oz7zm/image/upload/v1680261825/IMG_3139_j6nk3m.jpg")
 story1.photo.attach(io: file, filename: "IMG_3139_j6nk3m.jpg", content_type: "image/jpg")
@@ -709,3 +746,8 @@ story6.save
 file = URI.open("https://res.cloudinary.com/dyi2oz7zm/image/upload/v1680261684/IMG_3141_yif7zj.jpg")
 story7.photo.attach(io: file, filename: "IMG_3141_yif7zj.jpg", content_type: "image/jpg")
 story7.save
+
+Favorite.create!(story_id: story8.id, user_id: user1.id)
+Favorite.create!(story_id: story10.id, user_id: user1.id)
+Favorite.create!(story_id: story15.id, user_id: user1.id)
+Favorite.create!(story_id: story21.id, user_id: user1.id)
