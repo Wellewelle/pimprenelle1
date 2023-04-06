@@ -7,10 +7,10 @@ export default class extends Controller {
     console.log("Test001")
   }
 
-  increase(event) {
+  increment(event) {
     console.log("Increase Button");
     this.upbtnTarget.setAttribute("disabled", "");
-    this.dwnbtnTarget.setAttribute("disabled", "");
+    // this.dwnbtnTarget.setAttribute("disabled", "");
   }
 
   decrease(event) {
