@@ -7,9 +7,9 @@
           <%= simple_form_for(@story) do |f| %>
             <%= f.input :title, label: "Titre" %>
             <%= f.input :summary, label: "Résumé" %>
-            <%= f.input :age, collection: ["2 à 5 ans", "5 à 8 ans", "8 à 10 ans", "10 à 12 ans", "12 ans et plus"], label: false, prompt: "Ajouter votre tranche d'âge", input_html: { class: "w-100", style: "border-radius: 5px; color: #FFAA4C;" } %>
-            <%= f.input :genre, collection: ["Romance", "Fantaisie", "Aventure", "Amitié", "Scien-Fiction", "Humour", "Pour s'endormir", "conte", "légende"], label: false, prompt: "Donnez un genre à votre histoire", input_html: { class: "w-100", style: "border-radius: 5px; color: #FFAA4C; " } %>
-            <%= f.input :tags, collection: ["Fées", "Chevaliers", "Sorcières", "Magie", "Princes et Princesses", "Animaux", "Monstres", "Rêves"], label: false, prompt: "Mettez un tag", input_html: { class: "w-100", style: "border-radius: 5px; color: #FFAA4C;" } %>
+            <%= f.input :genre, collection: ["Romance", "Fantaisie", "Aventure", "Amitié", "Science-Fiction", "Humour", "Pour s'endormir", "Conte", "Légende"], label: false, prompt: "Donnez un genre à votre histoire", input_html: { class: "w-100", style: "border-radius: 5px; color: #FFAA4C; " } %>
+            <%= f.input :age, collection: ["2 à 5 ans", "5 à 8 ans", "8 à 10 ans", "10 à 12 ans", "12 ans et plus"], label: false, prompt: "Age", input_html: { class: "w-100", style: "border-radius: 5px; color: #FFAA4C;" } %>
+            <%#= f.input :tags, collection: ["Fées", "Chevaliers", "Sorcières", "Magie", "Princes et Princesses", "Animaux", "Monstres", "Rêves"], label: false, prompt: "Mettez un tag", input_html: { class: "w-100", style: "border-radius: 5px; color: #FFAA4C;" } %>
             <%= f.input :content, label: "Racontez...", :input_html => {:style => 'width: 100%, border-radius: 5px;', :rows => 10, class: 'response-project'} %>
             <%= f.input :audios %>
             <%= f.button :submit, "Modifier", class: "btn btn-primary", style: "background-color: #FFAA4C; color: white; border-radius: 10px; box-shadow: 1px 1px 2px rgba(0,0,0,0.1);"%>
