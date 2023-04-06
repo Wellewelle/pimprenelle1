@@ -2,24 +2,24 @@
  <div class="row justify-content-center">
     <div class="col-xs-12 col-sm-4 col-sm-offset-4">
       <div class="form-login">
-        <h1>Écris ton histoire</h1>
+        <h1 style="margin-bottom: 20px;">Écris ton histoire</h1>
 
           <%= simple_form_for(@story) do |f| %>
             <%= f.input :title, label: "Titre" %>
             <%= f.input :summary, label: "Résumé" %>
-          <div id="select-inputs">
-            <div class="select-item"><%= f.select :age,["2 à 5 ans", "5 à 8 ans", "8 à 10 ans", "10 à 12 ans", "12 ans et plus"], label: "Tranche d'âge" %></div>
-            <div class="select-item"><%= f.select :genre, ["Romance", "Fantaisie", "Aventure", "Amitié", "Science-Fiction", "Humour", "Conte", "Légende"], label: "Donnez un genre à votre histoire" %></div>
-            <div class="select-item"><%= f.select :tags, ["Fées", "Chevaliers", "Sorcières", "Magie", "Princes et Princesses", "Animaux", "Monstres", "Rêves"], label: "Ajoutez un tag" %></div>
-          </div>
+            <%= f.input :age, collection: ["2 à 5 ans", "5 à 8 ans", "8 à 10 ans", "10 à 12 ans", "12 ans et plus"], label: false, prompt: "Tranche d'âge", input_html: { class: "w-100", style: "border-radius: 5px; color: #FFAA4C;" } %>
+            <%= f.input :genre, collection: ["Romance", "Fantaisie", "Aventure", "Amitié", "Scien-Fiction", "Humour", "Pour s'endormir", "conte", "légende"], label: false, prompt: "Genre", input_html: { class: "w-100", style: "border-radius: 5px; color: #FFAA4C; " } %>
+            <%= f.input :tags, collection: ["Fées", "Chevaliers", "Sorcières", "Magie", "Princes et Princesses", "Animaux", "Monstres", "Rêves"], label: false, prompt: "Tag", input_html: { class: "w-100", style: "border-radius: 5px; color: #FFAA4C;" } %>
             <%= f.input :content, label: "Racontez...", :input_html => {:style => 'width: 100%', :rows => 10, class: 'response-project'} %>
             <%= f.input :photo, as: :file %>
             <%= f.input :audios, as: :file, input_html: {multiple: true} %>
-            <%= f.button :submit, "Publier mon histoire", class: "btn btn-primary publier"%>
+            <%= f.button :submit, "Publier mon histoire", class: "btn btn-primary publier", style: "background-color: #FFAA4C; color: white; border-radius: 10px; box-shadow: 1px 1px 2px rgba(0,0,0,0.1);"%>
           <% end %>
-          <%= link_to "Retour au profile", profile_path %>
+      <div class= "d-flex justify-content-center align-items-center" style="flex-direction: column-reverse;">
+        <%= link_to "Retour profil", profile_path %>
+        <i class="fa-sharp fa-solid fa-circle-arrow-left" style="margin-right: 10px; font-size: 40px;"></i>Retour profil
+      </div>
 
-        <%= button_to "Retour à la liste", stories_path, method: :get, class:"btn btn-secondary mt-2 retour-liste" %>
       </div>
     </div>
   </div>
