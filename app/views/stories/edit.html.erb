@@ -2,7 +2,7 @@
   <div class="row justify-content-center">
       <div class="col-xs-12 col-sm-4 col-sm-offset-4">
         <div class="form-login">
-          <h1>Modifiez votre histoire</h1>
+          <h1>Modifie ton histoire</h1>
 
           <%= simple_form_for(@story) do |f| %>
             <%= f.input :title, label: "Titre" %>
@@ -12,7 +12,7 @@
             <%= f.select :tags, ["Fées", "Chevaliers", "Sorcières", "Magie", "Princes et Princesses", "Animaux", "Monstres", "Rêves"], label: "Mettez un tag" %>
 
             <%= f.input :content, label: "Racontez...", :input_html => {:style => 'width: 100%', :rows => 10, class: 'response-project'} %>
-            <%= f.input :audio %>
+            <%= f.input :audios %>
 
             <%= f.button :submit, "Modifier", class: "btn btn-primary"%>
           <% end %>
