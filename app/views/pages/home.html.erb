@@ -5,13 +5,13 @@
     </div>
   </div>
 
-  <div class="d-grid gap-2 mt-4 mb-4 text-center">
+  <div class="d-grid gap-2 mt-4 text-center">
     <%= link_to "/stories" do %>
       <button id="creation" class="btn btn-primary rounded-5 fs-5 w-100" style="height: 5rem;" type="button">Découvrez nos histoires !</button>
     <% end %>
   </div>
 
-    <p class="titres text-center white mt-4 child">Histoires audios pour 2 ans et +</p>
+    <p class="titres text-center white mt-2 child">Histoires audios pour 2 ans et +</p>
   <div class="scroll-container">
     <% @stories.shuffle.each do |story| %>
     <% if story.audios.attached? %>
@@ -27,7 +27,7 @@
     <% end %>
   </div>
 
-  <p class="titres text-center white mt-2 child">Nos plus beaux contes</h6>
+  <p class="titres text-center white mt-4 child">Nos plus beaux contes</h6>
   <div class="scroll-container">
     <% @stories.where(genre:"Conte").shuffle.each do |story| %>
     <div id="box1" class="scroll-item card rounded-4" style="width: 10rem;">
@@ -42,8 +42,8 @@
   </div>
 
 
-      <p class="titres text-center white mt-2 child">À l'aventure !</h6>
-  <div id="box3" class="scroll-container mb-5">
+      <p class="titres text-center white mt-4 child">À l'aventure !</h6>
+  <div id="box3" class="scroll-container">
     <% @stories.where(genre:"Aventure").shuffle.each do |story| %>
     <div class="scroll-item card rounded-4" style="width: 10rem;">
     <% if story.photo.attached? %>
