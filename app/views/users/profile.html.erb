@@ -25,7 +25,7 @@
             <div class="ms-2 me-auto">
               <div class="fw-bold"><strong><%= link_to favorite.story.title, story_path(favorite.story), class: "linkstory" %></strong></div>
             </div>
-            <span class="#"><%= button_to favorite_path(favorite, story_id: favorite.story.id), class: "destroybtn", method: :delete, data: { confirm: 'Are you sure?' } do %>
+            <span class="#"><%= button_to favorite_path(favorite, story_id: favorite.story.id), id: "destroybtn", method: :delete, data: { confirm: 'Are you sure?' } do %>
               <i class="fa-solid fa-trash-can" style="color: #035397;"></i>
             </span>
             <% end %>
@@ -47,16 +47,16 @@
 
 
 
-              <div class="d-flex" style="gap: 10px;">
+              <div class="d-flex" style="gap: 10px; align-items: baseline;">
                 <div class= "">
-                  <span class="order-1"><%= button_to edit_story_path(story), method: :get, class:"btn btn-warning mr-2", id:"editbutton" do %>
+                  <span class="order-1"><%= button_to edit_story_path(story), method: :get, id:"editbutton" do %>
                    <i class="fa-solid fa-pen-nib"style="color: #035397;"></i>
                   </span>
                   <% end %>
                 </div>
 
-                <div>
-                  <span class="order-2"><%= button_to story_path(story), class: "destroybtn ml-1", method: :delete, data: { confirm: 'Are you sure?' } do %>
+                <div class= "">
+                  <span class="order-2"><%= button_to story_path(story), id: "destroybtn", method: :delete, data: { confirm: 'Are you sure?' } do %>
                     <i class="fa-solid fa-trash-can" style="color: #035397;"></i>
                   </span>
                   <% end %>
