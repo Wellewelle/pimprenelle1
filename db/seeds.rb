@@ -693,7 +693,7 @@ file = URI.open("https://res.cloudinary.com/dyi2oz7zm/video/upload/v1680095816/F
 story26.audios.attach(io: file, filename: "Float_z5pvtc.mp3", content_type: "audio/mp3")
 story26.save
 
-story27 = Story.create!(title: "Le Royaume des Nuages",
+story27 = Story.create!(title: "Le Royaume des Nuagges",
   summary: "Un garçon courageux traverse une série d'épreuves pour sauver un royaume caché dans les nuages.",
   content: "Dans un village lointain vivait un jeune garçon nommé Tom. Un jour, alors qu'il jouait près de la rivière, il trouva un étrange objet brillant. C'était une clé en or, attachée à un ballon qui flottait dans les airs. Comme par magie, le ballon emmena Tom vers les cieux, où il découvrit un royaume caché parmi les nuages. Ce royaume était peuplé d'êtres merveilleux, tels que des licornes, des dragons et des fées.
 
@@ -708,7 +708,7 @@ story27 = Story.create!(title: "Le Royaume des Nuages",
   De retour chez lui, Tom raconta ses aventures à ses amis et à sa famille. Le Royaume des Nuages Flottants était désormais en sécurité, et Tom avait appris que le courage, l'amitié et la persévérance pouvaient surmonter les plus grands obstacles.",
 
   genre: "Aventure",
-  age: "9 à 10 ans",
+  age: "5 à 8 ans",
   tags: "Magie, Amis, Courage",
   rating: 80,
   user_id: user1.id)
