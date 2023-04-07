@@ -144,8 +144,8 @@ story8.save
 story9 = Story.create!(title: "Roland", summary: "Roland découvre qu'il peut donner vie à ses dessins et envoie un zèbre et des ours en classe", content: "Roland était en retard. « Va au coin », dit le maître, et Roland obéit. Mais, au coin, il n'y avait rien à faire, alors Roland prit son crayon et dessina un tigre allongé sur le mur. Puis il dit : « CRACK » et le tigre devint vivant. Le tigre s'étira, se déroula de tout son long et dit bonjour au maître très poliment. Le maître répondit : « Il n'y a pas de place pour toi ici. » Il ouvrit la porte et, sans un mot de plus, le tigre sortit. « Récréation, tout le monde dehors maintenant », dit le maître. « Sauf toi, Roland. Tu restes ici. Et attention, plus de « CRACK », je te prie ». Roland resta seul dans la classe. Comme il s'ennuyait, il prit son cahier, dessina un zèbre, arracha la page et la colla à la fenêtre. Dans la cour, les autres garçons faisaient une bataille de boules de neige. Une des boules frappa la vitre, le verre fit « CRACK » en se cassant, et le zèbre devint vivant. D'un bond il fut dans la cour et d'un bond il franchit le mur. Le maître n'avait rien vu car il avait reçu une boule de neige dans l'œil. Heureusement, pas très dure. Après la récréation, la classe reprit. Dehors, le vent soufflait fort. Par la vitre cassée, la neige entrait à gros flocons et s'entassait sur le plancher. Roland avait oublié ce que le maître lui avait dit. Il dessina donc vingt sapins, trois ours noirs, deux ours bruns et un ruisseau et dit : « CRACK ! CRACK ! CRACK ! CRACK ! ». Le ruisseau se mit à couler et les ours à marcher sur la neige du plancher ! Alors le maître dit aux enfants de rentrer chez eux car il faisait vraiment trop froid.", genre: "Fantaisie", age: "5 à 8 ans", tags: "Dessin, Animaux, Ecole", rating: rand(21..82), user_id: user2.id)
 file = URI.open("https://res.cloudinary.com/ddd2hwkfz/image/upload/v1680622995/Pimprenelle/biblidhis_011i01_ksfkgy.png")
 story9.photo.attach(io: file, filename: "biblidhis_011i01_ksfkgy.png", content_type: "image/jpg")
-file = URI.open("https://res.cloudinary.com/dyi2oz7zm/video/upload/v1680095816/Float_z5pvtc.mp3")
-story9.audios.attach(io: file, filename: "Float_z5pvtc.mp3", content_type: "audio/mp3")
+file = URI.open("https://res.cloudinary.com/dyi2oz7zm/video/upload/v1680851972/tinywow_Nouvel_enregistrement_2_19027781_pd63ct.mp3")
+story9.audios.attach(io: file, filename: "tinywow_Nouvel_enregistrement_2_19027781_pd63ct.mp3", content_type: "audio/mp3")
 story9.save
 
 story10 = Story.create!(title: "L'hermine et l'hiver", summary: "L'hermine se promène seule en hiver, mais découvre que son pelage blanc la protège des prédateurs", content: "Un jour d'hiver, alors que la forêt était recouverte d'un beau manteau blanc, l'hermine se promenait pendant que ses amis dormaient en attendant le retour du printemps. « Que vais-je bien pouvoir faire, se demanda-t-elle, je m'ennuie toute seule » Elle essaya bien de réveiller quelques-uns de ses amis : l'écureuil, le hérisson, mais elle n'y parvint pas. « Bon, se dit-elle, puisque tout le monde dort et même Hector, le grand ours, je vais en profiter pour le taquiner. » Elle s'approcha doucement du museau d'Hector et souffla très fort. Celui-ci, qui ne dormait que d'un œil, poussa un grognement de mécontentement si impressionnant que l'hermine devint blanche de peur et s'enfuit à toutes pattes. Cependant, en se promenant ainsi le poil tout blanc, elle s'aperçut qu'on ne la remarquait pas et pouvait facilement échapper au loup et au renard. C'est pourquoi maintenant l'hermine garde son manteau blanc l'hiver en se faisant peur toute seule.", genre: "Aventure", age: "2 à 5 ans", tags: "Animaux, Hiver, Couleurs", rating: rand(21..82), user_id: user2.id)
@@ -190,8 +190,8 @@ story11 = Story.create!(title: "Le Chêne et le Roseau", summary: "Le Chêne se 
 
 file = URI.open("https://res.cloudinary.com/ddd2hwkfz/image/upload/v1680681734/Pimprenelle/biblidpoe_002i01_tfnno1.png")
 story11.photo.attach(io: file, filename: "biblidpoe_002i01_tfnno1.png", content_type: "image/jpg")
-file = URI.open("https://res.cloudinary.com/dyi2oz7zm/video/upload/v1680095816/Float_z5pvtc.mp3")
-story11.audios.attach(io: file, filename: "Float_z5pvtc.mp3", content_type: "audio/mp3")
+file = URI.open("https://res.cloudinary.com/dyi2oz7zm/video/upload/v1680851972/tinywow_Nouvel_enregistrement_2_19027781_pd63ct.mp3")
+story11.audios.attach(io: file, filename: "tinywow_Nouvel_enregistrement_2_19027781_pd63ct.mp3", content_type: "audio/mp3")
 story11.save
 
 story12 = Story.create!(
@@ -269,8 +269,8 @@ story13 = Story.create!(title: "Le Renard et le Bouc",
 
 file = URI.open("https://res.cloudinary.com/ddd2hwkfz/image/upload/v1680681982/Pimprenelle/biblidpoe_020i01_hprpds.png")
 story13.photo.attach(io: file, filename: "biblidpoe_020i01_hprpds.png", content_type: "image/jpg")
-file = URI.open("https://res.cloudinary.com/dyi2oz7zm/video/upload/v1680095816/Float_z5pvtc.mp3")
-story13.audios.attach(io: file, filename: "Float_z5pvtc.mp3", content_type: "audio/mp3")
+file = URI.open("https://res.cloudinary.com/dyi2oz7zm/video/upload/v1680851972/tinywow_Nouvel_enregistrement_2_19027781_pd63ct.mp3")
+story13.audios.attach(io: file, filename: "tinywow_Nouvel_enregistrement_2_19027781_pd63ct.mp3", content_type: "audio/mp3")
 story13.save
 
 
@@ -413,8 +413,8 @@ Et le Soleil, impressionné par le bruit, renonce, mais pour un temps seulement,
 
 file = URI.open("https://res.cloudinary.com/ddd2hwkfz/image/upload/v1680682868/Pimprenelle/biblidcon_081i01_glm7t2.png")
 story17.photo.attach(io: file, filename: "biblidcon_081i01_glm7t2.png", content_type: "image/jpg")
-file = URI.open("https://res.cloudinary.com/dyi2oz7zm/video/upload/v1680095816/Float_z5pvtc.mp3")
-story17.audios.attach(io: file, filename: "Float_z5pvtc.mp3", content_type: "audio/mp3")
+file = URI.open("https://res.cloudinary.com/dyi2oz7zm/video/upload/v1680813511/tinywow_Le_royaume_des_nuages_klsngp_18987587_xubm30.mp3")
+story17.audios.attach(io: file, filename: "tinywow_Le_royaume_des_nuages_klsngp_18987587_xubm30.mp3", content_type: "audio/mp3")
 story17.save
 
 story18 = Story.create!(title: "Le Canari Merveilleux",
@@ -689,8 +689,8 @@ story26 = Story.create!(title: "La Forêt des Lumières",
 
 file = URI.open("https://res.cloudinary.com/ddd2hwkfz/image/upload/v1680775103/Pimprenelle/OTIweDEwODAuanBn_tjfp4f.jpg")
 story26.photo.attach(io: file, filename: "OTIweDEwODAuanBn_tjfp4f.jpg", content_type: "image/jpg")
-file = URI.open("https://res.cloudinary.com/dyi2oz7zm/video/upload/v1680095816/Float_z5pvtc.mp3")
-story26.audios.attach(io: file, filename: "Float_z5pvtc.mp3", content_type: "audio/mp3")
+file = URI.open("https://res.cloudinary.com/dyi2oz7zm/video/upload/v1680813511/tinywow_Le_royaume_des_nuages_klsngp_18987587_xubm30.mp3")
+story26.audios.attach(io: file, filename: "tinywow_Le_royaume_des_nuages_klsngp_18987587_xubm30.mp3", content_type: "audio/mp3")
 story26.save
 
 story27 = Story.create!(title: "Le Royaume des Nuagges",
