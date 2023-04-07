@@ -24,8 +24,10 @@
 <div class="container">
   <div class="row mb-3">
     <div class="col-12">
+
       <div class="card text-bg-dark rounded-4 rounded-bottom border-0 mt-3">
         <%= cl_image_tag @story.photo.key, class: "card-img rounded-4 rounded-bottom", style: "height: 15rem;", id: "top-image" %>
+
         <div class="card-img-overlay">
           <h2 class="fw-bold text-center fs-1 position-absolute top-50 start-50 translate-middle"><strong><%= @story.title %></strong></h2>
           <div style="position: absolute; bottom:0; right:3%">
