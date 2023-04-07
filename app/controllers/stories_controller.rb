@@ -55,7 +55,7 @@ class StoriesController < ApplicationController
       end
     end
     if @story.save
-      redirect_to stories_path
+      redirect_to profile_path
     else
       render :new, status: :unprocessable_entity
     end
