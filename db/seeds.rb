@@ -353,8 +353,8 @@ Vous verrez que chez vous j'ai puisé ces leçons.",
 
 file = URI.open("https://res.cloudinary.com/ddd2hwkfz/image/upload/v1680682281/Pimprenelle/biblidpoe_012i01_movfn1.png")
 story15.photo.attach(io: file, filename: "biblidpoe_012i01_movfn1.png", content_type: "image/jpg")
-file = URI.open("https://res.cloudinary.com/dyi2oz7zm/video/upload/v1680095816/Float_z5pvtc.mp3")
-story15.audios.attach(io: file, filename: "Float_z5pvtc.mp3", content_type: "audio/mp3")
+file = URI.open("https://res.cloudinary.com/dyi2oz7zm/video/upload/v1680851972/tinywow_Nouvel_enregistrement_2_19027781_pd63ct.mp3")
+story15.audios.attach(io: file, filename: "tinywow_Nouvel_enregistrement_2_19027781_pd63ct.mp3", content_type: "audio/mp3")
 story15.save
 
 
